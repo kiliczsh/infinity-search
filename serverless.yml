@@ -1,0 +1,38 @@
+service: serverless-flask
+
+plugins:
+  - serverless-python-requirements
+  - serverless-wsgi
+  - serverless-domain-manager
+custom:
+  wsgi:
+    app: wsgi.app
+    packRequirements: false
+  pythonRequirements:
+    dockerizePip: true
+# If you are not using a domain, remove this area --
+  customDomain:
+    domainName: infinitysearch.co
+    basePath: ''
+    stage: ${self:provider.stage}
+    createRoute53Record: true
+# ---------
+
+package:
+  exclude:
+    - node_modules/**
+    - venv/**
+
+provider:
+  name: aws
+  runtime: python3.7
+  region: us-east-1
+  stage: v1
+
+
+functions:
+  app:
+    handler: wsgi_handler.handler
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'

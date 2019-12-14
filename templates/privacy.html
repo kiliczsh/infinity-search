@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Infinity Search</title>
+    <meta charset="UTF-8">
+    <link rel='shortcut icon' type='image/png' href='https://i.postimg.cc/7Lwth4Th/Infinity-Search-Logo-1-dragged.png'/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blogs.css') }}">
+</head>
+<body class="Site">
+<div class="top"></div>
+
+<div style="text-align: center; padding-bottom: 15px;">
+    <img onClick="window.open('/', '_self')" style="vertical-align:middle; cursor: pointer; border-radius: 50%;" src="https://i.postimg.cc/Rhg9MPYN/Infinity-Search-Logo.png"
+     width="75px" height="75px" alt="">
+
+    <span class="rome" style="vertical-align:middle; font-size: 30px; padding-left: 20px;">  </span>
+</div>
+
+<div class="search-container">
+    <div class="side-left"></div>
+    <div class="middle">
+
+        <br>
+
+        <div class="article">
+
+            <h1> Infinity Search Privacy Policy </h1>
+            <hr/>
+
+            <h2> Information Collected </h2>
+
+            We use <a href="https://usefathom.com/"> Fathom Analytics</a> to monitor site traffic. This
+            service allows us to get site usage metrics while also respecting the privacy of our users.
+            It tells us how many people are using our website but doesn't store any information about who
+            the users are and it doesn't install cookies to your device.
+
+            <hr/>
+
+            <h2> Information Not Collected </h2>
+
+            We do not collect or log data about the individual users who access this website. This means that we do not
+            log IP addresses or user-agent strings. We also do not use cookies at all, which is one the most
+            common ways that other websites attempt to track you online, even after you have left their site.
+
+            <hr/>
+
+            <h2> Information Shared </h2>
+
+            Since we are using third-party APIs to gather the search results, those services can view the
+            searches that we make. They cannot see, however, who made the search because it
+            appears to them as our service making the search. This is the same way that
+            <a href="https://duckduckgo.com/"> DuckDuckGo</a> works as well.
+
+            <hr/>
+
+            <h2> How We Value Your Privacy </h2>
+
+            We value your privacy here by simply never straying away from the privacy policy described
+            above. Our model is designed to respect the privacy of all our users.
+
+        </div>
+
+    </div>
+    <div class="side-right"></div>
+</div>
+
+<div style="margin-top: 20px"></div>
+
+<div class="navbar">
+    <a href="/about">About</a>
+    <a href="/content"> Blog </a>
+    <a href="/pro"> Infinity Pro </a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/contact">Contact</a>
+</div>
+<!-- Fathom - simple website analytics - https://usefathom.com -->
+<script>
+(function(f, a, t, h, o, m){
+a[h]=a[h]||function(){
+(a[h].q=a[h].q||[]).push(arguments)
+};
+o=f.createElement('script'),
+m=f.getElementsByTagName('script')[0];
+o.async=1; o.src=t; o.id='fathom-script';
+m.parentNode.insertBefore(o,m)
+})(document, window, '//cdn.usefathom.com/tracker.js', 'fathom');
+fathom('set', 'siteId', 'FZMFTWHZ');
+fathom('trackPageview');
+</script>
+<!-- / Fathom -->
+</body>
+
+
+
+</html>

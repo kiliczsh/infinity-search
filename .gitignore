@@ -1,0 +1,35 @@
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+*.DS_Store
+*__pycache__/
+
+# Serverless directories
+.serverless
+
+accounts.py
+.idea
+package.json
+package-lock.json
+procfile
+runtime.txt
+
+node_modules/
+
+SearchEngines/Bing/Bing_API_Example.py
+templates/search_div.html
