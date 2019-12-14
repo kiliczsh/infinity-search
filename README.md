@@ -10,7 +10,8 @@ It is also not currently implemented in Infinity Search.
 
 # How It Works
 For the web application, we use Flask. For the search results, we use the Microsoft Cognitive Services Search API and
-the DuckDuckGo Instant Answers API. 
+the DuckDuckGo Instant Answers API. We will have more detailed information about how
+our system works in the future. 
 
 # Usage
 
@@ -50,7 +51,7 @@ you can go [here](https://flask.palletsprojects.com/en/1.1.x/deploying).
 
 ## Documentation 
 There is currently not much documentation but as this project 
-grows, it can be found in the [docs folder]('/docs') 
+grows, it can be found in the [docs folder](/docs) 
 
 ## Contributing to Infinity Search
 All contributions, bug reports, bug fixes, documentation improvements, enhancements and ideas are welcome. 
