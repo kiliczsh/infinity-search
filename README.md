@@ -51,7 +51,7 @@ you can go [here](https://flask.palletsprojects.com/en/1.1.x/deploying).
 
 ## Documentation 
 There is currently not much documentation but as this project 
-grows, it can be found in the [docs folder](/docs) 
+grows, it can be found in the [docs folder](/docs).
 
 ## Contributing to Infinity Search
 All contributions, bug reports, bug fixes, documentation improvements, enhancements and ideas are welcome. 
