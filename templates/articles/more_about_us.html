@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Infinity Search</title>
+    <meta charset="UTF-8">
+    <link rel='shortcut icon' type='image/png' href='https://i.postimg.cc/7Lwth4Th/Infinity-Search-Logo-1-dragged.png'/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blogs.css') }}">
+</head>
+<body class="Site">
+<div class="top"></div>
+
+<div style="text-align: center; padding-bottom: 15px;">
+    <img onClick="window.open('/', '_self')" style="vertical-align:middle; cursor: pointer; border-radius: 50%;" src="https://i.postimg.cc/Rhg9MPYN/Infinity-Search-Logo.png"
+     width="75px" height="75px" alt="">
+
+    <span class="rome" style="vertical-align:middle; font-size: 30px; padding-left: 20px;">  </span>
+</div>
+
+<div class="search-container">
+    <div class="side-left"></div>
+    <div class="middle">
+        <br>
+        <h1> More Privacy Information About Us </h1>
+        <div class="article">
+            We've had many people ask us questions about the technical aspects of
+            how we manage user privacy. This post answers these questions.
+            <hr/>
+
+            <h3> Do you open source any of your code? Where can we find it? </h3>
+            Yes, all of our code is open source! It can all be found at
+            <a href="https://gitlab.com/infinitysearch/infinity-search">
+                https://gitlab.com/infinitysearch/infinity-search</a>.
+            <br><br>
+
+            We are also working on other search services that include a web crawler, indexer, and our desktop version
+            of Infinity Search that will also be open source. These are still in the early stages of development,
+            however, and they will be released sometime in the future.
+            <hr/>
+
+            <h3> What customer data is collected, how often, and in what level of identification? </h3>
+            Since we are using the Microsoft's Cognitive Services API, the
+            searches that have been made on our behalf are saved by Microsoft. It just appears to Microsoft as us
+            making the searches, however. We are also considering integrating our results from other services such
+            as <a href="https://www.mojeek.com/"> Mojeek</a>, <a href="https://duckduckgo.com/"> DuckDuckGo</a>, and
+            our custom API in the future. We will maintain the same process described above for any future integrations.
+            <br><br>
+            To measure site usage, we use <a href="https://usefathom.com/"> Fathom Analytics</a>. They do not track
+            or store our visitors’ personal information and give us site metrics by taking anonymous data. This article
+            published by them describes how they manage this: <a href="https://usefathom.com/news/anonymization">
+            https://usefathom.com/news/anonymization</a>. Their demo page displays what a site owner can see about
+            their users: <a href="https://app.usefathom.com/share/lsqyv/pjrvs">
+            https://app.usefathom.com/share/lsqyv/pjrvs</a>.
+
+            <br><br>
+
+            We take user privacy very seriously and we believe that for our service, the best possible way to achieve
+            this is by not collecting data about our customers or attempting to identify them. The information above
+            is already available in our privacy policy but this can give users a more in-depth look at how information
+            is being handled by our service.
+
+            <hr/>
+
+            <h3> Will changes to your Terms & Conditions and privacy policies be communicated to end users at least
+                30 days in advance of any changes? How will these changes be communicated? </h3>
+
+            Yes. If we are going to make changes to our privacy policy we will notify our users through our
+            blog posts and through Twitter at least 30 days in advance. We also do not plan any making any changes
+            to our policy in the foreseeable future.
+
+            <hr/>
+
+            <h3> What processes do you have in place if there is unauthorized access to data? </h3>
+            We do not log or save any data of our own and our code is open source, so this scenario does not apply
+            to our service.
+
+            <hr/>
+
+            <h3> Have you had an independent audit? Please share the date of the latest one and the findings. </h3>
+            No. We are a new service and have never had an audit of any kind. Since our service is open source,
+            anyone is welcome to view our code, analyze it for their concerns, and inform us of the results.
+
+            <hr/>
+
+            <h3> If you require sign-up or account creation, do consumers have easy access to tools to delete their
+                data? Can they delete everything on the servers or just the local cache? </h3>
+
+            We do not have sign-up or account creation, so there is no data for us to save about our users.
+
+            <hr/>
+
+            <h3> How else does Infinity Search help with privacy?  </h3>
+            By default, we send user search queries through POST data. This makes it so that what was searched for
+            is encrypted and also cannot be seen in the user's search history. We do have the option to search
+            topics from GET requests, but that is just for the functionality of sending a search made on our site in the
+            form of a simple link (such as <a href="https://infinitysearch.co/?q=Hawaii">
+            https://infinitysearch.co/?q=Hawaii</a>).
+            <br><br>
+
+        </div>
+
+    </div>
+    <div class="side-right"></div>
+</div>
+
+<div class="navbar">
+    <a href="/about">About</a>
+    <a href="/content"> Blog </a>
+    <a href="/pro"> Infinity Pro </a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/contact">Contact</a>
+</div>
+<!-- Fathom - simple website analytics - https://usefathom.com -->
+<script>
+(function(f, a, t, h, o, m){
+a[h]=a[h]||function(){
+(a[h].q=a[h].q||[]).push(arguments)
+};
+o=f.createElement('script'),
+m=f.getElementsByTagName('script')[0];
+o.async=1; o.src=t; o.id='fathom-script';
+m.parentNode.insertBefore(o,m)
+})(document, window, '//cdn.usefathom.com/tracker.js', 'fathom');
+fathom('set', 'siteId', 'FZMFTWHZ');
+fathom('trackPageview');
+</script>
+<!-- / Fathom -->
+</body>
+
+</html>

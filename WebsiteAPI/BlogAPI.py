@@ -1,20 +1,22 @@
-from flask import Blueprint, render_template, jsonify, request
+from flask import Blueprint, render_template, jsonify, request, redirect
 
 blogAPI = Blueprint('blogAPI', __name__)
 
 @blogAPI.route('/content')
 def render_articles():
     articles = [
-        {'link' : '/articles/resources', 'title' : 'Privacy Resources'},
-        {'link' : '/articles/hello_world', 'title' : 'Our First Blog Post'}
-        ]
+        {'link': '/articles/more_about_us', 'title': 'More Privacy Information About Us'},
+        {'link': '/articles/about_our_company', 'title': 'About Our Company'},
+        {'link': '/articles/open_source', 'title': 'Infinity Search Is Now Open Source'},
+        {'link' : '/articles/privacy_resources', 'title' : 'Privacy Resources'},
+    ]
 
     return render_template('articles/articles.html', articles=articles)
 
-@blogAPI.route('/articles/resources')
-def render_blog_privacy_resources():
-    return render_template('articles/Privacy_Resources.html')
+@blogAPI.route('/articles/<post>')
+def render_blog_post(post):
+    try:
+        return render_template('articles/' + post + '.html')
+    except Exception as e:
+        return redirect('/404')
 
-@blogAPI.route('/articles/hello_world')
-def render_blog_hello_world():
-    return render_template('articles/hello_world.html')
