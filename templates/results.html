@@ -12,8 +12,9 @@
         $("a[href^='http']").each(function () {
 
             if (this.className == "bottomlink") {
-                $(this).css({'background-image': 'url(http://www.google.com/s2/favicons?domain=' + this.hostname + ')'});
+                $(this).css({'background-image': 'url(https:/' + this.hostname + '/favicon.ico)'});
                 $(this).css({"background-repeat": "no-repeat"});
+                $(this).css({"background-size": "contain"});
                 $(this).css({"padding-left": "20px"});
             }
         });
