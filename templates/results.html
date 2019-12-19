@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <head>
+    <meta charset="UTF-8">
+    <title>Infinity Results</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel='shortcut icon' type='image/png' href='https://i.postimg.cc/7Lwth4Th/Infinity-Search-Logo-1-dragged.png'/>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
@@ -7,33 +9,15 @@
      <script src="{{ url_for('static', filename='jquery-3.4.1.min.js') }}"></script>
 </html>
 <script>
-    $(document).ready(function () {
-        /* Nothing else needed */
-        $("a[href^='http']").each(function () {
 
-            if (this.className == "bottomlink") {
-                $(this).css({'background-image': 'url(https:/' + this.hostname + '/favicon.ico)'});
-                $(this).css({"background-repeat": "no-repeat"});
-                $(this).css({"background-size": "contain"});
-                $(this).css({"padding-left": "20px"});
-            }
-        });
-    });
-</script>
-<script>
-    function myFunction(id) {
-      if (document.getElementById(id).checked) {
-            document.getElementById(id + '_container').style.display = 'block';
-      }
-      else {
-            document.getElementById(id + '_container').style.display = 'none';
-      }
+    function imgError(image) {
+    image.onerror = "";
+    image.src = "https://i.postimg.cc/cHgVnXfW/blank.png";
+    return true;
     }
+
 </script>
-<head>
-    <meta charset="UTF-8">
-    <title>Infinity Results</title>
-</head>
+
 <body>
     <div style="text-align: left; margin-left: 3%">
         <img onClick="window.open('/', '_self')" style="vertical-align:middle; cursor:pointer; border-radius: 50%;" src="https://i.postimg.cc/Rhg9MPYN/Infinity-Search-Logo.png" width="30px" height="30px" alt="">
@@ -152,41 +136,46 @@
          <div class="ddg_ia_container" id="ddg_ia_container">
 
         {% for info in ddg_ia_result %}
-            <div class="result_container" onclick="location.href='{{ info[2] }}';" style="cursor: pointer;">
-            <b> {{ info[0] }} </b> <br><br>
-            &nbsp <img class="ia_image" src={{ info[3] }} ><br><br>
-            {{ info[1] }} <br><br>
-            <a href={{ info[2] }} class="bottomlink"> {{ info[2] }}</a> <br><br>
-            <a class="bottomlink" style="font-size: 13px;" href="https://duckduckgo.com/api"> Result Provided by the DuckDuckGo Instant Answer API </a>
-            </div>
+            <a class="result_container link_container" href="{{info[2]}}" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;"> <b> {{ info[0] }} </b> <br><br> </span>
+            &nbsp <img class="ia_image" src={{ info[3] }}><br><br>
+                <span style="color: black">{{ info[1] }} <br><br> </span>
+            <span href={{ info[2] }} class="bottomlink jake" style="display: block">
+                <img onerror="imgError(this)" src="https://en.wikipedia.com/favicon.ico" height="16px" width="16px" style="padding-right: 5px;">{{ info[2] }}
+            </span> <br>
+            <span class="bottomlink" onclick="location.href='/contact';" style="font-size: 13px; display: block; color: black">
+                <img onerror="imgError(this)" src="https://duckduckgo.com/favicon.ico" height="16px" width="16px" style="padding-right: 5px;">Result Provided by the DuckDuckGo Instant Answer API
+            </span>
+            </a>
          {% endfor %}
+
         </div>
 
         <div id="bing_container">
-            <div class="result_container" onclick="location.href='/contact';" style="cursor: pointer;">
-                <a href='/contact' class="toplink"> Your Ad Here </a>
+            <a href="/contact" class="result_container link_container" style="display: block;">
+                <span class="toplink jake" style="color: black; font-size: 20px;"> Your Ad Here </span>
                 <i class="fas fa-ad" style="font-size: 20px; color: rgb(31, 93, 213); padding-left: 5px;"></i>
                 <br>
-                <a href='/contact' class="bottomlink"> Contact us for more information </a>
-                <div class="snippet"> Your ad description</div>
-            </div>
+                <span class="bottomlink jake">Contact us for more information </span>
+                <div class="snippet"> Your ad description. </div>
+            </a>
         </div>
 
-        <!-- Bing results -->
         <div id="bing_container">
         {% for link in bing_results %}
-            <div class="result_container" onclick="location.href='{{ link[1] }}';" style="cursor: pointer;">
-            <a href={{ link[1] }} class="toplink"> {{ link[0] }} </a><br>
-            <a href={{ link[1] }} class="bottomlink">
+            <a href="{{ link[1] }}" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">{{ link[0] }} </span><br>
+                <span class="bottomlink jake">
+                <img src="https://{{link[3] }}" height="16px" width="16px" onerror="imgError(this)">
                 {% if link[1]|count > 80 %}
-                    {{ link[1][0:80] }}
+                    {{link[1][0:80]}}
                 {% endif %}
                 {% if link[1]|count < 80 %}
-                    {{ link[1] }}
+                    {{link[1]}}
                 {% endif %}
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">{{ link[2] }} </div>
             </a>
-            <div class="snippet"> {{ link[2] }} </div>
-            </div>
         {% endfor %}
         </div>
 
@@ -198,10 +187,9 @@
             <p class="fried">
             <div id="external_container">
             {% for link in external_results %}
-                <div class="external_result_container" onclick="location.href='{{ link[1] }}';" style="cursor: pointer;">
-                  <a href={{ link[1] }} class="bottomlink"> {{ link[0] }}</a>
-
-                </div>
+                  <a href={{ link[1] }} class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="{{link[2]}}" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">{{link[0]}} </span>
+                  </a>
             {% endfor %}
             </div>
         </div>

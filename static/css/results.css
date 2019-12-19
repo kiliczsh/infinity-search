@@ -175,6 +175,8 @@ button {
     border-radius: 3px;
 
     box-shadow: 0 0 0 1pt rgb(235, 235, 235);
+
+    /*box-shadow: 0 0 0 1pt lightgray;*/
     /*box-shadow: 0 0 0 1pt rgb(150, 150, 150);*/
 }
 
@@ -385,4 +387,50 @@ a.fill {
     .middle_right_container {
         margin-left: 3%;
     }
+}
+
+
+
+/* unvisited link */
+a.link_container:link {
+    color: rgb(31, 93, 213);
+    /*color: rgb(188, 29, 15);*/
+    /*font-size: 15px;*/
+    font-size: 17px;
+    text-decoration: none;
+}
+
+/* visited link */
+a.link_container:visited {
+    color: rgb(31, 93, 213);
+    /*color: rgb(188, 29, 15);*/
+    /*font-size: 15px;*/
+    font-size: 17px;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a.link_container:hover {
+    /*color: black;*/
+    font-size: 17px;
+    color: rgb(31, 93, 213);
+    text-decoration: none;
+}
+
+
+.favicon_img {
+    width: 16px;
+    height: 16px;
+}
+
+
+.jake:hover {
+    text-decoration: underline;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }

@@ -26,7 +26,11 @@ def combine_results(current, new):
 
 def format_bing(data):
     # Bing Data is already formatted
-    data.append(['View More Results From Bing', 'https://www.bing.com/search?q=' + formatted_query])
+
+    for page in data:
+        x = 0
+
+    data.append(['View More Results From Bing', 'https://www.bing.com/search?q=' + formatted_query, '', 'www.bing.com/favicon.ico'])
 
     return data
 
@@ -47,7 +51,9 @@ def search_all(query, bing_search):
     return ranked_results
 
 # if __name__ == '__main__':
-#     x = search_all('Python')
-#
-#     for l in x:
-#         print(l)
+    # x = search_all('Python')
+    #
+    # for l in x:
+    #     print(l)
+
+
