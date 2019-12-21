@@ -6,6 +6,7 @@ def get_external_links(query):
         ['Internet Archive Results', 'https://archive.org/search.php?query=' + query, 'https://archive.org/favicon.ico'],
         ['GitHub Results', 'https://github.com/search?q=' + query, 'https://github.com/favicon.ico'],
         ['GitLab Results', 'https://gitlab.com/search?search=' + query, 'https://gitlab.com/favicon.ico'],
+        ['DuckDuckGo IA Results', 'https://duck.co/ia?q=' + query, 'https://duckduckhack.com/images/favicons/favicon-32x32.png'],
         # Popular Websites
         ['Wikipedia Search Results', 'https://en.wikipedia.org/wiki/' + query, 'https://en.wikipedia.org/favicon.ico'],
         ['Invidious Search Results', 'https://www.invidio.us/search?q=' + query, 'https://www.invidio.us/favicon.ico'],
