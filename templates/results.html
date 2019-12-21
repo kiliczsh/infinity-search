@@ -151,15 +151,15 @@
 
         </div>
 
-        <div id="bing_container">
-            <a href="/contact" class="result_container link_container" style="display: block;">
-                <span class="toplink jake" style="color: black; font-size: 20px;"> Your Ad Here </span>
-                <i class="fas fa-ad" style="font-size: 20px; color: rgb(31, 93, 213); padding-left: 5px;"></i>
-                <br>
-                <span class="bottomlink jake">Contact us for more information </span>
-                <div class="snippet"> Your ad description. </div>
-            </a>
-        </div>
+<!--        <div id="bing_container">-->
+<!--            <a href="/contact" class="result_container link_container" style="display: block;">-->
+<!--                <span class="toplink jake" style="color: black; font-size: 20px;"> Your Ad Here </span>-->
+<!--                <i class="fas fa-ad" style="font-size: 20px; color: rgb(31, 93, 213); padding-left: 5px;"></i>-->
+<!--                <br>-->
+<!--                <span class="bottomlink jake"> Contact us for more information </span>-->
+<!--                <div class="snippet"> Your ad description. </div>-->
+<!--            </a>-->
+<!--        </div>-->
 
         <div id="bing_container">
         {% for link in bing_results %}
@@ -177,6 +177,18 @@
             <div class="snippet jake" style="color: black; text-decoration: none;">{{ link[2] }} </div>
             </a>
         {% endfor %}
+        </div>
+
+        <div id="bing_container">
+            <a href="https://usefathom.com/ref/PDKRHE" class="result_container link_container" style="display: block;">
+                <span class="toplink jake" style="color: black; font-size: 20px;"> Fathom Analytics - Privacy-focused website analytics. </span>
+                <i class="fas fa-ad" style="font-size: 20px; color: rgb(31, 93, 213); padding-left: 5px;"></i>
+                <br>
+                <span class="bottomlink jake"> https://usefathom.com/ref/PDKRHE </span>
+                <div class="snippet" style="color:black"> This is an affiliate link provided by Infinity Search. We
+                    use Fathom and recommend everyone to switch to analytics platforms that respect user privacy.
+                </div>
+            </a>
         </div>
 
         </p>
