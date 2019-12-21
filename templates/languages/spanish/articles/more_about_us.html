@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Infinity Search</title>
+    <meta charset="UTF-8">
+    <link rel='shortcut icon' type='image/png' href='https://i.postimg.cc/7Lwth4Th/Infinity-Search-Logo-1-dragged.png'/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blogs.css') }}">
+</head>
+<body class="Site">
+<div class="top"></div>
+
+<div style="text-align: center; padding-bottom: 15px;">
+    <img onClick="window.open('/es', '_self')" style="vertical-align:middle; cursor: pointer; border-radius: 50%;" src="https://i.postimg.cc/Rhg9MPYN/Infinity-Search-Logo.png"
+     width="75px" height="75px" alt="">
+
+    <span class="rome" style="vertical-align:middle; font-size: 30px; padding-left: 20px;">  </span>
+</div>
+
+<div class="search-container">
+    <div class="side-left"></div>
+    <div class="middle">
+        <br>
+        <h1> Más Información De Privacidad Sobre Nosotross </h1>
+        <div class="article">
+            Hemos tenido muchas personas que nos hacen preguntas sobre los aspectos técnicos de
+            cómo gestionamos la privacidad de los usuarios. Este post responde a estas preguntas.
+            <hr/>
+
+            <h3> ¿Abre Sin Código Fuente Alguno De Sus Códigos? ¿Dónde Podemos Encontrarlo? </h3>
+            ¡Sí, todo nuestro código es de código abierto! Todo se puede encontrar en
+            <a href="https://gitlab.com/infinitysearch/infinity-search">
+                https://gitlab.com/infinitysearch/infinity-search</a>.
+            <br><br>
+
+            También estamos trabajando en otros servicios de búsqueda que incluyen un rastreador web, indexador y nuestra versión de escritorio
+            de Infinity Search que también será de código abierto. Estos todavía están en las primeras etapas de desarrollo,
+            sin embargo, y serán liberados en algún momento en el futuro.
+            <hr/>
+
+            <h3> ¿Qué datos de clientes se recopilan, con qué frecuencia y en qué nivel de identificación? </h3>
+            Dado que estamos utilizando la API de Cognitive Services de Microsoft, el
+            las búsquedas que se han realizado en nuestro nombre son guardadas por Microsoft. Sólo se le parece a Microsoft como nosotros
+            haciendo las búsquedas, sin embargo. También estamos considerando integrar nuestros resultados de otros servicios como
+            <a href="https://www.mojeek.com/"> Mojeek</a>, <a href="https://duckduckgo.com/"> DuckDuckGo</a>, Y
+            nuestra API personalizada en el futuro. Mantendremos el mismo proceso descrito anteriormente para cualquier integración futura.
+            <br><br>
+            Para medir el uso del sitio, utilizamos <a href="https://usefathom.com/"> Fathom Analytics</a>. No rastrean
+            o almacenar la información personal de nuestros visitantes y darnos métricas del sitio tomando datos anónimos. Este artículo
+            publicado por ellos describe cómo gestionan esto: <a href="https://usefathom.com/news/anonymization">
+            https://usefathom.com/news/anonymization</a>. su página de demostración muestra lo que el propietario de un sitio puede ver sobre
+            sus usuarios: <a href="https://app.usefathom.com/share/lsqyv/pjrvs">
+            https://app.usefathom.com/share/lsqyv/pjrvs</a>.
+
+            <br><br>
+
+            Nos tomamos muy en serio la privacidad del usuario y creemos que por nuestro servicio, la mejor manera posible de lograr
+            esto es por no recopilar datos sobre nuestros clientes o intentar identificarlos. La información anterior
+            ya está disponible en nuestra política de privacidad, pero esto puede dar a los usuarios una mirada más profunda de cómo la información
+            está siendo manejado por nuestro servicio.
+
+            <hr/>
+
+            <h3> Se comunicarán los cambios en sus Términos y Condiciones y políticas de privacidad a los usuarios finales al menos
+                ¿30 días antes de cualquier cambio? ¿Cómo se comunicarán estos cambios? </h3>
+
+            Sí. Si vamos a hacer cambios en nuestra política de privacidad, notificaremos a nuestros usuarios a través de
+            entradas de blog y a través de Twitter con al menos 30 días de antelación. Tampoco planeamos realizar ningún cambio
+            a nuestra política en un futuro previsible.
+
+            <hr/>
+
+            <h3> ¿Qué procesos tiene en vigor si hay acceso no autorizado a los datos? </h3>
+            No registramos ni guardamos ningún dato propio y nuestro código es de código abierto, por lo que este escenario no se aplica
+            a nuestro servicio.
+
+            <hr/>
+
+            <h3> ¿Ha tenido una auditoría independiente? Por favor, comparta la fecha de la última y los hallazgos. </h3>
+            No. Somos un nuevo servicio y nunca hemos tenido una auditoría de ningún tipo. Dado que nuestro servicio es de código abierto,
+            cualquier persona es bienvenida a ver nuestro código, analizarlo para sus preocupaciones, e informarnos de los resultados.
+
+            <hr/>
+
+            <h3> Si necesita registrarse o crear una cuenta, los consumidores tienen fácil acceso a las herramientas para eliminar su
+                ¿Datos? ¿Pueden eliminar todo en los servidores o solo en la memoria caché local? </h3>
+
+            No tenemos registro ni creación de cuenta, por lo que no hay datos que podamos guardar sobre nuestros usuarios.
+
+            <hr/>
+
+            <h3> ¿De qué otra manera Ayuda Infinity Search con la privacidad?  </h3>
+            De forma predeterminada, enviamos consultas de búsqueda de usuarios a través de datos POST. Esto hace que lo que se buscó
+            está encriptado y tampoco se puede ver en el historial de búsqueda del usuario. Tenemos la opción de buscar
+            temas de solicitudes GET, pero eso es sólo para la funcionalidad de enviar una búsqueda realizada en nuestro sitio en el
+            forma de un simple enlace (como <a href="https://infinitysearch.co/es?q=Hawaii">
+            https://infinitysearch.co/?q=Hawaii</a>).
+            <br><br>
+
+        </div>
+
+    </div>
+    <div class="side-right"></div>
+</div>
+
+<div class="navbar">
+    <a href="/about/es">Acerca De</a>
+    <a href="/content/es"> Blog </a>
+    <a href="/pro/es"> Infinity Pro </a>
+    <a href="/privacy/es">Política De Privacidady</a>
+    <a href="/contact/es"> Contacto </a>
+</div>
+<!-- Fathom - simple website analytics - https://usefathom.com -->
+<script>
+(function(f, a, t, h, o, m){
+a[h]=a[h]||function(){
+(a[h].q=a[h].q||[]).push(arguments)
+};
+o=f.createElement('script'),
+m=f.getElementsByTagName('script')[0];
+o.async=1; o.src=t; o.id='fathom-script';
+m.parentNode.insertBefore(o,m)
+})(document, window, '//cdn.usefathom.com/tracker.js', 'fathom');
+fathom('set', 'siteId', 'FZMFTWHZ');
+fathom('trackPageview');
+</script>
+<!-- / Fathom -->
+</body>
+
+</html>
