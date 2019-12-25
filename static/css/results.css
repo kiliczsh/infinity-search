@@ -197,10 +197,13 @@ button {
 
 .external_result_container:hover {
     box-shadow: 0 0 0 1pt rgb(200, 200, 200);
+    /*box-shadow: 0 0 0 1pt red;*/
+
 }
 
 .result_container:hover {
     box-shadow: 0 0 0 1pt rgb(200, 200, 200);
+    /*box-shadow: 0 0 0 1pt red;*/
 }
 
 .footer {

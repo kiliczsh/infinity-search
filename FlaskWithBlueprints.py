@@ -41,6 +41,11 @@ def render_robots():
     return send_from_directory(app.static_folder, 'robots.txt')
 
 
+@app.route('/default_search.xml')
+def render_default_search():
+    return send_from_directory(app.static_folder, 'search.xml')
+
+
 # @app.route('/favicon.ico')
 # def favicon():
 #     return send_from_directory(os.path.join(app.root_path, 'static'),'favicon.ico', mimetype='image/vnd.microsoft.icon')

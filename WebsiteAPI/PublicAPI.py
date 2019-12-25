@@ -84,6 +84,9 @@ def render_static():
         try:
             if request.args.get('q') is not None:
                 query = request.args.get('q')
+
+                print(query)
+
                 return get_results(query)
 
         except Exception:
@@ -129,4 +132,3 @@ def render_privacy():
 @publicAPI.route('/pro')
 def render_pro():
     return render_template('pro.html')
-
