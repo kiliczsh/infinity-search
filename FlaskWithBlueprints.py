@@ -6,9 +6,10 @@ from WebsiteAPI.PublicAPI import publicAPI
 from WebsiteAPI.BlogAPI import blogAPI
 
 from WebsiteAPI.GermanAPI import germanAPI
-
-
 from WebsiteAPI.SpanishAPI import spanishAPI
+
+from WebsiteAPI.DesignsAPI import designsAPI
+
 
 app = Flask(__name__)
 
@@ -17,6 +18,9 @@ app.register_blueprint(blogAPI)
 
 app.register_blueprint(germanAPI)
 app.register_blueprint(spanishAPI)
+
+app.register_blueprint(designsAPI)
+
 
 # app.jinja_env.cache = {} # Apparently this line of code can decrease response time if the cache is too large
 

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Infinity Results</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel='shortcut icon' type='image/png' href='https://i.postimg.cc/7Lwth4Th/Infinity-Search-Logo-1-dragged.png'/>
+    <link rel="stylesheet" href="/static/css/designs/one/results1.css">
+    <html lang="en">
+     <script src="/static/jquery-3.4.1.min.js"></script>
+</html>
+<script>
+
+    function imgError(image) {
+    image.onerror = "";
+    image.src = "https://i.postimg.cc/cHgVnXfW/blank.png";
+    return true;
+    }
+
+</script>
+
+<body>
+    <div style="text-align: left; margin-left: 3%">
+        <img onClick="window.open('/', '_self')" style="vertical-align:middle; cursor:pointer; border-radius: 50%;" src="https://i.postimg.cc/Rhg9MPYN/Infinity-Search-Logo.png" width="30px" height="30px" alt="">
+<!--        <img onClick="window.open('/', '_self')" style="vertical-align:middle; cursor:pointer; border-radius: 50%;" src="/static/images/red_white_fav.png" width="30px" height="30px" alt="">-->
+
+        <span class="rome" style="vertical-align:middle;"> &nbsp INFINITY SEARCH </span>
+    </div>
+
+    <div class="search">
+        <form action="/results" method="post" style="text-align: left">
+            <input type="text" name="Search" value='old navy'>
+            <button style="background-color: white">
+                <i class="fa fa-search" style="font-size: 30px; color: rgb(31, 93, 213); padding-left: 10px;"></i>
+            </button>
+        </form>
+    </div>
+
+    <hr>
+    <div class="main-container">
+
+    <div class="results_container middle_left_container">
+
+
+
+
+
+
+        <p class="results" id="results">
+
+         <!-- duckduckgo instant answers area -->
+         <div class="ddg_ia_container" id="ddg_ia_container">
+
+
+            <a class="result_container link_container" href="https://en.wikipedia.org/wiki/Old_Navy" style="display: block;">
+            <span class="toplink jake" style="color: white; font-size: 20px;"> <b> Old Navy </b> <br><br> </span>
+            &nbsp <img class="ia_image" src=https://duckduckgo.com/i/75ba196b.png><br><br>
+                <span style="color: black">Old Navy is an American clothing and accessories retailing company owned by American multinational corporation Gap Inc. It has corporate operations in the Mission Bay neighborhood of San Francisco, California. The largest of the Old Navy stores are its flagship stores, located in New York City, Seattle, Chicago, San Francisco, Manila, and Mexico City. The brand was named after Old Navy Café, a bar located in Paris, France. <br><br> </span>
+            <span href=https://en.wikipedia.org/wiki/Old_Navy class="bottomlink jake" style="display: block">
+                <img onerror="imgError(this)" src="https://en.wikipedia.com/favicon.ico" height="16px" width="16px" style="padding-right: 5px;">https://en.wikipedia.org/wiki/Old_Navy
+            </span> <br>
+            <span class="bottomlink" onclick="location.href='/contact';" style="font-size: 13px; display: block; color: black">
+                <img onerror="imgError(this)" src="https://duckduckgo.com/favicon.ico" height="16px" width="16px" style="padding-right: 5px;">Result Provided by the DuckDuckGo Instant Answer API
+            </span>
+            </a>
+
+
+        </div>
+
+<!--        <div id="bing_container">-->
+<!--            <a href="/contact" class="result_container link_container" style="display: block;">-->
+<!--                <span class="toplink jake" style="color: black; font-size: 20px;"> Your Ad Here </span>-->
+<!--                <i class="fas fa-ad" style="font-size: 20px; color: rgb(31, 93, 213); padding-left: 5px;"></i>-->
+<!--                <br>-->
+<!--                <span class="bottomlink jake"> Contact us for more information </span>-->
+<!--                <div class="snippet"> Your ad description. </div>-->
+<!--            </a>-->
+<!--        </div>-->
+
+        <div id="bing_container">
+
+            <a href="https://www.oldnavy.com/" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Old Navy - Official Site </span><br>
+                <span class="bottomlink jake">
+                <img src="https://www.oldnavy.com/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://www.oldnavy.com/
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">Oldnavy.com provides the latest fashions at great prices for the whole family. Shop Men&#39;s, Women&#39;s and Kids&#39;; departments, Womens Plus, and clothing for baby and maternity wear. </div>
+            </a>
+
+            <a href="https://oldnavy.gap.com/" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Old Navy </span><br>
+                <span class="bottomlink jake">
+                <img src="https://oldnavy.gap.com/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://oldnavy.gap.com/
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">Old Navy provides the latest fashions at great prices for the whole family. Shop men&#39;s, women&#39;s, women&#39;s plus, kids&#39;, baby and maternity wear. We also offer big and tall sizes for adults and extended sizes for kids. </div>
+            </a>
+
+            <a href="https://www.synchronycredit.com/eSecurity/Login/login.action?clientId=oldnavy&amp;accountType=generic&amp;langId=en" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Manage Your Old Navy Credit Card Account </span><br>
+                <span class="bottomlink jake">
+                <img src="https://www.synchronycredit.com/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+                    https://www.synchronycredit.com/eSecurity/Login/login.action?clientId=oldnavy&amp;ac
+
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">For security, when you choose &#34;Continue,&#34; we will send you a one-time, numeric passcode by phone or text. Enter the code on the next screen. Standard text messaging and phone rates may apply. </div>
+            </a>
+
+            <a href="https://corporate.gapinc.com/en-us/careers/old-navy-careers" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Old Navy Careers | Gap Inc. </span><br>
+                <span class="bottomlink jake">
+                <img src="https://corporate.gapinc.com/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://corporate.gapinc.com/en-us/careers/old-navy-careers
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">we like your style. Forget what you know about old-school industry rules. When you work at Old Navy, you’re choosing a different path. From day one, we’ve been on a mission to democratize fashion and make shopping fun again. </div>
+            </a>
+
+            <a href="https://www.facebook.com/oldnavy" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Old Navy - Home | Facebook </span><br>
+                <span class="bottomlink jake">
+                <img src="https://www.facebook.com/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://www.facebook.com/oldnavy
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">Old Navy, San Francisco, California. 10M likes. Fashion for the people. Click around, be inspired, get some nice things. </div>
+            </a>
+
+            <a href="https://www.oldnavy.ca/" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Clothes for women, men, kids and baby | Old Navy </span><br>
+                <span class="bottomlink jake">
+                <img src="https://www.oldnavy.ca/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://www.oldnavy.ca/
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">Select styles only. While supplies last. For a limited time. Online &amp; in-store prices and exclusions may vary. </div>
+            </a>
+
+            <a href="https://blackfriday.com/old-navy-black-friday" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Old Navy Black Friday 2019 Ad, Deals &amp; Sales | BlackFriday.com </span><br>
+                <span class="bottomlink jake">
+                <img src="https://blackfriday.com/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://blackfriday.com/old-navy-black-friday
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">See the Old Navy Black Friday 2019 ad at BlackFriday.com. Find the best 2019 Old Navy Black Friday deals and sales. Follow all of the breaking BlackFriday.com ads and news. </div>
+            </a>
+
+            <a href="https://en.wikipedia.org/wiki/Old_Navy" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Old Navy - Wikipedia </span><br>
+                <span class="bottomlink jake">
+                <img src="https://en.wikipedia.org/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://en.wikipedia.org/wiki/Old_Navy
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">Old Navy is an American clothing and accessories retailing company owned by American multinational corporation Gap Inc. It has corporate operations in the Mission Bay neighborhood of San Francisco, California.The largest of the Old Navy stores are its flagship stores, located in New York City, Seattle, Chicago, San Francisco, Manila, and Mexico City. </div>
+            </a>
+
+            <a href="https://www.gap.com/" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Gap Inc. </span><br>
+                <span class="bottomlink jake">
+                <img src="https://www.gap.com/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://www.gap.com/
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">Shop casual women&#39;s, men&#39;s, maternity, kids&#39; &amp; baby clothes at Gap. Our style is clean and confident, comfortable and accessible, classic and modern. Find the perfect pair of jeans, t-shirts, dresses and more for the whole family. </div>
+            </a>
+
+            <a href="https://oldnavy.gap.com/browse/division.do?cid=5360" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Women&#39;s Clothing | Old Navy </span><br>
+                <span class="bottomlink jake">
+                <img src="https://oldnavy.gap.com/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://oldnavy.gap.com/browse/division.do?cid=5360
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">At Old Navy, shopping for women&#39;s clothing is fun again. Get the latest fashion essentials, including women&#39;s jeans, dresses, coats, jackets, shoes and bags. </div>
+            </a>
+
+            <a href="https://www.thredup.com/products/women/old-navy" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Old Navy Women&#39;s Clothing On Sale Up To 90% Off Retail ... </span><br>
+                <span class="bottomlink jake">
+                <img src="https://www.thredup.com/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://www.thredup.com/products/women/old-navy
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">The Old Navy brand first appeared in 1994 and has since emerged as a leading American clothing design company. Geared towards women with busy lives, this brand offers a wide variety of styles for ladies of all ages. </div>
+            </a>
+
+            <a href="https://www.ispot.tv/brands/AOq/old-navy" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Old Navy TV Commercials - iSpot.tv </span><br>
+                <span class="bottomlink jake">
+                <img src="https://www.ispot.tv/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://www.ispot.tv/brands/AOq/old-navy
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">Watch, interact and learn more about the songs, characters, and celebrities that appear in your favorite Old Navy TV Commercials. Watch the commercial, share it with friends, then discover more great Old Navy TV commercials on iSpot.tv </div>
+            </a>
+
+            <a href="https://www.hours-locations.com/old-navy/" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Old Navy Store Locator: Hours, and Addresses Near You </span><br>
+                <span class="bottomlink jake">
+                <img src="https://www.hours-locations.com/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://www.hours-locations.com/old-navy/
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">Get Old Navy hours and locations near you. What are the store hours on Black Friday and Thanksgiving? Where is the closest location near me? When do they open and close on Sundays? What are their hours of operation on holidays? Use our store locator to find the nearest Old Navy store locations. </div>
+            </a>
+
+            <a href="https://www.doxo.com/info/Old-Navy-Card" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Old Navy | Make Your Retail Store Card Payment Online ... </span><br>
+                <span class="bottomlink jake">
+                <img src="https://www.doxo.com/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://www.doxo.com/info/Old-Navy-Card
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">doxo enables secure bill payment on your behalf and is not an affiliate of or endorsed by Old Navy. Pay with your Visa, MasterCard, or Discover credit card or debit card, with Apple Pay, or with your bank account. </div>
+            </a>
+
+            <a href="https://www.offers.com/oldnavy/" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">50% off Old Navy Coupon Codes &amp; Coupons 2019 </span><br>
+                <span class="bottomlink jake">
+                <img src="https://www.offers.com/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://www.offers.com/oldnavy/
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">Get on-trend apparel and accessories at surprising values at Old Navy, America’s favorite family retailer. Whether you’re shopping for your growing baby bump, your tween’s latest growth spurt, or a new date night outfit, use Old Navy coupons to save on your new outfit. </div>
+            </a>
+
+            <a href="https://www.store-locator.info/old-navy/store-list" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Old Navy Store Locator - List of All Old Navy stores locations </span><br>
+                <span class="bottomlink jake">
+                <img src="https://www.store-locator.info/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://www.store-locator.info/old-navy/store-list
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">List of Old Navy stores in United States. Locate the Old Navy store near you. </div>
+            </a>
+
+            <a href="https://www.navyfederal.org/" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Navy Federal Credit Union </span><br>
+                <span class="bottomlink jake">
+                <img src="https://www.navyfederal.org/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://www.navyfederal.org/
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">Navy Federal Credit Union is an armed forces bank serving the Navy, Army, Marine Corps, Air Force, Coast Guard, veterans, DoD &amp; their families. Join now! </div>
+            </a>
+
+            <a href="https://www.theblackfriday.com/oldnavy-blackfriday.shtml" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Old Navy Black Friday 2020 Ad, Deals and Sales </span><br>
+                <span class="bottomlink jake">
+                <img src="https://www.theblackfriday.com/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://www.theblackfriday.com/oldnavy-blackfriday.shtml
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">Old Navy Black Friday Gameplan Unveiled. Old Navy announced that they will start their Pre-Black Friday Sale, from Wednesday, November 20 through Tuesday, November 26, customers will receive 50% off all jeans, sweaters and outerwear in-stores and online. (See Details)Black Friday Sale start from Wednesday November 27 at 8AM to 10PM. The sale will continue on Thanksgiving day when doors open at ... </div>
+            </a>
+
+            <a href="https://www.glamour.com/story/old-navy-changing-denim-rockstar-universal-fit" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Old Navy Jeans Are Changing—Here’s What That Means for You ... </span><br>
+                <span class="bottomlink jake">
+                <img src="https://www.glamour.com/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://www.glamour.com/story/old-navy-changing-denim-rockstar-universal-fit
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">Over the past few weeks, Old Navy has reintroduced its entire jeans collection with a new universal-fit design. Here&#39;s how it came to be. </div>
+            </a>
+
+            <a href="https://www.oldnavy.ca/products/womens-clothing.jsp" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Women&#39;s Clothing | Old Navy Canada </span><br>
+                <span class="bottomlink jake">
+                <img src="https://www.oldnavy.ca/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://www.oldnavy.ca/products/womens-clothing.jsp
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">Old Navy women&#39;s clothing highlights a versatile selection of amazing designs at great prices. Choose from a variety of stylish women&#39;s clothing featuring the latest designs in pants, tops, dresses, outwear and more. </div>
+            </a>
+
+            <a href="https://www.indeed.com/q-Old-Navy-jobs.html" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Old Navy Jobs, Employment | Indeed.com </span><br>
+                <span class="bottomlink jake">
+                <img src="https://www.indeed.com/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://www.indeed.com/q-Old-Navy-jobs.html
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">2,830 Old Navy jobs available on Indeed.com. Apply to Associate, Customer Assistant, Seasonal Associate and more! </div>
+            </a>
+
+            <a href="https://blackfriday.com/ads/black-friday/old-navy/id/005bxtnm8y2hbJEEMSR7izV" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Old Navy Black Friday Ad for 2019 | BlackFriday.com </span><br>
+                <span class="bottomlink jake">
+                <img src="https://blackfriday.com/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://blackfriday.com/ads/black-friday/old-navy/id/005bxtnm8y2hbJEEMSR7izV
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">Old Navy Black Friday Ad for 2019 is here, and it&#39;s got some seriously doorbusting deals this year! With 4 pages of this season&#39;s most in-demand products from trendy tech to the hottest toys, these deals can&#39;t be missed. </div>
+            </a>
+
+            <a href="https://twitter.com/OldNavy" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Old Navy Official (@OldNavy) | Twitter </span><br>
+                <span class="bottomlink jake">
+                <img src="https://twitter.com/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://twitter.com/OldNavy
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">The latest Tweets from Old Navy Official (@OldNavy). Fashion for the people. Be inspired, get some nice things, start the conversation. #oldnavystyle Questions? Tweet @ONCustServ or call 1-800-OLD-NAVY. San Francisco, CA </div>
+            </a>
+
+            <a href="https://www.youtube.com/channel/UCAlfeUQBAi3zhRUS5JrRaAQ" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Old Navy - YouTube </span><br>
+                <span class="bottomlink jake">
+                <img src="https://www.youtube.com/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://www.youtube.com/channel/UCAlfeUQBAi3zhRUS5JrRaAQ
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">Fashion for the people. Welcome to our world. Welcome back to Old Navy Tonight - YOU get ALL the GIFTS! Hurry in to shop FORTY PERCENT OFF EVERYTHING! 🛍️🛍️ That&#39;s right - up to FORTY ... </div>
+            </a>
+
+            <a href="https://play.google.com/store/apps/details?id=com.oldnavy.snapappy&amp;hl=en" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">Old Navy - Apps on Google Play </span><br>
+                <span class="bottomlink jake">
+                <img src="https://play.google.com/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://play.google.com/store/apps/details?id=com.oldnavy.snapappy&amp;hl=en
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">Shop Old Navy and other Gap Inc stores in our new easy to use app. Find, save, share and buy products when and where it is convenient for you. App Features Browse - browse the latest fashions across all our categories with detailed product descriptions and access to size and color availability. Scan - Scan product barcodes in store to find alternate sizes and colors, get product information ... </div>
+            </a>
+
+            <a href="https://www.bing.com/search?q=old+navy" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">View More Results From Bing </span><br>
+                <span class="bottomlink jake">
+                <img src="https://www.bing.com/favicon.ico" height="16px" width="16px" onerror="imgError(this)">
+
+
+                    https://www.bing.com/search?q=old+navy
+
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;"> </div>
+            </a>
+
+        </div>
+
+        <div id="bing_container">
+            <a href="https://usefathom.com/ref/PDKRHE" class="result_container link_container" style="display: block;">
+                <span class="toplink jake" style="color: black; font-size: 20px;"> Fathom Analytics - Privacy-focused website analytics. </span>
+                <i class="fas fa-ad" style="font-size: 20px; color: rgb(31, 93, 213); padding-left: 5px;"></i>
+                <br>
+                <span class="bottomlink jake"> https://usefathom.com/ref/PDKRHE </span>
+                <div class="snippet" style="color:black"> This is an affiliate link provided by Infinity Search. We
+                    use Fathom and recommend everyone to switch to analytics platforms that respect user privacy.
+                </div>
+            </a>
+        </div>
+
+        </p>
+
+    </div>
+        <div class="middle_right_container">
+            <!-- Gitlab results -->
+            <p class="fried">
+            <div id="external_container">
+
+                  <a href=https://archive.org/search.php?query=old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://archive.org/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">Internet Archive Results </span>
+                  </a>
+
+                  <a href=https://github.com/search?q=old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://github.com/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">GitHub Results </span>
+                  </a>
+
+                  <a href=https://gitlab.com/search?search=old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://gitlab.com/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">GitLab Results </span>
+                  </a>
+
+                  <a href=https://duck.co/ia?q=old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://duckduckhack.com/images/favicons/favicon-32x32.png" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">DuckDuckGo IA Results </span>
+                  </a>
+
+                  <a href=https://en.wikipedia.org/wiki/old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://en.wikipedia.org/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">Wikipedia Search Results </span>
+                  </a>
+
+                  <a href=https://www.invidio.us/search?q=old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://www.invidio.us/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">Invidious Search Results </span>
+                  </a>
+
+                  <a href=https://www.youtube.com/results?search_query=old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://www.youtube.com/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">Youtube Results </span>
+                  </a>
+
+                  <a href=https://unsplash.com/s/photos/old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://unsplash.com/favicon-32x32.png" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">Unsplash Image Results </span>
+                  </a>
+
+                  <a href=https://twitter.com/search?q=old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://twitter.com/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">Twitter Results </span>
+                  </a>
+
+                  <a href=https://www.amazon.com/s?k=old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://www.amazon.com/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">Amazon Results </span>
+                  </a>
+
+                  <a href=https://www.reddit.com/search/?q=old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://www.reddit.com/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">Reddit Search Results </span>
+                  </a>
+
+                  <a href=http://boardreader.com/s/old+navy.html class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://boardreader.com/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">BoardReader Forum Engine Results </span>
+                  </a>
+
+                  <a href=https://www.peteyvid.com/index.php?q=old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://www.peteyvid.com/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">Petey Vid Search Results </span>
+                  </a>
+
+                  <a href=https://stackoverflow.com/search?q=old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">Stack Overflow Search Results </span>
+                  </a>
+
+                  <a href=https://www.wolframalpha.com/input/?i=old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://www.wolframalpha.com/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">Wolfram Alpha Results </span>
+                  </a>
+
+                  <a href=https://www.gutenberg.org/ebooks/search/?query=old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://www.gutenberg.org/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">Project Gutenburg Results </span>
+                  </a>
+
+                  <a href=https://web.archive.org/web/*/old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://archive.org/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">Wayback Machine Results </span>
+                  </a>
+
+                  <a href=https://commons.wikimedia.org/wiki/old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://commons.wikimedia.org/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">Wikimedia Commons Results </span>
+                  </a>
+
+                  <a href=https://www.slideshare.net/search/slideshow?searchfrom=header&amp;q=old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://www.slideshare.net/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">SlideShare Search Results </span>
+                  </a>
+
+                  <a href=https://duckduckgo.com/?q=old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://duckduckgo.com/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">DuckDuckGo Search Engine Results </span>
+                  </a>
+
+                  <a href=http://gigablast.com/search?c=main&amp;q=old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://gigablast.com/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">Gigablast Search Engine Results </span>
+                  </a>
+
+                  <a href=https://www.mojeek.com/search?q=old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://www.mojeek.com/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">Mojeek Search Engine Results </span>
+                  </a>
+
+                  <a href=https://yandex.com/search/?text=old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://yandex.com/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">Yandex Russian Search Engine Results </span>
+                  </a>
+
+                  <a href=https://www.qwant.com/?q=old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="https://www.qwant.com/favicon.ico" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">Qwant Search Engine Results </span>
+                  </a>
+
+                  <a href=http://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=1&amp;rsv_idx=1&amp;tn=baidu&amp;wd=old+navy class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">Baidu Chinese Search Engine Results </span>
+                  </a>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="navbar">
+        <a href="/about">About</a>
+        <a href="/pro">Infinity Pro</a>
+        <a href="/content"> Blog </a></li>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/contact">Contact</a>
+      </div>
+</body>
+
+</html>

@@ -132,3 +132,4 @@ def render_privacy():
 @publicAPI.route('/pro')
 def render_pro():
     return render_template('pro.html')
+

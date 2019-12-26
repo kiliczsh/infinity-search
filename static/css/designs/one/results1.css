@@ -1,0 +1,442 @@
+
+.top-container {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.left-container {
+    flex: 3%;
+}
+
+.middle_left_container {
+    flex: 75%;
+    /*box-shadow: 0 0 0 1pt rgb(150, 150, 150);*/
+    margin-left: 3%;
+    margin-right: 3%;
+
+}
+
+.middle_right_container {
+    flex: 25%;
+    /*box-shadow: 0 0 0 1pt rgb(150, 150, 150);*/
+    margin-right: 2%;
+    margin-left: 1%;
+}
+
+.right-container {
+    flex: 3%;
+}
+
+.fried {
+    font-size: 20px;
+    text-align: left;
+    line-height: 200%;
+}
+
+.snippet {
+    /*    Do something*/
+}
+
+
+.header {
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.infinity {
+    margin-top: -26px;
+    margin-left: 8%;
+    /*margin-right: 800px;*/
+    /*box-shadow: 0 0 0 1pt rgb(150, 150, 150);*/
+}
+
+.logo {
+    display: inline;
+    margin-left: 3%;
+    /*display: inline-block;*/
+}
+
+.search {
+    font-size: 10px;
+    text-align: left;
+    margin-top: 5px;
+    margin-left: 3%;
+    margin-right: 30%;
+}
+
+.results {
+    font-size: 20px;
+    text-align: left;
+    line-height: 200%;
+    /*padding-left: 50px;*/
+}
+
+.rome {
+    /*font-family: "Times New Roman", Helvetica, sans-serif;*/
+    /*letter-spacing: 1px;*/
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+
+    padding-top: 10px;;
+
+    color: white;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+
+    /*font-size: 20pt;*/
+    font-weight: 300;
+    line-height: 1.65em;
+
+    background-color: black;
+}
+
+hr {
+    height: 1px;
+    border: 0;
+    color: lightgray;
+    background-color: lightgray;
+    margin-right: 0;
+
+}
+
+.horizontal {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 9px 9px -9px rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+.results_container {
+    /*background-color: rgb(229, 229, 229);*/
+    /*margin-left: 50px;*/
+    /*margin-right: 50px;*/
+    /*margin-right: 500px;*/
+
+    /*margin-top: 30px;*/
+
+    /*background-color: rgb(255, 255, 255);*/
+    /*background-color: rgb(245, 245, 245);*/
+
+    /*text-align: center;*/
+    /*align: center;*/
+    /*margin: 0 auto;*/
+    /*width: 22%;*/
+    /*border-radius: 4px;*/
+    /*padding-top: 2px;*/
+    /*padding-bottom: 12px;*/
+    /*outline: 1px solid rgb(200, 200, 200);*/
+    /*box-shadow: 0 0 0 1pt rgb(220, 220, 220);*/
+
+}
+
+input[type=text], select {
+    font-size: .95rem;
+    width: 93%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background: none !important;
+    border: none;
+    padding: 0 !important;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: #069;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.result_container {
+    background-color: black;
+
+    margin-top: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+    border-radius: 3px;
+
+    box-shadow: 0 0 0 1pt rgb(40, 40, 40);
+
+    /*box-shadow: 0 0 0 1pt lightgray;*/
+    /*box-shadow: 0 0 0 1pt rgb(150, 150, 150);*/
+}
+
+.external_result_container {
+    background-color: black;
+
+    /*margin-left: 11%;*/
+    /*margin-right: 30%;*/
+
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 14px;
+    padding-left: 12px;
+    border-radius: 3px;
+
+    box-shadow: 0 0 0 1pt rgb(40, 40, 40);
+}
+
+.external_result_container:hover {
+    box-shadow: 0 0 0 3pt rgb(31, 93, 213);
+    background-color: rgb(35,35,35);
+    /*box-shadow: 0 0 0 1pt red;*/
+
+}
+
+.result_container:hover {
+    box-shadow: 0 0 0 3pt rgb(31, 93, 213);
+    background-color: rgb(20,20,20);
+    /*box-shadow: 0 0 0 1pt red;*/
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+    /*background-color: rgb(230, 230, 230);*/
+    padding-bottom: 25px;
+
+}
+
+footer {
+    position: relative;
+    text-align: center;
+    color: rgb(31, 93, 213);
+    bottom: 0;
+    width: 100%;
+    padding-top: 35px;
+    padding-bottom: 25px;
+    /*font-size: 2px;*/
+    /*height: 10px;*/
+}
+
+/* top links ------------------------------------------------ */
+/* unvisited link */
+a.toplink:link {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/* visited link */
+a.toplink:visited {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a.toplink:hover {
+    color: white;
+    /*color: rgb(31, 93, 213);*/
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+/* selected link */
+a.toplink:active {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+
+}
+
+/* bottom links ------------------------------------------------ */
+
+/* unvisited link */
+a.bottomlink:link {
+    color: rgb(31, 93, 213);
+    /*color: rgb(188, 29, 15);*/
+    /*font-size: 15px;*/
+    font-size: 17px;
+    text-decoration: none;
+}
+
+/* visited link */
+a.bottomlink:visited {
+    color: rgb(31, 93, 213);
+    /*color: rgb(188, 29, 15);*/
+    /*font-size: 15px;*/
+    font-size: 17px;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a.bottomlink:hover {
+    /*color: black;*/
+    font-size: 17px;
+    color: rgb(31, 93, 213);
+    text-decoration: underline;
+}
+
+/* ----------------------- */
+
+/* unvisited link */
+a:link {
+    color: rgb(31, 93, 213);
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: rgb(31, 93, 213);
+    font-size: 15px;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: black;
+    color: rgb(31, 93, 213);
+    text-decoration: underline;
+}
+
+/* selected link */
+a:active {
+    color: rgb(31, 93, 213);
+    color: black;
+    text-decoration: none;
+}
+
+a.fill {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: rgb(31, 93, 213);
+
+}
+
+/* Style the top navigation bar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    /*/ / background-color: #333;*/
+    background-color: black;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+    color: white;
+    /*padding: 14px 20px;*/
+    padding: 14px 40px;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    /*background-color: rgb(10,10,10);*/
+    color: white;
+    color: rgb(31, 93, 213);
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: stretch;
+    /*background-color: #f1f1f1;*/
+}
+
+.checkbox-container > div {
+    /*background-color: DodgerBlue;*/
+    /*color: white;*/
+    /*width: 100px;*/
+    /*margin: 10px;*/
+    text-align: left;
+    /*line-height: 75px;*/
+    font-size: 16px;
+}
+
+.ia_image {
+    width: 100%;
+    max-width: 200px;
+
+    height: 100%;
+    max-height: 200px;
+}
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1000px) {
+    .navbar, .main-container {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .middle_right_container {
+        margin-left: 3%;
+    }
+}
+
+
+
+/* unvisited link */
+a.link_container:link {
+    color: rgb(31, 93, 213);
+    /*color: rgb(188, 29, 15);*/
+    /*font-size: 15px;*/
+    font-size: 17px;
+    text-decoration: none;
+}
+
+/* visited link */
+a.link_container:visited {
+    color: rgb(31, 93, 213);
+    /*color: rgb(188, 29, 15);*/
+    /*font-size: 15px;*/
+    font-size: 17px;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a.link_container:hover {
+    /*color: black;*/
+    font-size: 17px;
+    color: rgb(31, 93, 213);
+    text-decoration: none;
+}
+
+
+.favicon_img {
+    width: 16px;
+    height: 16px;
+}
+
+
+.jake:hover {
+    text-decoration: underline;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

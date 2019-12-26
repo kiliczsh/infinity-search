@@ -1,0 +1,243 @@
+* {
+    box-sizing: border-box;
+}
+
+.top {
+    padding-top: 140px;
+}
+
+.logo_container {
+    display: inline-block;
+    text-align: center;
+}
+
+/* Header/logo Title */
+.header {
+    font-size: 30px;
+}
+
+.rome {
+    letter-spacing: 1px;
+}
+
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+
+    color: white;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+
+    /*font-size: 20pt;*/
+    font-weight: 300;
+    line-height: 1.65em;
+
+    background-color: black;
+
+}
+
+button {
+    background: none !important;
+    border: none;
+    padding: 0 !important;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: #069;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Style the top navigation bar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    /*/ / background-color: #333;*/
+    background-color: black;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+    color: white;
+    /*padding: 14px 20px;*/
+    padding: 14px 40px;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    /*background-color: rgb(10,10,10);*/
+    color: white;
+    color: rgb(31, 93, 213);
+}
+
+/* unvisited link */
+a.toplink:link {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+/* visited link */
+a.toplink:visited {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a.toplink:hover {
+    color: white;
+    color: rgb(31, 93, 213);
+    font-size: 18px;
+
+    text-decoration: none;
+}
+
+/* selected link */
+a.toplink:active {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+
+}
+
+/* Column container */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+/* Main Search Area */
+.main_area {
+    flex: 100%;
+    background-color: yellow;
+    /*/ / padding: 20 px;*/
+    text-align: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* Main column */
+.main {
+    /*/ / flex: 70 %;*/
+    background-color: white;
+    padding: 20px;
+}
+
+
+.description {
+    margin-left: 81px;
+    margin-right: 50px;
+    font-size: 20px;
+    text-align: left;
+    color: rgb(160, 160, 160);
+}
+
+.searchContainment {
+    /*/ / padding-left: 17 %;*/
+    /*/ / padding-right: 17 %;*/
+}
+
+
+.checkbox-container {
+    display: flex;
+    align-items: stretch;
+    /*background-color: #f1f1f1;*/
+
+}
+
+.checkbox-container > div {
+    margin: 10px;
+    text-align: center;
+}
+
+input[type=text], select {
+    width: 80%;
+    padding: 12px 20px;
+    font-size: 1.3125rem;
+    margin: 28px 20px;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    /*background-color: white;*/
+
+}
+
+input[type=submit] {
+    /*width: 100%;*/
+    background-color: rgb(31, 93, 213);
+    color: white;
+    padding: 13px 20px;
+    /*font-family: "Open Sans", sans-serif;*/
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    font-size: 1.3125rem;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    opacity: 1;
+
+}
+
+.Site {
+    display: flex;
+    /*min-height: 100vh;*/
+    flex-direction: column;
+
+}
+
+.Site-content {
+    text-align: center;
+    flex: 1;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    min-height: 60vh;
+
+}
+
+.side-left {
+    flex: 15%;
+}
+
+.middle {
+    flex: 70%;
+}
+
+.side-right {
+    flex: 15%;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1000px) {
+    .navbar {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+/*//@media only screen and (max-width: 500px) {*/
+/* // !* For mobile phones: *!*/
+/*  //.row, .navbar {*/
+/*  //  width: 100%;*/
+/*  //}*/
+/*//}*/
