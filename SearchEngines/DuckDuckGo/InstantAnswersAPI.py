@@ -38,5 +38,6 @@ def run(query):
 
 
 if __name__ == '__main__':
-    run('Old navy')
+    # run('Old navy')
+    d = search_ddg_ia('Denmark')
 
