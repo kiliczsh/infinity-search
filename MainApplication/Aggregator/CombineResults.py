@@ -1,4 +1,5 @@
 import SearchEngines.Bing.BingSearch as Bing
+import SearchEngines.Mojeek.MojeekSearch as Mojeek
 
 formatted_query = ''
 
@@ -27,21 +28,48 @@ def combine_results(current, new):
 def format_bing(data):
     # Bing Data is already formatted
 
-    for page in data:
-        x = 0
+    # for page in data:
+    #     x = 0
 
-    data.append(['View More Results From Bing', 'https://www.bing.com/search?q=' + formatted_query, '', 'www.bing.com/favicon.ico'])
+    data.append(['View More Results From Bing', 'https://www.bing.com/search?q=' + formatted_query, '', 'https://www.bing.com/favicon.ico'])
 
     return data
 
+def format_mojeek(data):
+    # Mojeek Data is already formatted
+    data.append(['View More Results From Mojeek', 'https://www.mojeek.com/search?q=' + formatted_query, '', 'https://www.mojeek.com/favicon.ico'])
+
+    return data
 
 def search_all(query, bing_search):
     format_query(query)
 
     try:
-        bing = Bing.get_all(query, count=25)
+        mojeek1 = Mojeek.get_results(formatted_query)
+        mojeek2 = Mojeek.get_results(formatted_query, s=11)
+
+        # print(mojeek1)
+        # print(mojeek2)
+
+        mojeek = mojeek1
+        for page in mojeek2:
+            mojeek.append(page)
+
+        mojeek = format_mojeek(mojeek)
+
+        all_results = []
+        all_results = combine_results(all_results, mojeek)
+        ranked_results = rank_all(all_results)
+        return ranked_results
+
     except Exception as e:
         print(e)
+        mojeek = [[]]
+
+    try:
+        bing = Bing.get_all(query, count=25)
+    except Exception as e:
+        # print(e)
         bing = [[]]
 
     bing = format_bing(bing)
@@ -49,6 +77,41 @@ def search_all(query, bing_search):
     all_results = combine_results(all_results, bing)
     ranked_results = rank_all(all_results)
     return ranked_results
+
+
+def search_mojeek(query, bing_search):
+    format_query(query)
+
+    # We are testing out Mojeek for now but if it fails we switch to Bing results
+
+    try:
+        mojeek1 = Mojeek.get_results(formatted_query)
+        mojeek2 = Mojeek.get_results(formatted_query, s=11)
+
+        # print(mojeek1)
+        # print(mojeek2)
+
+        mojeek = mojeek1
+        for page in mojeek2:
+            mojeek.append(page)
+
+        mojeek = format_mojeek(mojeek)
+
+        all_results = []
+        all_results = combine_results(all_results, mojeek)
+        ranked_results = rank_all(all_results)
+        return ranked_results
+
+    except Exception as e:
+        print(e)
+        mojeek = [[]]
+
+    mojeek = format_bing(mojeek)
+    all_results = []
+    all_results = combine_results(all_results, mojeek)
+    ranked_results = rank_all(all_results)
+    return ranked_results
+
 
 # if __name__ == '__main__':
     # x = search_all('Python')

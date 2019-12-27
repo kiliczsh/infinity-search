@@ -25,7 +25,7 @@ def get_all(query, count=10):
         if parsed[0] == 'http':
             url = url.replace('http://', 'https://') # Force https
 
-        favicon_url = parsed[1] + '/favicon.ico'
+        favicon_url = 'https://' + parsed[1] + '/favicon.ico'
 
         data.append([val.name,val.url, val.snippet, favicon_url])
 

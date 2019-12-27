@@ -166,7 +166,7 @@
             <a href="{{ link[1] }}" class="result_container link_container" style="display: block;">
             <span class="toplink jake" style="color: black; font-size: 20px;">{{ link[0] }} </span><br>
                 <span class="bottomlink jake">
-                <img src="https://{{link[3] }}" height="16px" width="16px" onerror="imgError(this)">
+                <img src="{{link[3] }}" height="16px" width="16px" onerror="imgError(this)">
                 {% if link[1]|count > 80 %}
                     {{link[1][0:80]}}
                 {% endif %}
