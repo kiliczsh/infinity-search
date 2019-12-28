@@ -133,3 +133,43 @@ def render_privacy():
 def render_pro():
     return render_template('pro.html')
 
+# Second Page (showing less know results (Just for fun) (separate from our main search)
+
+
+def get_secondpage_results(query):
+    words = query
+    words = str(words).split()
+
+    if len(words) == 0:
+        return redirect('/')
+
+    external_links = Externals.get_external_links(query)
+    results = Searches.second_page_results(query)
+
+    return render_template('secondpage_results.html', query=query, bing_results=results[0],
+                           external_results=external_links)
+
+
+@publicAPI.route('/secondpage')
+def render_second_page_home():
+    return render_template('secondpage.html')
+
+@publicAPI.route('/secondpage/results',  methods=['GET', 'POST'])
+def render_second_page_results():
+    if request.method == 'POST':
+        try:  # In case someone tried to change the value of the form name
+            form_results = dict(request.form)
+            query = form_results['Search']
+
+        except Exception:
+            return redirect('/')
+
+        return get_secondpage_results(query)
+
+    else:
+        return redirect('/secondpage')
+
+
+
+
+

@@ -8,10 +8,11 @@ blogAPI = Blueprint('blogAPI', __name__)
 @blogAPI.route('/content')
 def render_articles():
     articles = [
+        {'link': '/articles/secondpage', 'title': 'Why We Made Second Page'},
         {'link': '/articles/more_about_us', 'title': 'More Privacy Information About Us'},
         {'link': '/articles/about_our_company', 'title': 'About Our Company'},
         {'link': '/articles/open_source', 'title': 'Infinity Search Is Now Open Source'},
-        {'link' : '/articles/privacy_resources', 'title' : 'Privacy Resources'},
+        {'link' : '/articles/privacy_resources', 'title' : 'Privacy Resources'}
     ]
 
     return render_template('articles/articles.html', articles=articles)

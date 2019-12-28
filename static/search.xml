@@ -4,5 +4,5 @@
     <ShortName>Infinity Search</ShortName>
     <Description>Privacy Search Engine</Description>
     <Url type="text/html" method="get" template="https://infinitysearch.co?q={searchTerms}"/>
-    <Image width="16" height="16">https://i.postimg.cc/7Lwth4Th/Infinity-Search-Logo-1-dragged.png</Image>
+    <Image width="16" height="16">https://i.postimg.cc/vBHkHNy9/Infinity-Search-Logo.png</Image>
 </OpenSearchDescription>
