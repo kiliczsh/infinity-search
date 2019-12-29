@@ -197,14 +197,14 @@ button {
 }
 
 .external_result_container:hover {
-    box-shadow: 0 0 0 1pt rgb(200, 200, 200);
-    /*box-shadow: 0 0 0 1pt red;*/
+    /*box-shadow: 0 0 0 1pt rgb(200, 200, 200);*/
+    box-shadow: 0 0 0 1pt red;
 
 }
 
 .result_container:hover {
-    box-shadow: 0 0 0 1pt rgb(200, 200, 200);
-    /*box-shadow: 0 0 0 1pt red;*/
+    /*box-shadow: 0 0 0 1pt rgb(200, 200, 200);*/
+    box-shadow: 0 0 0 1pt red;
 }
 
 .footer {
@@ -344,14 +344,14 @@ a.fill {
     padding: 14px 40px;
     text-decoration: none;
     text-align: center;
-    color: rgb(31, 93, 213);
+    /*color: rgb(31, 93, 213);*/
 
 }
 
 /* Change color on hover */
 .navbar a:hover {
-    background-color: #ddd;
-    color: black;
+    /*background-color: #ddd;*/
+    color: red;
 }
 
 .checkbox-container {

@@ -64,7 +64,7 @@ button {
 /* Style the navigation bar links */
 .navbar a {
     color: black;
-    padding: 14px 20px;
+    /*padding: 14px 20px;*/
     padding: 14px 40px;
     text-decoration: none;
     text-align: center;
@@ -72,8 +72,8 @@ button {
 
 /* Change color on hover */
 .navbar a:hover {
-    background-color: #ddd;
-    color: black;
+    /*background-color: #ddd;*/
+    color: red;
 }
 
 /* Column container */
@@ -136,17 +136,6 @@ ul, li {
 /*/ / padding-right: 17 %;*/
 }
 
-.checkbox-container {
-    display: flex;
-    align-items: stretch;
-    /*background-color: #f1f1f1;*/
-
-}
-
-.checkbox-container > div {
-    margin: 10px;
-    text-align: center;
-}
 
 input[type=text], select {
     width: 80%;

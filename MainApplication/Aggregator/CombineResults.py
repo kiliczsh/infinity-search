@@ -45,27 +45,27 @@ def format_mojeek(data):
 def search_all(query, bing_search):
     format_query(query)
 
-    try:
-        mojeek1 = Mojeek.get_results(formatted_query)
-        mojeek2 = Mojeek.get_results(formatted_query, s=11)
-
-        # print(mojeek1)
-        # print(mojeek2)
-
-        mojeek = mojeek1
-        for page in mojeek2:
-            mojeek.append(page)
-
-        mojeek = format_mojeek(mojeek)
-
-        all_results = []
-        all_results = combine_results(all_results, mojeek)
-        ranked_results = rank_all(all_results)
-        return ranked_results
-
-    except Exception as e:
-        print(e)
-        mojeek = [[]]
+    # try:
+    #     mojeek1 = Mojeek.get_results(formatted_query)
+    #     mojeek2 = Mojeek.get_results(formatted_query, s=11)
+    #
+    #     # print(mojeek1)
+    #     # print(mojeek2)
+    #
+    #     mojeek = mojeek1
+    #     for page in mojeek2:
+    #         mojeek.append(page)
+    #
+    #     mojeek = format_mojeek(mojeek)
+    #
+    #     all_results = []
+    #     all_results = combine_results(all_results, mojeek)
+    #     ranked_results = rank_all(all_results)
+    #     return ranked_results
+    #
+    # except Exception as e:
+    #     print(e)
+    #     mojeek = [[]]
 
     try:
         bing = Bing.get_all(query, count=25)
