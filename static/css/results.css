@@ -98,14 +98,13 @@ body {
     line-height: 1.65em;
 
     background-color: white;
-
 }
 
 hr {
     height: 1px;
     border: 0;
-    color: lightgray;
-    background-color: lightgray;
+    color: rgb(210, 210, 210);
+    background-color: rgb(210, 210, 210);
     margin-right: 0;
 
 }
@@ -175,7 +174,10 @@ button {
 
     border-radius: 3px;
 
-    box-shadow: 0 0 0 1pt rgb(235, 235, 235);
+    /*box-shadow: 0 0 0 1pt rgb(235, 235, 235);*/
+
+    box-shadow: 0 0 0 1pt rgb(210, 210, 210);
+
 
     /*box-shadow: 0 0 0 1pt lightgray;*/
     /*box-shadow: 0 0 0 1pt rgb(150, 150, 150);*/
@@ -193,7 +195,9 @@ button {
     padding-left: 12px;
     border-radius: 3px;
 
-    box-shadow: 0 0 0 1pt rgb(235, 235, 235);
+    /*box-shadow: 0 0 0 1pt rgb(235, 235, 235);*/
+    box-shadow: 0 0 0 1pt rgb(210, 210, 210);
+
 }
 
 .external_result_container:hover {
