@@ -19,13 +19,13 @@
 
 <body>
     <div style="text-align: left; margin-left: 3%">
-    <a href="/secondpage" style="display: inline-block"> <img style="vertical-align:middle; cursor: pointer; border-radius: 50%;" src="https://i.postimg.cc/Rhg9MPYN/Infinity-Search-Logo.png" width="75px" height="75px" alt=""></a>
+        <a href="/news" style="display: inline-block"> <img style="vertical-align:middle; cursor: pointer; border-radius: 50%;" src="https://i.postimg.cc/Rhg9MPYN/Infinity-Search-Logo.png" width="30px" height="30px" alt=""></a>
 
-        <span class="rome" style="vertical-align:middle;"> &nbsp SECOND PAGE BY INFINITY SEARCH </span>
+        <span class="rome" style="vertical-align:middle;"> &nbsp INFINITY SEARCH NEWS </span>
     </div>
 
     <div class="search">
-        <form action="/secondpage/results" method="post" style="text-align: left">
+        <form action="/news/results" method="post" style="text-align: left">
             <input type="text" name="Search" value='{{ query }}'>
             <button style="background-color: white">
                 <i class="fa fa-search" style="font-size: 30px; color: rgb(31, 93, 213); padding-left: 10px;"></i>
@@ -37,116 +37,25 @@
     <div class="main-container">
 
     <div class="results_container middle_left_container">
-   {% if stock_searched == True %}
-     <!-- TradingView Widget BEGIN -->
-    <div class="tradingview-widget-container">
-      <div id="tradingview_9c61a"></div>
-      <div class="tradingview-widget-copyright"><a href={{ url }} rel="noopener" target="_blank"><span class="blue-text">{{ stock }} Chart</span></a> by TradingView</div>
-      <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-      <script type="text/javascript">
-      new TradingView.widget(
-      {
-      "width": 980,
-      "height": 610,
-      "symbol": '{{ symbol }}',
-      "interval": "D",
-      "timezone": "Etc/UTC",
-      "theme": "Light",
-      "style": "1",
-      "locale": "en",
-      "toolbar_bg": "#f1f3f6",
-      "enable_publishing": false,
-      "allow_symbol_change": true,
-      "referral_id": "20191",
-      "container_id": "tradingview_9c61a"
-      }
-      );
-      </script>
-    </div>
-        <!-- TradingView Widget END -->
-    {% endif %}
-
-    {% if crypto_news == True %}
-        <!-- TradingView Widget BEGIN -->
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/" rel="noopener" target="_blank"><span class="blue-text">Cryptocurrency Markets</span></a> by TradingView</div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
-          {
-          "width": "1100",
-          "height": "490",
-          "defaultColumn": "overview",
-          "screener_type": "crypto_mkt",
-          "displayCurrency": "USD",
-          "colorTheme": "light",
-          "transparency": false,
-          "locale": "en"
-        }
-          </script>
-        </div>
-        <!-- TradingView Widget END -->
-    {% endif %}
-
-    {% if stock_news == True %}
-        <!-- TradingView Widget BEGIN -->
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"><span class="blue-text">Quotes</span></a> by TradingView</div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
-          {
-          "symbols": [
-            {
-              "description": "S&P 500",
-              "proName": "SP:SPX"
-            },
-            {
-              "description": "NASDAQ 100",
-              "proName": "NDX"
-            },
-            {
-              "description": "EUR/USD",
-              "proName": "OANDA:EURUSD"
-            },
-            {
-              "description": "CRUDE OIL",
-              "proName": "NYSE:WTI"
-            },
-            {
-              "description": "BTC/USD",
-              "proName": "COINBASE:BTCUSD"
-            },
-            {
-              "description": "DXY",
-              "proName": "TVC:DXY"
-            }
-          ],
-          "colorTheme": "light",
-          "isTransparent": true,
-          "locale": "en"
-        }
-        </script>
-        </div>
-    <!-- TradingView Widget END -->
-    {% endif %}
 
         <p class="results" id="results">
 
          <!-- duckduckgo instant answers area -->
          <div class="ddg_ia_container" id="ddg_ia_container">
 
-        {% for info in ddg_ia_result %}
-            <a class="result_container link_container" href="{{info[2]}}" style="display: block;">
-            <span class="toplink jake" style="color: black; font-size: 20px;"> <b> {{ info[0] }} </b> <br><br> </span>
-            &nbsp <img class="ia_image" src={{ info[3] }}><br><br>
-                <span style="color: black">{{ info[1] }} <br><br> </span>
-            <span href={{ info[2] }} class="bottomlink jake" style="display: block">
-                <img onerror="imgError(this)" src="https://en.wikipedia.com/favicon.ico" height="16px" width="16px" style="padding-right: 5px;">{{ info[2] }}
-            </span> <br>
-            <span class="bottomlink" onclick="location.href='/contact';" style="font-size: 13px; display: block; color: black">
-                <img onerror="imgError(this)" src="https://duckduckgo.com/favicon.ico" height="16px" width="16px" style="padding-right: 5px;">Result Provided by the DuckDuckGo Instant Answer API
-            </span>
-            </a>
-         {% endfor %}
+<!--        {% for info in ddg_ia_result %}-->
+<!--            <a class="result_container link_container" href="{{info[2]}}" style="display: block;">-->
+<!--            <span class="toplink jake" style="color: black; font-size: 20px;"> <b> {{ info[0] }} </b> <br><br> </span>-->
+<!--            &nbsp <img class="ia_image" src={{ info[3] }}><br><br>-->
+<!--                <span style="color: black">{{ info[1] }} <br><br> </span>-->
+<!--            <span href={{ info[2] }} class="bottomlink jake" style="display: block">-->
+<!--                <img onerror="imgError(this)" src="https://en.wikipedia.com/favicon.ico" height="16px" width="16px" style="padding-right: 5px;">{{ info[2] }}-->
+<!--            </span> <br>-->
+<!--            <span class="bottomlink" onclick="location.href='/contact';" style="font-size: 13px; display: block; color: black">-->
+<!--                <img onerror="imgError(this)" src="https://duckduckgo.com/favicon.ico" height="16px" width="16px" style="padding-right: 5px;">Result Provided by the DuckDuckGo Instant Answer API-->
+<!--            </span>-->
+<!--            </a>-->
+<!--         {% endfor %}-->
 
         </div>
 

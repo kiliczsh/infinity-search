@@ -42,7 +42,7 @@ def format_mojeek(data):
     return data
 
 # really just Bing for now
-def search_all(query, bing_search):
+def search_all(query):
     format_query(query)
 
     # try:
@@ -80,7 +80,7 @@ def search_all(query, bing_search):
     return ranked_results
 
 
-def search_mojeek(query, bing_search):
+def search_mojeek(query):
     format_query(query)
 
     # We are testing out Mojeek for now but if it fails we switch to Bing results

@@ -4,41 +4,51 @@ import SearchEngines.DuckDuckGo.InstantAnswersAPI as DDG_IA
 import MainApplication.Aggregator.external_links as Externals
 from exchange_dict import exchange_dict
 import random
+import SearchEngines.Dictionary.Dictionary as Dictionary_API
+
 
 publicAPI = Blueprint('publicAPI', __name__)
 descriptions = ['Search better.', 'This search engine doesn\'t track you.', 'Made for everyone.', 'Search smarter.']
 
 
 def get_results(query):
-    search_ddg_ia = True
-    ddg_ia_cb = 'checked'
-    search_bing = True
-    bing_cb = 'checked'
-
     stock_searched = False
     stock = ''
 
     symbol = ''
     url = ''
 
+    definition = []
+
+
     words = query
     words = str(words).split()
 
-    if len(words) == 0:
+    words_in_search = len(words)
+
+    if words_in_search == 0:
         return redirect('/')
 
-    if len(words) == 1:
-        results = Searches.search_all(query, search_bing)
-        ddg_ia_result = []
-        if search_ddg_ia is True:
-            ddg_ia_result = DDG_IA.search_ddg_ia(query)
-        external_links = Externals.get_external_links(query)
+    ddg_ia_result = DDG_IA.search_ddg_ia(query)
+    results = Searches.search_all(query)
+    external_links = Externals.get_external_links(query)
 
+
+    if words_in_search == 1:
         return render_template('results.html', query=query, stock=stock,
-                               stock_searched=stock_searched, symbol=symbol, url=url, bing_cb=bing_cb,
-                               ddg_ia_cb=ddg_ia_cb,
+                               stock_searched=stock_searched, symbol=symbol, url=url,
                                ddg_ia_result=ddg_ia_result, bing_results=results[0],
-                               external_results=external_links)
+                               external_results=external_links, definition=definition)
+
+    if words_in_search == 2:
+        if words[1].upper() == 'DEFINITION' or words[1].upper() == 'DEFINE':
+            word_definition = Dictionary_API.search_word(words[0])
+            definition = word_definition
+
+        if words[0].upper() == 'DEFINITION' or words[0].upper() == 'DEFINE':
+            word_definition = Dictionary_API.search_word(words[1])
+            definition = word_definition
+
 
     if words[1].upper() == 'STOCK':
         stock_searched = True
@@ -61,19 +71,10 @@ def get_results(query):
     if words[0].upper() == 'CRYPTO':
         crypto_news = True
 
-    results = Searches.search_all(query, search_bing)
-
-    ddg_ia_result = []
-    if search_ddg_ia is True:
-        ddg_ia_result = DDG_IA.search_ddg_ia(query)
-
-    external_links = Externals.get_external_links(query)
-
     return render_template('results.html', query=query, stock=stock, stock_searched=stock_searched,
-                           symbol=symbol, url=url, stock_news=stock_news, crypto_news=crypto_news, bing_cb=bing_cb,
-                           ddg_ia_cb=ddg_ia_cb,
+                           symbol=symbol, url=url, stock_news=stock_news, crypto_news=crypto_news,
                            ddg_ia_result=ddg_ia_result, bing_results=results[0],
-                           external_results=external_links)
+                           external_results=external_links, definition=definition)
 
 
 @publicAPI.route('/', methods=['GET', 'POST'])
@@ -170,6 +171,42 @@ def render_second_page_results():
         return redirect('/secondpage')
 
 
+# News Search Engine ---------------------------
+import SearchEngines.InfinityNews.InfinityNews as InfinityNews
 
+def get_news_results(query):
+    words = query
+    words = str(words).split()
+
+    if len(words) == 0:
+        return redirect('/')
+
+    external_links = Externals.get_external_links(query)
+
+    results = InfinityNews.get_news(query)
+
+    return render_template('news_results.html', query=query, bing_results=results[0],
+                           external_results=external_links)
+
+
+@publicAPI.route('/news')
+def render_news_search():
+    return render_template('news.html')
+
+
+@publicAPI.route('/news/results',  methods=['GET', 'POST'])
+def render_news_engine_results():
+    if request.method == 'POST':
+        try:  # In case someone tried to change the value of the form name
+            form_results = dict(request.form)
+            query = form_results['Search']
+
+        except Exception:
+            return redirect('/')
+
+        return get_news_results(query)
+
+    else:
+        return redirect('/news')
 
 

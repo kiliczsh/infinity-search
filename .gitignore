@@ -33,3 +33,13 @@ node_modules/
 
 SearchEngines/Bing/Bing_API_Example.py
 templates/search_div.html
+
+
+SearchEngines/Dictionary/*
+SearchEngines/InfinityNews/*
+
+
+
+
+
+
