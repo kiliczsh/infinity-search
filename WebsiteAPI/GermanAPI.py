@@ -29,7 +29,7 @@ def get_results(query):
         return redirect('/de')
 
     if len(words) == 1:
-        results = Searches.search_all(query, search_bing)
+        results = Searches.search_all(query)
         ddg_ia_result = []
         if search_ddg_ia is True:
             ddg_ia_result = DDG_IA.search_ddg_ia(query)
@@ -62,7 +62,7 @@ def get_results(query):
     if words[0].upper() == 'CRYPTO':
         crypto_news = True
 
-    results = Searches.search_all(query, search_bing)
+    results = Searches.search_all(query)
 
     ddg_ia_result = []
     if search_ddg_ia is True:

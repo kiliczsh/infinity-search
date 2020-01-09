@@ -1,6 +1,6 @@
 import requests
 from urllib.parse import urlparse
-
+from math import floor
 
 def combine_results(current, new):
     all_data = current
@@ -18,7 +18,6 @@ def get_news(query):
     query = query.replace(' ', '+')
 
     data = requests.get('http://localhost:9200/news_engine/_search?q=' + query + '&size=' + str(20) + '&pretty=true').json()
-
     # print(data)
 
     results = data['hits']['hits']
@@ -38,7 +37,12 @@ def get_news(query):
 
         favicon_url = 'https://' + parsed[1] + '/favicon.ico'
 
-        links.append([source['title'] ,source['url'], source['category'], favicon_url])
+        minutes_ago = source['minutes_ago']
+        hours_ago = source['hours_ago']
+
+        links.append([source['title'] ,source['url'], round(minutes_ago), favicon_url, floor(hours_ago)])
+
+
 
 
     # print(links)

@@ -82,7 +82,19 @@
                     {{link[1]}}
                 {% endif %}
             </span>
-            <div class="snippet jake" style="color: black; text-decoration: none;">{{ link[2] }} </div>
+            <div class="snippet jake" style="color: black; text-decoration: none;">
+                {% if link[2] < 60 and link[2] > 0 %}
+                    From {{ link[2] }} minutes ago.
+                {% endif %}
+
+                {% if link[2] >= 60 %}
+                    From {{ link[4] }} hours ago.
+                {% endif %}
+
+                {% if link[2] < 0 %}
+                    From ? hours ago.
+                {% endif %}
+            </div>
             </a>
         {% endfor %}
         </div>
@@ -98,6 +110,12 @@
                 </div>
             </a>
         </div>
+
+<!--        <div id="bing_container">-->
+<!--            <a href="" class="result_container link_container" style="display: block;">-->
+<!--                <h1> More News</h1>-->
+<!--            </a>-->
+<!--        </div>-->
 
         </p>
 
