@@ -185,13 +185,13 @@ button {
     /*box-shadow: 0 0 0 1pt rgb(150, 150, 150);*/
 
 
-      /*box-shadow:*/
-      /*0 2.8px 2.2px rgba(0, 0, 0, 0.034),*/
-      /*0 6.7px 5.3px rgba(0, 0, 0, 0.048),*/
-      /*0 12.5px 10px rgba(0, 0, 0, 0.06),*/
-      /*0 22.3px 17.9px rgba(0, 0, 0, 0.072),*/
-      /*0 41.8px 33.4px rgba(0, 0, 0, 0.086),*/
-      /*0 100px 80px rgba(0, 0, 0, 0.12)*/
+      box-shadow:
+      0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+      0 12.5px 10px rgba(0, 0, 0, 0.06),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+      0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+      0 100px 80px rgba(0, 0, 0, 0.12)
 
     /*box-shadow:*/
     /*  2px 2.8px 2.2px rgba(0, 0, 0, 0.034),*/
@@ -219,13 +219,13 @@ button {
     /*border: 1pt solid rgb(240, 240, 240);*/
 
 
-      /*box-shadow:*/
-      /*0 2.8px 2.2px rgba(0, 0, 0, 0.034),*/
-      /*0 6.7px 5.3px rgba(0, 0, 0, 0.048),*/
-      /*0 12.5px 10px rgba(0, 0, 0, 0.06),*/
-      /*0 22.3px 17.9px rgba(0, 0, 0, 0.072),*/
-      /*0 41.8px 33.4px rgba(0, 0, 0, 0.086),*/
-      /*0 100px 80px rgba(0, 0, 0, 0.12)*/
+      box-shadow:
+      0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+      0 12.5px 10px rgba(0, 0, 0, 0.06),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+      0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+      0 100px 80px rgba(0, 0, 0, 0.12)
 
     /*box-shadow:         3px 3px 5px 6px #ccc;*/
     /*box-shadow: 1px 1px 1px 1px #ccc;*/
@@ -242,7 +242,7 @@ button {
 .result_container:hover {
     /*box-shadow: 0 0 0 1pt rgb(200, 200, 200);*/
     /*box-shadow: 0 0 0 1px green;*/
-    border: 1pt solid red;
+    /*border: 1pt solid red;*/
 
     /*box-shadow: 1px 1px 1px 1px #ccc*/
 
@@ -252,35 +252,33 @@ button {
     /*  !*12.5px 12.5px 10px rgba(0, 0, 0, 0.06)*!*/
 
     box-shadow:
-      2.8px 2.8px 2.2px rgba(0, 0, 0, 0.15),
-      6.7px 6.7px 5.3px rgba(0, 0, 0, 0.048),
-      12.5px 12.5px 10px rgba(0, 0, 0, 0.06)
-
+      0 2.8px 2.2px rgba(0, 0, 0, 0.2),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.09),
+      0 12.5px 10px rgba(0, 0, 0, 0.08),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.09),
+      0 41.8px 33.4px rgba(0, 0, 0, 0.1),
+      0 100px 80px rgba(0, 0, 0, 0.19)
 
 }
 
 .external_result_container:hover {
     /*box-shadow: 0 0 0 1pt rgb(200, 200, 200);*/
     /*box-shadow: 0 0 0 1px green;*/
-    border: 1pt solid red;
+    /*border: 1pt solid red;*/
 
-    /*box-shadow:*/
-    /*  0 2.8px 2.2px rgba(0, 0, 0, 0.034),*/
-    /*  0 6.7px 5.3px rgba(0, 0, 0, 0.048),*/
-    /*  0 12.5px 10px rgba(0, 0, 0, 0.06)*/
-      /*0 22.3px 17.9px rgba(0, 0, 0, 0.072),*/
-      /*0 41.8px 33.4px rgba(0, 0, 0, 0.086),*/
-      /*0 100px 80px rgba(0, 0, 0, 0.12)*/
+   box-shadow:
+      0 2.8px 2.2px rgba(0, 0, 0, 0.2),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.09),
+      0 12.5px 10px rgba(0, 0, 0, 0.08),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.09),
+      0 41.8px 33.4px rgba(0, 0, 0, 0.1),
+      0 100px 80px rgba(0, 0, 0, 0.19)
 
     /*box-shadow:*/
     /*  2.8px 2.8px 2.2px rgba(0, 0, 0, 0.034),*/
     /*  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.048),*/
     /*  12.5px 12.5px 10px rgba(0, 0, 0, 0.06)*/
 
-    box-shadow:
-      2.8px 2.8px 2.2px rgba(0, 0, 0, 0.15),
-      6.7px 6.7px 5.3px rgba(0, 0, 0, 0.048),
-      12.5px 12.5px 10px rgba(0, 0, 0, 0.06)
 
 
 }
