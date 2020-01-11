@@ -35,6 +35,7 @@
 
 .fried {
     font-size: 20px;
+    /*font-size: 20vw;*/
     text-align: left;
     line-height: 200%;
 }
@@ -351,6 +352,8 @@ a.bottomlink:link {
     /*color: rgb(188, 29, 15);*/
     /*font-size: 15px;*/
     font-size: 17px;
+    /*font-size: 1vw;*/
+
     text-decoration: none;
 }
 
@@ -360,6 +363,7 @@ a.bottomlink:visited {
     /*color: rgb(188, 29, 15);*/
     /*font-size: 15px;*/
     font-size: 17px;
+    /*font-size: 1vw;*/
     text-decoration: none;
 }
 
@@ -367,6 +371,7 @@ a.bottomlink:visited {
 a.bottomlink:hover {
     /*color: black;*/
     font-size: 17px;
+    /*font-size: 1vw;*/
     color: rgb(31, 93, 213);
     text-decoration: underline;
 }
@@ -377,6 +382,8 @@ a.bottomlink:hover {
 a:link {
     color: rgb(31, 93, 213);
     font-size: 15px;
+    /*font-size: 1vw;*/
+
     text-decoration: none;
 }
 
@@ -416,6 +423,8 @@ a.fill {
     justify-content: center;
     /*background-color: #333;*/
     background-color: white;
+    font-size: 20pt;
+
 }
 
 /* Style the navigation bar links */
@@ -481,6 +490,7 @@ a.link_container:link {
     /*color: rgb(188, 29, 15);*/
     /*font-size: 15px;*/
     font-size: 17px;
+    /*font-size: 1.18vw;*/
     text-decoration: none;
 }
 
@@ -497,6 +507,7 @@ a.link_container:visited {
 a.link_container:hover {
     /*color: black;*/
     font-size: 17px;
+    /*font-size: 1.18vw;*/
     color: rgb(31, 93, 213);
     text-decoration: none;
 }

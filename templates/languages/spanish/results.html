@@ -141,10 +141,10 @@
             &nbsp <img class="ia_image" src={{ info[3] }}><br><br>
                 <span style="color: black">{{ info[1] }} <br><br> </span>
             <span href={{ info[2] }} class="bottomlink jake" style="display: block">
-                <img onerror="imgError(this)" src="https://en.wikipedia.com/favicon.ico" height="16px" width="16px" style="padding-right: 5px;">{{ info[2] }}
+                <img onerror="imgError(this)" src="https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/wikipedia.ico" height="16px" width="16px" style="padding-right: 5px;">{{ info[2] }}
             </span> <br>
             <span class="bottomlink" onclick="location.href='/contact';" style="font-size: 13px; display: block; color: black">
-                <img onerror="imgError(this)" src="https://duckduckgo.com/favicon.ico" height="16px" width="16px" style="padding-right: 5px;">Result Provided by the DuckDuckGo Instant Answer API
+                <img onerror="imgError(this)" src="https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/duckduckgo.ico" height="16px" width="16px" style="padding-right: 5px;">Result Provided by the DuckDuckGo Instant Answer API
             </span>
             </a>
          {% endfor %}
@@ -166,7 +166,7 @@
             <a href="{{ link[1] }}" class="result_container link_container" style="display: block;">
             <span class="toplink jake" style="color: black; font-size: 20px;">{{ link[0] }} </span><br>
                 <span class="bottomlink jake">
-                <img src="https://{{link[3] }}" height="16px" width="16px" onerror="imgError(this)">
+<!--                <img src="https://{{link[3] }}" height="16px" width="16px" onerror="imgError(this)">-->
                 {% if link[1]|count > 80 %}
                     {{link[1][0:80]}}
                 {% endif %}
