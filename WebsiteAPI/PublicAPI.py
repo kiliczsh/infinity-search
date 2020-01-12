@@ -85,13 +85,9 @@ def render_static():
         try:
             if request.args.get('q') is not None:
                 query = request.args.get('q')
-
-                print(query)
-
-                return get_results(query)
+                return redirect('/results?q=' + query)
 
         except Exception:
-
             description = descriptions[random.randint(0, len(descriptions) - 1)]
             return render_template('home.html', description=description)
 
@@ -101,6 +97,7 @@ def render_static():
 
 @publicAPI.route('/results', methods=['GET', 'POST'])
 def render_results():
+
     if request.method == 'POST':
         try:  # In case someone tried to change the value of the form name
             form_results = dict(request.form)
@@ -110,6 +107,14 @@ def render_results():
             return redirect('/')
 
         return get_results(query)
+
+    try:
+        if request.args.get('q') is not None:
+            query = request.args.get('q')
+            return get_results(query)
+
+    except Exception:
+        return redirect('/')
 
     else:
         return redirect('/')
