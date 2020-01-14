@@ -113,6 +113,20 @@ def search_mojeek(query):
     ranked_results = rank_all(all_results)
     return ranked_results
 
+def search_bing_images(query):
+    try:
+        bing = Bing.get_images(query, count=10)
+    except Exception as e:
+        print(e)
+        bing = [[]]
+
+    bing = format_bing(bing)
+    all_results = []
+    all_results = combine_results(all_results, bing)
+    ranked_results = rank_all(all_results)
+    return ranked_results
+
+
 def search_bing_mojeek(query):
     try:
         mojeek = Mojeek.get_results(formatted_query)

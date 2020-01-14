@@ -27,9 +27,33 @@ def get_all(query, count=10):
 
         favicon_url = 'https://' + parsed[1] + '/favicon.ico'
 
-        data.append([val.name,val.url, val.snippet, favicon_url])
+        data.append([val.name, url, val.snippet, favicon_url])
 
     return data
+
+def get_images(query, count=10):
+    client = BingAPI.client
+    web_data = client.web.search(query=query, count=count)
+    data = []
+
+    length = len(web_data.images.value)
+    index = 0
+    while index < length:
+        image = web_data.images.value[index]
+
+        width = image.width
+        height = image.height
+
+        if width > 300:
+            width = width / 5
+            height = height / 5
+
+        data.append([image.thumbnail_url, image.content_url, image.host_page_url, width, height])
+        index += 1
+
+    print(data)
+    return data
+
 
 def run(query):
     # urls = get_urls(query)
@@ -39,6 +63,7 @@ def run(query):
 
 
 if __name__ == '__main__':
-    run('Yosemite')
+    # run('Yosemite')
+    get_images('yosemite')
 
 

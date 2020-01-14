@@ -141,7 +141,6 @@ def render_pro():
 
 # Second Page (showing less know results (Just for fun) (separate from our main search)
 
-
 def get_secondpage_results(query):
     words = query
     words = str(words).split()
@@ -176,42 +175,83 @@ def render_second_page_results():
         return redirect('/secondpage')
 
 
-# News Search Engine ---------------------------
-import SearchEngines.InfinityNews.InfinityNews as InfinityNews
-
-def get_news_results(query):
-    words = query
-    words = str(words).split()
-
-    if len(words) == 0:
-        return redirect('/')
-
-    external_links = Externals.get_external_links(query)
-
-    results = InfinityNews.get_news(query)
-
-    return render_template('news_results.html', query=query, bing_results=results[0],
-                           external_results=external_links)
+# ---------------------
 
 
-@publicAPI.route('/news')
-def render_news_search():
-    return render_template('news.html')
+# Images ------------------
+
+# def get_image_results(query):
+#     words = query
+#     words = str(words).split()
+#
+#     if len(words) == 0:
+#         return redirect('/')
+#
+#     external_links = Externals.get_external_links(query)
+#
+#     results = Searches.search_bing_images(query)
+#     print(results)
+#
+#     return render_template('image_results.html', query=query, bing_results=results[0],
+#                            external_results=external_links)
+#
+#
+# @publicAPI.route('/images')
+# def render_image_search():
+#     return render_template('images.html')
+#
+
+# @publicAPI.route('/images/results',  methods=['GET', 'POST'])
+# def render_image_results():
+#     if request.method == 'POST':
+#         try:  # In case someone tried to change the value of the form name
+#             form_results = dict(request.form)
+#             query = form_results['Search']
+#
+#         except Exception:
+#             return redirect('/')
+#
+#         return get_image_results(query)
+#
+#     else:
+#         return redirect('/news')
 
 
-@publicAPI.route('/news/results',  methods=['GET', 'POST'])
-def render_news_engine_results():
-    if request.method == 'POST':
-        try:  # In case someone tried to change the value of the form name
-            form_results = dict(request.form)
-            query = form_results['Search']
-
-        except Exception:
-            return redirect('/')
-
-        return get_news_results(query)
-
-    else:
-        return redirect('/news')
-
-
+# # News Search Engine ---------------------------
+# import SearchEngines.InfinityNews.InfinityNews as InfinityNews
+#
+# def get_news_results(query):
+#     words = query
+#     words = str(words).split()
+#
+#     if len(words) == 0:
+#         return redirect('/')
+#
+#     external_links = Externals.get_external_links(query)
+#
+#     results = InfinityNews.get_news(query)
+#
+#     return render_template('news_results.html', query=query, bing_results=results[0],
+#                            external_results=external_links)
+#
+# @publicAPI.route('/news')
+# def render_news_search():
+#     return render_template('news.html')
+#
+#
+# @publicAPI.route('/news/results',  methods=['GET', 'POST'])
+# def render_news_engine_results():
+#     if request.method == 'POST':
+#         try:  # In case someone tried to change the value of the form name
+#             form_results = dict(request.form)
+#             query = form_results['Search']
+#
+#         except Exception:
+#             return redirect('/')
+#
+#         return get_news_results(query)
+#
+#     else:
+#         return redirect('/news')
+#
+#
