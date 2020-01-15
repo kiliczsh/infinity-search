@@ -74,6 +74,7 @@ def get_external_links(query):
         ['Mojeek Search Engine Results', 'https://www.mojeek.com/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/mojeek.ico'],
         ['Yandex Russian Search Engine Results', 'https://yandex.com/search/?text=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/yandex.ico'],
         ['Qwant Search Engine Results', 'https://www.qwant.com/?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/qwant.ico'],
+        ['Cliqz Search Engine Results', 'https://beta.cliqz.com/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/cliqz.ico'],
         # ['360 Chinese Search Engine Results', 'https://www.so.com/s?q=' + query],
         ['Baidu Chinese Search Engine Results',
          'https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/baidu.ico'],
@@ -117,6 +118,8 @@ def get_external_links_german(query):
         ['Mojeek Ergebnisse', 'https://www.mojeek.com/search?q=' + query, 'https://www.mojeek.com/favicon.ico'],
         ['Yandex Ergebnisse', 'https://yandex.com/search/?text=' + query, 'https://yandex.com/favicon.ico'],
         ['Qwant Ergebnisse', 'https://www.qwant.com/?q=' + query, 'https://www.qwant.com/favicon.ico'],
+        ['Cliqz Ergebnisse', 'https://beta.cliqz.com/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/cliqz.ico'],
+
         # ['360 Chinese Search Engine Results', 'https://www.so.com/s?q=' + query],
         ['Baidu Ergebnisse',
          'https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=' + query, ''],
@@ -160,12 +163,31 @@ def get_external_links_spanish(query):
         ['Resultados de Mojeek', 'https://www.mojeek.com/search?q=' + query, 'https://www.mojeek.com/favicon.ico'],
         ['Resultados de Yandex', 'https://yandex.com/search/?text=' + query, 'https://yandex.com/favicon.ico'],
         ['Resultados de Qwant', 'https://www.qwant.com/?q=' + query, 'https://www.qwant.com/favicon.ico'],
+        ['Resultados de Cliqz', 'https://beta.cliqz.com/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/cliqz.ico'],
         # ['360 Chinese Search Engine Results', 'https://www.so.com/s?q=' + query],
         ['Resultados de Baidu',
          'https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=' + query, ''],
         # Trend Data
         # ['Google Trends Results', 'https://trends.google.com/trends/explore?q=' + query, 'https://ssl.gstatic.com/trends_nrtr/2051_RC11/favicon.ico'],
     ]
+
+    return links
+
+
+def get_image_links():
+
+    links = []
+
+    return links
+
+
+def get_video_links():
+    links = []
+
+    return links
+
+def get_news_links():
+    links = []
 
     return links
 

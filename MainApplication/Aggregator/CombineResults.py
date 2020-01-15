@@ -120,7 +120,7 @@ def search_bing_images(query):
         print(e)
         bing = [[]]
 
-    bing = format_bing(bing)
+    # bing = format_bing(bing)
     all_results = []
     all_results = combine_results(all_results, bing)
     ranked_results = rank_all(all_results)

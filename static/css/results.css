@@ -529,3 +529,65 @@ a.link_container:hover {
   margin-right: auto;
   width: 50%;
 }
+
+
+
+/*For the tabs */
+
+.tab-container {
+  display: flex;
+  flex-direction: row;
+  /*background-color: DodgerBlue;*/
+}
+
+.tab-container > div {
+  /*background-color: #f1f1f1;*/
+  /*width: 100px;*/
+  margin-right: 9px;
+  /*text-align: center;*/
+  /*line-height: 75px;*/
+  /*font-size: 30px;*/
+}
+
+
+/* unvisited link */
+a.tab-link:link {
+    color: grey;
+    text-decoration: none;
+}
+
+/* visited link */
+a.tab-link:visited {
+    color: grey;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a.tab-link:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.image_container {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    background-color: white;
+    /*background-color: rgba(252, 252, 252, 1);*/
+
+    margin-top: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 3px;
+
+    /*box-shadow: 0 0 0 1pt rgb(235, 235, 235);*/
+
+    /*box-shadow: 0 0 0 1pt rgb(210, 210, 210);*/
+    /*border: 1pt solid rgb(240, 240, 240);*/
+    border: 1pt solid rgb(210, 210, 210);
+}
+
+

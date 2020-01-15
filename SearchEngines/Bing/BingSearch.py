@@ -36,8 +36,14 @@ def get_images(query, count=10):
     web_data = client.web.search(query=query, count=count)
     data = []
 
+    if web_data.images is None:
+        print('None')
+        return [[]]
+
     length = len(web_data.images.value)
     index = 0
+
+    print(length)
     while index < length:
         image = web_data.images.value[index]
 

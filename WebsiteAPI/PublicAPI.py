@@ -180,41 +180,48 @@ def render_second_page_results():
 
 # Images ------------------
 
-# def get_image_results(query):
-#     words = query
-#     words = str(words).split()
-#
-#     if len(words) == 0:
-#         return redirect('/')
-#
-#     external_links = Externals.get_external_links(query)
-#
-#     results = Searches.search_bing_images(query)
-#     print(results)
-#
-#     return render_template('image_results.html', query=query, bing_results=results[0],
-#                            external_results=external_links)
-#
-#
-# @publicAPI.route('/images')
-# def render_image_search():
-#     return render_template('images.html')
-#
+def get_image_results(query):
+    words = query
+    words = str(words).split()
 
-# @publicAPI.route('/images/results',  methods=['GET', 'POST'])
-# def render_image_results():
-#     if request.method == 'POST':
-#         try:  # In case someone tried to change the value of the form name
-#             form_results = dict(request.form)
-#             query = form_results['Search']
-#
-#         except Exception:
-#             return redirect('/')
-#
-#         return get_image_results(query)
-#
-#     else:
-#         return redirect('/news')
+    if len(words) == 0:
+        return redirect('/')
+
+    external_links = Externals.get_external_links(query)
+
+    results = Searches.search_bing_images(query)
+    # print(results)
+
+    return render_template('image_results.html', query=query, bing_results=results[0],
+                           external_results=external_links)
+
+
+@publicAPI.route('/images')
+def render_image_search():
+    return render_template('images.html')
+
+
+@publicAPI.route('/results/images',  methods=['GET', 'POST'])
+def render_image_results():
+    if request.method == 'POST':
+        try:  # In case someone tried to change the value of the form name
+            form_results = dict(request.form)
+            query = form_results['Search']
+
+        except Exception:
+            return redirect('/')
+
+        return get_image_results(query)
+
+    try:
+        if request.args.get('q') is not None:
+            query = request.args.get('q')
+            return get_image_results(query)
+
+    except Exception:
+        return redirect('/')
+
+    return redirect('/')
 
 
 # # News Search Engine ---------------------------
@@ -255,3 +262,59 @@ def render_second_page_results():
 #         return redirect('/news')
 #
 #
+
+# Temporary Page
+@publicAPI.route('/results/news',  methods=['GET', 'POST'])
+def render_news_engine_results():
+    if request.method == 'POST':
+        try:  # In case someone tried to change the value of the form name
+            form_results = dict(request.form)
+            query = form_results['Search']
+
+            external_links = Externals.get_external_links(query)
+            return render_template('news_results.html', query=query, bing_results=[],
+                                   external_results=external_links)
+
+        except Exception:
+            return redirect('/')
+
+    try:
+        if request.args.get('q') is not None:
+            query = request.args.get('q')
+            external_links = Externals.get_external_links(query)
+            return render_template('news_results.html', query=query, bing_results=[],
+                                   external_results=external_links)
+
+    except Exception:
+        return redirect('/')
+
+    return redirect('/')
+
+
+# Temporary Page
+@publicAPI.route('/results/videos',  methods=['GET', 'POST'])
+def render_video_results():
+    if request.method == 'POST':
+        try:  # In case someone tried to change the value of the form name
+            form_results = dict(request.form)
+            query = form_results['Search']
+
+            external_links = Externals.get_external_links(query)
+            return render_template('video_results.html', query=query, bing_results=[],
+                                   external_results=external_links)
+
+        except Exception:
+            return redirect('/')
+
+    try:
+        if request.args.get('q') is not None:
+            query = request.args.get('q')
+            external_links = Externals.get_external_links(query)
+            return render_template('video_results.html', query=query, bing_results=[],
+                                   external_results=external_links)
+
+    except Exception:
+        return redirect('/')
+
+    return redirect('/')
+

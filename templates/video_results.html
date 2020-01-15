@@ -27,7 +27,7 @@
     </div>
 
     <div class="search">
-        <form action="/results/news" method="post" style="text-align: left">
+        <form action="/results/videos" method="post" style="text-align: left">
             <input type="text" name="Search" value='{{ query }}'>
             <button style="background-color: white">
                 <i class="fa fa-search" style="font-size: 30px; color: rgb(31, 93, 213); padding-left: 10px;"></i>
@@ -44,10 +44,10 @@
             <a href="/results/images?q={{ query }}" class="tab-link" style="display: inline-block"> Images </a>
         </div>
         <div>
-            <a href="/results/news?q={{ query }}" class="tab-link" style="display: inline-block; text-decoration: underline; color: black"> News </a>
+            <a href="/results/news?q={{ query }}" class="tab-link" style="display: inline-block;"> News </a>
         </div>
         <div>
-            <a href="/results/videos?q={{ query }}" class="tab-link" style="display: inline-block"> Videos </a>
+            <a href="/results/videos?q={{ query }}" class="tab-link" style="display: inline-block; text-decoration: underline; color: black"> Videos </a>
         </div>
     </div>
 
@@ -56,11 +56,10 @@
 
     <div class="results_container middle_left_container">
 
-        <h1> News results are under development</h1>
+        <h1> Video results are under development </h1>
         <p>
-            The current development of our news engine is open source and can be found at <a href="https://gitlab.com/infinitysearch/infinity-news-engine">
-            https://gitlab.com/infinitysearch/infinity-news-engine</a>. We are in the process of testing it and integrating
-            it into Infinity Search.
+            We are working on integrating video results into our service. Updates about our video integration can be
+            found here in the future.
         </p>
 
         <p class="results" id="results">
