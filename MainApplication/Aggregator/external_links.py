@@ -175,6 +175,7 @@ def get_external_links_spanish(query):
 
 
 def get_image_links(query):
+    query = query.replace(' ', '+')
     links = [
         # Image engines
         ['DuckDuckGo Image Results', 'https://duckduckgo.com/?iar=images&iax=images&ia=images&q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/duckduckgo.ico'],
@@ -197,6 +198,7 @@ def get_image_links(query):
 
 
 def get_video_links(query):
+    query = query.replace(' ', '+')
     links = [
         ['Invidious Search Results', 'https://www.invidio.us/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/invidious.ico'],
         ['Youtube Results', 'https://www.youtube.com/results?search_query=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/youtube.ico'],
@@ -217,6 +219,7 @@ def get_video_links(query):
 
 
 def get_news_links(query):
+    query = query.replace(' ', '+')
     links = [
         ['Reuters Results', 'https://www.reuters.com/search/news?blob=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/reuters.ico'],
         ['New York Times Results', 'https://www.nytimes.com/search?query=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/nyt.ico'],
@@ -233,23 +236,31 @@ def get_news_links(query):
 
 
 def get_book_links(query):
+    query = query.replace(' ', '+')
+
     links = []
 
     return links
 
 
 def get_shopping_links(query):
+    query = query.replace(' ', '+')
+
     links = []
 
     return links
 
 
 def get_travel_links(query):
+    query = query.replace(' ', '+')
+
     links = []
 
     return links
 
 def get_music_links(query):
+    query = query.replace(' ', '+')
+
     links = []
 
     return links
