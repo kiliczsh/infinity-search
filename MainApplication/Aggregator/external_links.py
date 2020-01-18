@@ -174,22 +174,83 @@ def get_external_links_spanish(query):
     return links
 
 
-def get_image_links():
+def get_image_links(query):
+    links = [
+        # Image engines
+        ['DuckDuckGo Image Results', 'https://duckduckgo.com/?iar=images&iax=images&ia=images&q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/duckduckgo.ico'],
+        ['Bing Image Results', 'https://www.bing.com/images/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/bing.ico'],
+        ['Google Image Results', 'https://www.google.com/search?hl=en&tbm=isch&source=hp&q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/google.ico'],
+        ['Pixabay Results', 'https://pixabay.com/images/search/' + query + '/', 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/pixabay.ico'],
+        ['Unsplash Results', 'https://unsplash.com/s/photos/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/unsplash.png'],
+        ['Flickr Results', 'https://www.flickr.com/search/?text=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/flickr.ico'],
+        ['Pexels Results', 'https://www.pexels.com/search/' + query + '/', 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/pexels.ico'],
+        ['Creative Commons Results', 'https://search.creativecommons.org/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/creativecommons.ico'],
+        ['Wikimedia Commons Results', 'https://commons.wikimedia.org/wiki/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/wikimedia.ico'],
+        ['Pinterest Results', 'https://www.pinterest.com/search/pins/?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/pinterest.ico'],
+        ['Internet Archive Image Results', 'https://archive.org/details/image?and[]=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/archive.ico'],
+        ['Picsearch Image Results', 'https://www.picsearch.com/index.cgi?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/picsearch.ico'],
+        ['Nasa Image Results', 'https://images.nasa.gov/search-results?yearStart=1920&yearEnd=2020&media=image&q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/nasa.ico'],
+        ['Tineye Reverse Image Search', 'https://tineye.com/', 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/tineye.ico'],
+    ]
 
+    return links
+
+
+def get_video_links(query):
+    links = [
+        ['Invidious Search Results', 'https://www.invidio.us/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/invidious.ico'],
+        ['Youtube Results', 'https://www.youtube.com/results?search_query=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/youtube.ico'],
+        ['Vimeo Results', 'https://vimeo.com/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/vimeo.png'],
+        ['Daily Motion Results', 'https://www.dailymotion.com/search/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/dailymotion.ico'],
+        ['Internet Archive Movie Results', 'https://archive.org/details/movies?and[]=' + query,'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/archive.ico'],
+        ['DTube Results', 'https://d.tube/#!/s/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/dtube.ico'],
+        ['Bitchute Results','https://search.bitchute.com/renderer?use=bitchute-json&name=Search&login=bcadmin&key=7ea2d72b62aa4f762cc5a348ef6642b8&query=' + query,'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/bitchute.ico'],
+        ['Petey Vid Search Results', 'https://www.peteyvid.com/index.php?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/peteyvid.ico'],
+        ['Twitch Results', 'https://www.twitch.tv/search?term=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/twitch.ico'],
+        ['LiveLeak Results', 'https://www.liveleak.com/browse?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/liveleak.ico'],
+        ['Ted Talk Results', 'https://www.ted.com/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/ted.ico'],
+        ['Veoh Results', 'https://www.veoh.com/find/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/veoh.ico'],
+        ['Metacafe Results', 'https://www.metacafe.com/videos_about/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/metacafe.ico'],
+        ['Vlare Results', 'https://vlare.tv/search/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/vlare.ico'],
+    ]
+    return links
+
+
+def get_news_links(query):
+    links = [
+        ['Reuters Results', 'https://www.reuters.com/search/news?blob=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/reuters.ico'],
+        ['New York Times Results', 'https://www.nytimes.com/search?query=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/nyt.ico'],
+        ['Fox Results', 'https://www.foxnews.com/search-results/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/fox.ico'],
+        ['CNN Results', 'https://www.cnn.com/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/cnn.ico'],
+        ['Washington Post Results','https://www.washingtonpost.com/newssearch/?datefilter=All%20Since%202005&sort=Relevance&query=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/washingtonpost.ico'],
+        ['Business Insider Results', 'https://www.businessinsider.com/s?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/businessinsider.ico'],
+        ['BBC News Results', 'https://www.bbc.co.uk/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/bbc.ico'],
+        ['RT Results', 'https://www.rt.com/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/rt.ico'],
+        ['Sputnik News Results', 'https://sputniknews.com/search/?query=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/sputnik.ico'],
+        ['NDTV Results', 'https://www.ndtv.com/search?searchtext=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/ndtv.ico']
+    ]
+    return links
+
+
+def get_book_links(query):
     links = []
 
     return links
 
 
-def get_video_links():
-    links = []
-
-    return links
-
-def get_news_links():
+def get_shopping_links(query):
     links = []
 
     return links
 
 
+def get_travel_links(query):
+    links = []
+
+    return links
+
+def get_music_links(query):
+    links = []
+
+    return links
 

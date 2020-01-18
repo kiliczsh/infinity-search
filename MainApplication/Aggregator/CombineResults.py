@@ -118,7 +118,8 @@ def search_bing_images(query):
         bing = Bing.get_images(query, count=10)
     except Exception as e:
         print(e)
-        bing = [[]]
+        return []
+        # bing = []
 
     # bing = format_bing(bing)
     all_results = []

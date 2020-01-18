@@ -9,6 +9,7 @@ from accounts import subscription_key, endpoint
 # Instantiate the client and replace with your endpoint.
 client = WebSearchAPI(CognitiveServicesCredentials(subscription_key), base_url = endpoint)
 
+# Not used
 def get_web_pages(query):
     web_data = client.web.search(query=query)
     return web_data.web_pages

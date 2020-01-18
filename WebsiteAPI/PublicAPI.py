@@ -187,10 +187,12 @@ def get_image_results(query):
     if len(words) == 0:
         return redirect('/')
 
-    external_links = Externals.get_external_links(query)
+    # external_links = Externals.get_external_links(query)
+    external_links = Externals.get_image_links(query)
 
     results = Searches.search_bing_images(query)
     # print(results)
+    print(results[0])
 
     return render_template('image_results.html', query=query, bing_results=results[0],
                            external_results=external_links)
@@ -263,7 +265,7 @@ def render_image_results():
 #
 #
 
-# Temporary Page
+# Temporary until the news engine is live
 @publicAPI.route('/results/news',  methods=['GET', 'POST'])
 def render_news_engine_results():
     if request.method == 'POST':
@@ -271,7 +273,7 @@ def render_news_engine_results():
             form_results = dict(request.form)
             query = form_results['Search']
 
-            external_links = Externals.get_external_links(query)
+            external_links = Externals.get_news_links(query)
             return render_template('news_results.html', query=query, bing_results=[],
                                    external_results=external_links)
 
@@ -281,7 +283,7 @@ def render_news_engine_results():
     try:
         if request.args.get('q') is not None:
             query = request.args.get('q')
-            external_links = Externals.get_external_links(query)
+            external_links = Externals.get_news_links(query)
             return render_template('news_results.html', query=query, bing_results=[],
                                    external_results=external_links)
 
@@ -291,7 +293,6 @@ def render_news_engine_results():
     return redirect('/')
 
 
-# Temporary Page
 @publicAPI.route('/results/videos',  methods=['GET', 'POST'])
 def render_video_results():
     if request.method == 'POST':
@@ -299,7 +300,7 @@ def render_video_results():
             form_results = dict(request.form)
             query = form_results['Search']
 
-            external_links = Externals.get_external_links(query)
+            external_links = Externals.get_video_links(query)
             return render_template('video_results.html', query=query, bing_results=[],
                                    external_results=external_links)
 
@@ -309,7 +310,7 @@ def render_video_results():
     try:
         if request.args.get('q') is not None:
             query = request.args.get('q')
-            external_links = Externals.get_external_links(query)
+            external_links = Externals.get_video_links(query)
             return render_template('video_results.html', query=query, bing_results=[],
                                    external_results=external_links)
 
