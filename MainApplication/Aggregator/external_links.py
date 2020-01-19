@@ -54,7 +54,10 @@ def get_external_links(query):
         ['Youtube Results', 'https://www.youtube.com/results?search_query=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/youtube.ico'],
         ['Unsplash Image Results', 'https://unsplash.com/s/photos/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/unsplash.png'],
         ['Twitter Results', 'https://twitter.com/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/twitter.ico'],
-        ['Amazon Results', 'https://www.amazon.com/s?k=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/amazon.ico'],
+        # ['Amazon Results', 'https://www.amazon.com/s?k=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/amazon.ico'],
+        # With affiliate link
+        ['Amazon Results', 'https://www.amazon.com/gp/search?ie=UTF8&tag=infinitysearc-20&linkCode=ur2&linkId=2477f1f1396323c01402d67e62bdbd5c&camp=1789&creative=9325&index=aps&keywords=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/amazon.ico'],
+
         # Forum Searches
         ['Reddit Search Results', 'https://www.reddit.com/search/?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/reddit.ico'],
         ['BoardReader Forum Engine Results', 'https://boardreader.com/s/' + query + '.html', 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/boardreader.ico'],
@@ -238,6 +241,7 @@ def get_news_links(query):
 def get_book_links(query):
     query = query.replace(' ', '+')
 
+
     links = []
 
     return links
@@ -246,7 +250,9 @@ def get_book_links(query):
 def get_shopping_links(query):
     query = query.replace(' ', '+')
 
-    links = []
+    links = [
+        ['Amazon Results','https://www.amazon.com/gp/search?ie=UTF8&tag=infinitysearc-20&linkCode=ur2&linkId=2477f1f1396323c01402d67e62bdbd5c&camp=1789&creative=9325&index=aps&keywords=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/amazon.ico'],
+    ]
 
     return links
 
