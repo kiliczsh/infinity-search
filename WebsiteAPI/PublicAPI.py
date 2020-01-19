@@ -319,3 +319,32 @@ def render_video_results():
 
     return redirect('/')
 
+
+@publicAPI.route('/results/shopping',  methods=['GET', 'POST'])
+def render_shopping_results():
+    if request.method == 'POST':
+        try:  # In case someone tried to change the value of the form name
+            form_results = dict(request.form)
+            query = form_results['Search']
+
+            external_links = Externals.get_shopping_links(query)
+            return render_template('shopping_results.html', query=query, bing_results=[],
+                                   external_results=external_links)
+
+        except Exception:
+            return redirect('/')
+
+    try:
+        if request.args.get('q') is not None:
+            query = request.args.get('q')
+            external_links = Externals.get_shopping_links(query)
+            return render_template('shopping_results.html', query=query, bing_results=[],
+                                   external_results=external_links)
+
+    except Exception:
+        return redirect('/')
+
+    return redirect('/')
+
+
+
