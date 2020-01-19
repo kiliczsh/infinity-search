@@ -22,8 +22,8 @@ def get_all(query, count=10):
         url = val.url
         parsed = urlparse(url)
 
-        if parsed[0] == 'http':
-            url = url.replace('http://', 'https://') # Force https
+        # if parsed[0] == 'http':
+        #     url = url.replace('http://', 'https://') # Force https
 
         favicon_url = 'https://' + parsed[1] + '/favicon.ico'
 
