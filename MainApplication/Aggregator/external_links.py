@@ -253,7 +253,8 @@ def get_shopping_links(query):
     links = [
         ['Amazon Results','https://www.amazon.com/gp/search?ie=UTF8&tag=infinitysearc-20&linkCode=ur2&linkId=2477f1f1396323c01402d67e62bdbd5c&camp=1789&creative=9325&index=aps&keywords=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/amazon.ico'],
         ['Jet Results', 'https://jet.com/search?term=' + query,'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/jet.ico'],
-        ['Ebay Results', 'https://www.ebay.com/sch/i.html?_nkw=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/ebay.ico'],
+        # ['Ebay Results', 'https://www.ebay.com/sch/i.html?_nkw=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/ebay.ico'],
+        ['Ebay Results', 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?ff3=4&pub=5575565606&toolid=10001&campid=5338647778&customid=&mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_nkw%3D' + query,'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/ebay.ico'],
         ['Overstock Results', 'https://www.overstock.com/'+ query +',/k,/results.html?SearchType=Header', 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/overstock.ico'],
         ['BestBuy Results', 'https://www.bestbuy.com/site/searchpage.jsp?st=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/bestbuy.ico'],
         ['Barnes and Noble Results', 'https://www.barnesandnoble.com/s/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/barnesandnoble.ico'],
