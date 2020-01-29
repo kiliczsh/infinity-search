@@ -2,6 +2,8 @@ import requests
 from urllib.parse import urlparse
 from math import floor
 
+from accounts import news_endpoint
+
 def combine_results(current, new):
     all_data = current
     # for page in new:
@@ -17,7 +19,9 @@ def get_news(query):
 
     query = query.replace(' ', '+')
 
-    data = requests.get('http://localhost:9200/news_engine/_search?q=' + query + '&size=' + str(20) + '&pretty=true').json()
+    # data = requests.get('http://localhost:9200/news_engine/_search?q=' + query + '&size=' + str(20) + '&pretty=true').json()
+    data = requests.get(news_endpoint + '/news_engine/_search?q=' + query + '&size=' + str(20) + '&pretty=true').json()
+
     # print(data)
 
     results = data['hits']['hits']
@@ -41,8 +45,6 @@ def get_news(query):
         hours_ago = source['hours_ago']
 
         links.append([source['title'] ,source['url'], round(minutes_ago), favicon_url, floor(hours_ago)])
-
-
 
 
     # print(links)

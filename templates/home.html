@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel='shortcut icon' type='image/png' href='https://i.postimg.cc/7Lwth4Th/Infinity-Search-Logo-1-dragged.png'/>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/skeuo_buttons.css') }}">-->
 
     <link rel="search" type="application/opensearchdescription+xml" title="Infinity Search" href="https://infinitysearch.co/default_search.xml">
 </head>
@@ -14,7 +15,7 @@
 <div class="top"></div>
 
 <div style="text-align: center; padding-bottom: 15px;">
-    <a href="/" style="display: inline-block"> <img style="vertical-align:middle; cursor: pointer; border-radius: 50%;" src="https://i.postimg.cc/Rhg9MPYN/Infinity-Search-Logo.png" width="90px" height="90px" alt=""></a>
+    <a href="/" style="display: inline-block;"> <img style="vertical-align:middle; cursor: pointer; border-radius: 50%;" src="https://i.postimg.cc/Rhg9MPYN/Infinity-Search-Logo.png" width="90px" height="90px" alt=""></a>
     <span class="rome" style="vertical-align:middle; font-size: 30px; padding-left: 20px;"> INFINITY SEARCH </span>
 </div>
 
@@ -24,8 +25,9 @@
         <div class="searchContainment Site-content">
             <form action="/results" method="post">
                 <p class="search">
-                    <input type="text" placeholder="Search for anything on the web" name="Search" width="300">
-                    <button style="background-color: white; padding: 13px 20px;">
+                    <input type="text" placeholder="Search for anything on the web" name="Search">
+                    <button style="background-color: white; padding: 13px 20px; cursor: pointer">
+                        <!--                        <button class="button-algolia" style="width: 60px; height: 60px; border-radius: 50%; padding: 0 0 0 0; margin: 0 0 0 0; background: white">-->
                         <i class="fa fa-search" style="font-size: 32px; color: rgb(31, 93, 213);"></i>
                     </button>
                     <br>
@@ -45,6 +47,11 @@
             color: white; text-decoration: none; border-radius: 3px;">
                 <span> Make us your default search engine </span>
             </a>
+            <br><br>
+<!--            <a href="https://gitlab.com/infinitysearch/make-us-your-default-search-engine" class="button-algolia"-->
+<!--               style="width: 500px;">-->
+<!--                Make us your default search engine-->
+<!--            </a>-->
 
 
         </div>

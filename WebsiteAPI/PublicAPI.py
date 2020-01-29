@@ -252,55 +252,52 @@ def render_image_results():
 
 
 # # News Search Engine ---------------------------
-# import SearchEngines.InfinityNews.InfinityNews as InfinityNews
-#
-# def get_news_results(query):
-#     words = query
-#     words = str(words).split()
-#
-#     if len(words) == 0:
-#         return redirect('/')
-#
-#     external_links = Externals.get_external_links(query)
-#
-#     results = InfinityNews.get_news(query)
-#
-#     return render_template('news_results.html', query=query, bing_results=results[0],
-#                            external_results=external_links)
-#
+import SearchEngines.InfinityNews.InfinityNews as InfinityNews
+
+def get_news_results(query):
+    words = query
+    words = str(words).split()
+
+    if len(words) == 0:
+        return redirect('/')
+
+    external_links = Externals.get_news_links(query)
+
+    results = InfinityNews.get_news(query)
+
+    return render_template('news_results.html', query=query, bing_results=results[0],
+                           external_results=external_links)
+
 # @publicAPI.route('/news')
 # def render_news_search():
 #     return render_template('news.html')
-#
-#
-# @publicAPI.route('/news/results',  methods=['GET', 'POST'])
-# def render_news_engine_results():
-#     if request.method == 'POST':
-#         try:  # In case someone tried to change the value of the form name
-#             form_results = dict(request.form)
-#             query = form_results['Search']
-#
-#         except Exception:
-#             return redirect('/')
-#
-#         return get_news_results(query)
-#
-#     else:
-#         return redirect('/news')
-#
-#
 
-# Temporary until the news engine is live
+
 @publicAPI.route('/results/news',  methods=['GET', 'POST'])
 def render_news_engine_results():
+    # if request.method == 'POST':
+    #     try:  # In case someone tried to change the value of the form name
+    #         form_results = dict(request.form)
+    #         query = form_results['Search']
+    #
+    #     except Exception:
+    #         return redirect('/')
+    #
+    #     return get_news_results(query)
+    #
+    # else:
+    #     return redirect('/news')
+
     if request.method == 'POST':
         try:  # In case someone tried to change the value of the form name
             form_results = dict(request.form)
             query = form_results['Search']
 
-            external_links = Externals.get_news_links(query)
-            return render_template('news_results.html', query=query, bing_results=[],
-                                   external_results=external_links)
+            return get_news_results(query)
+
+            # external_links = Externals.get_news_links(query)
+            # return render_template('news_results.html', query=query, bing_results=[],
+            #                        external_results=external_links)
 
         except Exception:
             return redirect('/')
@@ -308,14 +305,45 @@ def render_news_engine_results():
     try:
         if request.args.get('q') is not None:
             query = request.args.get('q')
-            external_links = Externals.get_news_links(query)
-            return render_template('news_results.html', query=query, bing_results=[],
-                                   external_results=external_links)
+            # external_links = Externals.get_video_links(query)
+            return get_news_results(query)
+
+            # return render_template('news_results.html', query=query, bing_results=[],
+            #                        external_results=external_links)
 
     except Exception:
         return redirect('/')
 
     return redirect('/')
+
+
+
+# # Temporary until the news engine is live
+# @publicAPI.route('/results/news',  methods=['GET', 'POST'])
+# def render_news_engine_results():
+#     if request.method == 'POST':
+#         try:  # In case someone tried to change the value of the form name
+#             form_results = dict(request.form)
+#             query = form_results['Search']
+#
+#             external_links = Externals.get_news_links(query)
+#             return render_template('news_results.html', query=query, bing_results=[],
+#                                    external_results=external_links)
+#
+#         except Exception:
+#             return redirect('/')
+#
+#     try:
+#         if request.args.get('q') is not None:
+#             query = request.args.get('q')
+#             external_links = Externals.get_news_links(query)
+#             return render_template('news_results.html', query=query, bing_results=[],
+#                                    external_results=external_links)
+#
+#     except Exception:
+#         return redirect('/')
+#
+#     return redirect('/')
 
 
 @publicAPI.route('/results/videos',  methods=['GET', 'POST'])
@@ -371,5 +399,6 @@ def render_shopping_results():
 
     return redirect('/')
 
-
-
+@publicAPI.route('/services')
+def render_services():
+    return render_template('services.html')
