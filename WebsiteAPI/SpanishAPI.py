@@ -4,6 +4,7 @@ import SearchEngines.DuckDuckGo.InstantAnswersAPI as DDG_IA
 import MainApplication.Aggregator.external_links as Externals
 from exchange_dict import exchange_dict
 import random
+import MainApplication.ddos_protection as ddos_protection
 
 spanishAPI = Blueprint('spanishAPI', __name__)
 descriptions = ['Busca mejor.', 'Este motor de búsqueda no te rastrea.', 'Hecho para todos.',
@@ -11,6 +12,9 @@ descriptions = ['Busca mejor.', 'Este motor de búsqueda no te rastrea.', 'Hecho
 
 
 def get_results(query):
+    if ddos_protection.ddos_safe() is False:
+        return render_template('500_traffic.html')
+    
     search_ddg_ia = True
     ddg_ia_cb = 'checked'
     search_bing = True

@@ -3,6 +3,7 @@ from MainApplication.Aggregator import CombineResults as Searches
 import SearchEngines.DuckDuckGo.InstantAnswersAPI as DDG_IA
 import MainApplication.Aggregator.external_links as Externals
 from exchange_dict import exchange_dict
+import MainApplication.ddos_protection as ddos_protection
 import random
 
 germanAPI = Blueprint('germanAPI', __name__)
@@ -11,6 +12,9 @@ descriptions = ['Bessere Suche.', 'Diese Suchmaschine verfolgt Sie nicht.', 'Fü
 
 
 def get_results(query):
+    if ddos_protection.ddos_safe() is False:
+        return render_template('500_traffic.html')
+
     search_ddg_ia = True
     ddg_ia_cb = 'checked'
     search_bing = True

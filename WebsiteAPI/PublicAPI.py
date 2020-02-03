@@ -5,6 +5,7 @@ import MainApplication.Aggregator.external_links as Externals
 from exchange_dict import exchange_dict
 import random
 import SearchEngines.Dictionary.Dictionary as Dictionary_API
+import MainApplication.ddos_protection as ddos_protection
 
 ads = [
     ['Apple AirPods with Charging Case (Latest Model)', 'https://amzn.to/30EEOEJ', 'https://amzn.to/30EEOEJ'],
@@ -32,7 +33,11 @@ publicAPI = Blueprint('publicAPI', __name__)
 descriptions = ['Search better.', 'This search engine doesn\'t track you.', 'Made for everyone.', 'Search smarter.']
 
 
+
 def get_results(query):
+    if ddos_protection.ddos_safe() is False:
+        return render_template('500_traffic.html')
+
     stock_searched = False
     stock = ''
 
@@ -206,6 +211,9 @@ def render_second_page_results():
 # Images ------------------
 
 def get_image_results(query):
+    if ddos_protection.ddos_safe() is False:
+        return render_template('500_traffic.html')
+
     words = query
     words = str(words).split()
 
@@ -267,10 +275,6 @@ def get_news_results(query):
 
     return render_template('news_results.html', query=query, bing_results=results[0],
                            external_results=external_links)
-
-# @publicAPI.route('/news')
-# def render_news_search():
-#     return render_template('news.html')
 
 
 @publicAPI.route('/results/news',  methods=['GET', 'POST'])
@@ -397,8 +401,6 @@ def render_shopping_results():
     except Exception:
         return redirect('/')
 
+
     return redirect('/')
 
-@publicAPI.route('/services')
-def render_services():
-    return render_template('services.html')

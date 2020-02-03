@@ -1,0 +1,96 @@
+{% extends 'results_layout.html' %}
+{% block content %}
+    <div class="search">
+        <form action="/results/news" method="post" style="text-align: left">
+            <input type="text" name="Search" value='{{ query }}'>
+            <button style="background-color: white">
+                <i class="fa fa-search" style="font-size: 30px; color: rgb(31, 93, 213); padding-left: 10px;"></i>
+            </button>
+        </form>
+    </div>
+
+    <div class="tab-container" style="margin-left: 3%">
+        <div>
+            <a href="/results?q={{ query }}" class="tab-link"
+               style="display: inline-block; margin-left: 10px;"> Web </a>
+        </div>
+        <div>
+            <a href="/results/images?q={{ query }}" class="tab-link" style="display: inline-block"> Images </a>
+        </div>
+        <div>
+            <a href="/results/news?q={{ query }}" class="tab-link" style="display: inline-block; text-decoration: underline; color: black"> News </a>
+        </div>
+        <div>
+            <a href="/results/videos?q={{ query }}" class="tab-link" style="display: inline-block"> Videos </a>
+        </div>
+        <div>
+            <a href="/results/shopping?q={{ query }}" class="tab-link" style="display: inline-block;"> Shopping </a>
+        </div>
+    </div>
+
+    <hr>
+    <div class="main-container">
+
+    <div class="results_container middle_left_container">
+
+        <h1> News results are under development</h1>
+        <p>
+            The current development of our news engine is open source and can be found at <a href="https://gitlab.com/infinitysearch/infinity-news-engine">
+            https://gitlab.com/infinitysearch/infinity-news-engine</a>. We are in the process of testing it and integrating
+            it into Infinity Search. The results may be delayed for now.
+        </p>
+
+        <p class="results" id="results">
+
+         <!-- duckduckgo instant answers area -->
+         <div class="ddg_ia_container" id="ddg_ia_container">
+
+        </div>
+        
+        <div id="bing_container">
+        {% for link in bing_results %}
+            <a href="{{ link[1] }}" class="result_container link_container" style="display: block;">
+            <span class="toplink jake" style="color: black; font-size: 20px;">{{ link[0] }} </span><br>
+                <span class="bottomlink jake">
+                <img src="{{link[3] }}" height="16px" width="16px" onerror="imgError(this)">
+                {% if link[1]|count > 80 %}
+                    {{link[1][0:80]}}
+                {% endif %}
+                {% if link[1]|count < 80 %}
+                    {{link[1]}}
+                {% endif %}
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;">
+                {% if link[2] < 60 and link[2] > 0 %}
+                    From {{ link[2] }} minutes ago.
+                {% endif %}
+
+                {% if link[2] >= 60 %}
+                    From {{ link[4] }} hours ago.
+                {% endif %}
+
+                {% if link[2] < 0 %}
+                    From ? hours ago.
+                {% endif %}
+            </div>
+            </a>
+        {% endfor %}
+        </div>
+
+        </p>
+
+    </div>
+        <div class="middle_right_container">
+            <!-- Gitlab results -->
+            <p class="fried">
+            <div id="external_container">
+            {% for link in external_results %}
+                  <a href={{ link[1] }} class="external_result_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="{{link[2]}}" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">{{link[0]}} </span>
+                  </a>
+            {% endfor %}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
