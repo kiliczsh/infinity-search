@@ -38,6 +38,7 @@ def get_results(query):
     if ddos_protection.ddos_safe() is False:
         return render_template('500_traffic.html')
 
+
     stock_searched = False
     stock = ''
 

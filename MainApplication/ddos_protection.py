@@ -33,6 +33,6 @@ def ddos_safe():
         col.update({'_id': daily_search_frequency['_id'] } , {'year' : year, 'month' : month, 'day' : day, 'frequency': current_search_amount + 1})
         return True
 
-    except pymongo.errors.ServerSelectionTimeoutError:
+    except Exception:
         return True
 
