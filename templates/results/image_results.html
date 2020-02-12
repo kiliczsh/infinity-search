@@ -41,21 +41,37 @@
 
     <div class="tab-container" style="margin-left: 3%">
         <div>
-            <a href="/results?q={{ query }}" class="tab-link"
-               style="display: inline-block; margin-left: 10px;"> Web </a>
+            <a href="/results?q={{ query }}" class="tab-link" style="display: inline-block; margin-left: 10px;"> Web </a>
         </div>
         <div>
-            <a href="/results/images?q={{ query }}" class="tab-link" style="display: inline-block; text-decoration: underline; color: black"> Images </a>
+            <a href="/results/images?q={{ query }}" class="tab-link current_tab" style="display: inline-block"> Images </a>
         </div>
         <div>
-            <a href="/results/news?q={{ query }}" class="tab-link"
-               style="display: inline-block;"> News </a>
+            <a href="/results/news?q={{ query }}" class="tab-link" style="display: inline-block"> News </a>
         </div>
         <div>
             <a href="/results/videos?q={{ query }}" class="tab-link" style="display: inline-block"> Videos </a>
         </div>
+
         <div>
-            <a href="/results/shopping?q={{ query }}" class="tab-link" style="display: inline-block;"> Shopping </a>
+            <a href="/results/maps?q={{ query }}" class="tab-link" style="display: inline-block;"> Maps </a>
+        </div>
+
+        <div class="tab-link" style="color: grey;">
+            |
+        </div>
+
+        <div>
+            <a href="/results/{{ current.lower() }}?q={{ query }}" class="tab-link" style="display: inline-block; text-decoration: underline; color: black"> {{ current }} </a>
+        </div>
+
+        <div class="dropdown">
+            <a onclick="myFunction()" class="dropbtn tab-link"> More</a>
+            <div id="myDropdown" class="dropdown-content">
+                {% for link in dropdown %}
+                    <a href="/results/{{link[0]}}?q={{ query }}"> {{link[1]}} </a>
+                {% endfor %}
+            </div>
         </div>
     </div>
 
@@ -112,7 +128,7 @@
             <p class="fried">
             <div id="external_container">
             {% for link in external_results %}
-                  <a href={{ link[1] }} class="external_result_container" style="display: block;">
+                  <a href={{ link[1] }} class="external_result_container link_container" style="display: block;">
                       <span style="font-size: 17px;"><img onerror="imgError(this)" src="{{link[2]}}" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">{{link[0]}} </span>
                   </a>
             {% endfor %}
@@ -128,19 +144,42 @@
         <a href="/contact">Contact</a>
       </div>
 <!-- Fathom - simple website analytics - https://usefathom.com -->
-<script>
-(function(f, a, t, h, o, m){
-a[h]=a[h]||function(){
-(a[h].q=a[h].q||[]).push(arguments)
-};
-o=f.createElement('script'),
-m=f.getElementsByTagName('script')[0];
-o.async=1; o.src=t; o.id='fathom-script';
-m.parentNode.insertBefore(o,m)
-})(document, window, '//cdn.usefathom.com/tracker.js', 'fathom');
-fathom('set', 'siteId', 'FZMFTWHZ');
-fathom('trackPageview');
-</script>
+    <script>
+        (function (f, a, t, h, o, m) {
+            a[h] = a[h] || function () {
+                (a[h].q = a[h].q || []).push(arguments)
+            };
+            o = f.createElement('script'),
+                m = f.getElementsByTagName('script')[0];
+            o.async = 1;
+            o.src = t;
+            o.id = 'fathom-script';
+            m.parentNode.insertBefore(o, m)
+        })(document, window, '//cdn.usefathom.com/tracker.js', 'fathom');
+        fathom('set', 'siteId', 'FZMFTWHZ');
+        fathom('trackPageview');
+    </script>
+    <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
 <!-- / Fathom -->
 </body>
 

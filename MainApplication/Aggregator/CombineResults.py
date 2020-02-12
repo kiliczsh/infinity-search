@@ -168,6 +168,10 @@ def second_page_results(query): # From Mojeek
     ranked_results = rank_all(all_results)
     return ranked_results
 
+
+
+
+
 # if __name__ == '__main__':
     # x = search_all('Python')
     #

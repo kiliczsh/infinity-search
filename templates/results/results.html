@@ -17,6 +17,26 @@
     return true;
     }
 
+        /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+
 </script>
 
 <body>
@@ -52,9 +72,28 @@
         <div>
             <a href="/results/videos?q={{ query }}" class="tab-link" style="display: inline-block"> Videos </a>
         </div>
+
         <div>
-            <a href="/results/shopping?q={{ query }}" class="tab-link" style="display: inline-block;"> Shopping </a>
+            <a href="/results/maps?q={{ query }}" class="tab-link" style="display: inline-block;"> Maps </a>
         </div>
+
+        <div class="tab-link" style="color: grey;">
+            |
+        </div>
+
+        <div>
+            <a href="/results/{{ current.lower() }}?q={{ query }}" class="tab-link" style="display: inline-block; text-decoration: underline; color: black"> {{ current }} </a>
+        </div>
+
+        <div class="dropdown">
+            <a onclick="myFunction()" class="dropbtn tab-link"> More</a>
+            <div id="myDropdown" class="dropdown-content">
+                {% for link in dropdown %}
+                    <a href="/results/{{link[0]}}?q={{ query }}"> {{link[1]}} </a>
+                {% endfor %}
+            </div>
+        </div>
+
     </div>
 
     <hr>

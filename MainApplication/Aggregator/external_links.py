@@ -263,12 +263,21 @@ def get_shopping_links(query):
 
     return links
 
-def get_travel_links(query):
+def get_map_links(query):
     query = query.replace(' ', '+')
 
-    links = []
+    links = [
+        ['Open Street Map Results', 'https://www.openstreetmap.org/search?query=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/openstreetmap.ico'],
+        ['Google Maps Results', 'https://www.google.com/maps/search/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/googlemaps.ico'],
+        ['Mapquest Results', 'https://www.mapquest.com/search/results?query=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/mapquest.ico'],
+        ['Bing Maps Results', 'https://www.bing.com/maps?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/bing.ico'],
+        ['Here We Go Results', 'https://wego.here.com/search/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/wego.ico'],
+        ['Wayz Results', 'https://www.waze.com/livemap/', 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/wayz.ico'],
+        ['Qwant Map Results','https://www.qwant.com/maps/', 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/qwant.ico']
+    ]
 
     return links
+
 
 def get_music_links(query):
     query = query.replace(' ', '+')

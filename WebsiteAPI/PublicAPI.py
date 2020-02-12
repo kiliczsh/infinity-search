@@ -6,6 +6,7 @@ from exchange_dict import exchange_dict
 import random
 import SearchEngines.Dictionary.Dictionary as Dictionary_API
 import MainApplication.ddos_protection as ddos_protection
+import integrations.maps.mapbox.get_coords as map_api
 
 ads = [
     ['Apple AirPods with Charging Case (Latest Model)', 'https://amzn.to/30EEOEJ', 'https://amzn.to/30EEOEJ'],
@@ -32,12 +33,18 @@ ads = [
 publicAPI = Blueprint('publicAPI', __name__)
 descriptions = ['Search better.', 'This search engine doesn\'t track you.', 'Made for everyone.', 'Search smarter.']
 
-
+dropdown = [
+    ['shopping', 'Shopping (Coming Soon)'],
+    ['mojeek', 'Mojeek European Search (Coming Soon)'],
+    # Coming soon
+    # ['code', 'Code (Coming Soon)'],
+    # ['datasets', 'Datasets (Coming Soon)'],
+    # ['research', 'Research (Coming Soon)'],
+]
 
 def get_results(query):
     if ddos_protection.ddos_safe() is False:
         return render_template('500_traffic.html')
-
 
     stock_searched = False
     stock = ''
@@ -64,11 +71,11 @@ def get_results(query):
     bottom_ad = ads[random.randint(0, ads_length_index)]
 
     if words_in_search == 1:
-        return render_template('results.html', query=query, stock=stock,
+        return render_template('results/results.html', query=query, stock=stock,
                                stock_searched=stock_searched, symbol=symbol, url=url,
                                ddg_ia_result=ddg_ia_result, bing_results=results[0],
                                external_results=external_links, definition=definition,
-                               top_ad=top_ad, bottom_ad=bottom_ad)
+                               top_ad=top_ad, bottom_ad=bottom_ad, current='', dropdown=dropdown)
 
     if words_in_search == 2:
         if words[1].upper() == 'DEFINITION' or words[1].upper() == 'DEFINE':
@@ -101,11 +108,11 @@ def get_results(query):
     if words[0].upper() == 'CRYPTO':
         crypto_news = True
 
-    return render_template('results.html', query=query, stock=stock, stock_searched=stock_searched,
+    return render_template('results/results.html', query=query, stock=stock, stock_searched=stock_searched,
                            symbol=symbol, url=url, stock_news=stock_news, crypto_news=crypto_news,
                            ddg_ia_result=ddg_ia_result, bing_results=results[0],
                            external_results=external_links, definition=definition,
-                           top_ad=top_ad, bottom_ad=bottom_ad)
+                           top_ad=top_ad, bottom_ad=bottom_ad, current='', dropdown=dropdown)
 
 
 @publicAPI.route('/', methods=['GET', 'POST'])
@@ -182,7 +189,7 @@ def get_secondpage_results(query):
     external_links = Externals.get_external_links(query)
     results = Searches.second_page_results(query)
 
-    return render_template('secondpage_results.html', query=query, bing_results=results[0],
+    return render_template('results/secondpage_results.html', query=query, bing_results=results[0],
                            external_results=external_links)
 
 
@@ -228,13 +235,8 @@ def get_image_results(query):
     # print(results)
     print(results[0])
 
-    return render_template('image_results.html', query=query, bing_results=results[0],
-                           external_results=external_links)
-
-
-@publicAPI.route('/images')
-def render_image_search():
-    return render_template('images.html')
+    return render_template('results/image_results.html', query=query, bing_results=results[0],
+                           external_results=external_links, current='', dropdown=dropdown)
 
 
 @publicAPI.route('/results/images',  methods=['GET', 'POST'])
@@ -274,8 +276,8 @@ def get_news_results(query):
 
     results = InfinityNews.get_news(query)
 
-    return render_template('news_results.html', query=query, bing_results=results[0],
-                           external_results=external_links)
+    return render_template('results/news_results.html', query=query, bing_results=results[0],
+                           external_results=external_links, current='', dropdown=dropdown)
 
 
 @publicAPI.route('/results/news',  methods=['GET', 'POST'])
@@ -349,6 +351,14 @@ def render_news_engine_results():
 #         return redirect('/')
 #
 #     return redirect('/')
+# Video  Results ------------------------
+import SearchEngines.Invidious.Invidious as Invidious
+def get_video_results(query):
+    results = Invidious.get_video_results(query)
+    external_links = Externals.get_video_links(query)
+
+    return render_template('results/video_results.html', query=query, bing_results=results,
+                           external_results=external_links, current='', dropdown=dropdown)
 
 
 @publicAPI.route('/results/videos',  methods=['GET', 'POST'])
@@ -358,21 +368,26 @@ def render_video_results():
             form_results = dict(request.form)
             query = form_results['Search']
 
-            external_links = Externals.get_video_links(query)
-            return render_template('video_results.html', query=query, bing_results=[],
-                                   external_results=external_links)
+            return get_video_results(query)
 
-        except Exception:
+            # external_links = Externals.get_video_links(query)
+            # return render_template('video_results.html', query=query, bing_results=[],
+            #                        external_results=external_links, current='', dropdown=dropdown)
+
+        except Exception as e:
+            print(e)
             return redirect('/')
 
     try:
         if request.args.get('q') is not None:
             query = request.args.get('q')
-            external_links = Externals.get_video_links(query)
-            return render_template('video_results.html', query=query, bing_results=[],
-                                   external_results=external_links)
+            return get_video_results(query)
+            # external_links = Externals.get_video_links(query)
+            # return render_template('video_results.html', query=query, bing_results=[],
+            #                        external_results=external_links, current='', dropdown=dropdown)
 
-    except Exception:
+    except Exception as e:
+        print(e)
         return redirect('/')
 
     return redirect('/')
@@ -386,8 +401,8 @@ def render_shopping_results():
             query = form_results['Search']
 
             external_links = Externals.get_shopping_links(query)
-            return render_template('shopping_results.html', query=query, bing_results=[],
-                                   external_results=external_links)
+            return render_template('results/shopping_results.html', query=query, bing_results=[],
+                                   external_results=external_links, current='Shopping', dropdown=dropdown)
 
         except Exception:
             return redirect('/')
@@ -396,12 +411,97 @@ def render_shopping_results():
         if request.args.get('q') is not None:
             query = request.args.get('q')
             external_links = Externals.get_shopping_links(query)
-            return render_template('shopping_results.html', query=query, bing_results=[],
-                                   external_results=external_links)
+            return render_template('results/shopping_results.html', query=query, bing_results=[],
+                                   external_results=external_links, current='Shopping', dropdown=dropdown)
 
     except Exception:
         return redirect('/')
 
+
+    return redirect('/')
+
+
+
+# Maps ------------------
+
+
+def get_map_results(query):
+    # if ddos_protection.ddos_safe() is False:
+    #     return render_template('500_traffic.html')
+
+    words = query
+    words = str(words).split()
+
+    if len(words) == 0:
+        return redirect('/')
+
+    external_links = Externals.get_map_links(query)
+
+    results = [[]]
+
+    location_info = map_api.get_location(query)
+
+    return render_template('results/map_results.html', query=query, bing_results=results[0],
+                           external_results=external_links, location_info=location_info, current='',
+                           dropdown=dropdown)
+
+
+@publicAPI.route('/results/maps',  methods=['GET', 'POST'])
+def render_map_results():
+    if request.method == 'POST':
+        try:  # In case someone tried to change the value of the form name
+            form_results = dict(request.form)
+            query = form_results['Search']
+
+        except Exception as e:
+            print(e)
+            return redirect('/')
+
+        return get_map_results(query)
+    try:
+        if request.args.get('q') is not None:
+            query = request.args.get('q')
+            return get_map_results(query)
+
+    except Exception as e:
+        print(e)
+        return redirect('/')
+
+    return redirect('/')
+
+# Mojeek Results ------------------------
+def get_mojeek_results(query):
+    # if ddos_protection.ddos_safe() is False:
+    #     return render_template('500_traffic.html')
+
+
+    external_links = Externals.get_external_links(query)
+
+    results = [[]]
+
+    return render_template('results/mojeek_results.html', query=query, bing_results=results[0],
+                           external_results=external_links, current='Mojeek',
+                           dropdown=dropdown)
+
+
+@publicAPI.route('/results/mojeek',  methods=['GET', 'POST'])
+def render_mojeek_results():
+    if request.method == 'POST':
+        try:  # In case someone tried to change the value of the form name
+            form_results = dict(request.form)
+            query = form_results['Search']
+
+        except Exception:
+            return redirect('/')
+
+        return get_mojeek_results(query)
+    try:
+        if request.args.get('q') is not None:
+            query = request.args.get('q')
+            return get_mojeek_results(query)
+
+    except Exception:
+        return redirect('/')
 
     return redirect('/')
 
