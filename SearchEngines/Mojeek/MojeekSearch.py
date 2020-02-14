@@ -22,8 +22,8 @@ def get_results(query, s=None):
     for result in results:
         parsed = urlparse(result['url'])
 
-        if parsed[0] == 'http':
-            result['url'] = result['url'].replace('http://', 'https://')  # Force https
+        # if parsed[0] == 'http':
+        #     result['url'] = result['url'].replace('http://', 'https://')  # Force https
 
         favicon_url = 'https://' + parsed[1] + '/favicon.ico'
 

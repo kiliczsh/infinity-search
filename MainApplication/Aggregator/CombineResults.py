@@ -37,7 +37,7 @@ def format_bing(data):
 
 def format_mojeek(data):
     # Mojeek Data is already formatted
-    data.append(['View More Results From Mojeek', 'https://www.mojeek.com/search?s=21&q=' + formatted_query, '', 'https://www.mojeek.com/favicon.ico'])
+    data.append(['View More Results From Mojeek', 'https://www.mojeek.com/search?&q=' + formatted_query, '', 'https://www.mojeek.com/favicon.ico'])
 
     return data
 
@@ -83,8 +83,6 @@ def search_all(query):
 def search_mojeek(query):
     format_query(query)
 
-    # We are testing out Mojeek for now but if it fails we switch to Bing results
-
     try:
         mojeek1 = Mojeek.get_results(formatted_query)
         mojeek2 = Mojeek.get_results(formatted_query, s=11)
@@ -105,13 +103,14 @@ def search_mojeek(query):
 
     except Exception as e:
         print(e)
-        mojeek = [[]]
+        # mojeek = [[]]
+        return [[]]
 
-    mojeek = format_bing(mojeek)
-    all_results = []
-    all_results = combine_results(all_results, mojeek)
-    ranked_results = rank_all(all_results)
-    return ranked_results
+    # mojeek = format_bing(mojeek)
+    # all_results = []
+    # all_results = combine_results(all_results, mojeek)
+    # ranked_results = rank_all(all_results)
+    # return ranked_results
 
 def search_bing_images(query):
     try:

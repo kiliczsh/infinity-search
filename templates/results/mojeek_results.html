@@ -53,37 +53,23 @@
         
         <p class="results" id="results">
 
-         <!-- duckduckgo instant answers area -->
-         <div class="ddg_ia_container" id="ddg_ia_container">
 
-        </div>
-        
         <div id="bing_container">
         {% for link in bing_results %}
-            <a href="{{ link[1] }}" class="result_container link_container" style="display: block;">
+            <a href="{{ link[1] }}" class="result_container link_container" style="display: block; overflow: hidden; text-overflow: ellipsis">
             <span class="toplink jake" style="color: black; font-size: 20px;">{{ link[0] }} </span><br>
                 <span class="bottomlink jake">
-                <img src="{{link[3] }}" height="16px" width="16px" onerror="imgError(this)">
-                {% if link[1]|count > 80 %}
-                    {{link[1][0:80]}}
+<!--                <img src="{{link[3] }}" height="16px" width="16px" onerror="imgError(this)">-->
+<!--                <img src="" height="16px" width="16px" onerror="imgError(this)">-->
+
+                {% if link[1]|count > 65 %}
+                    {{link[1][0:65]}}
                 {% endif %}
-                {% if link[1]|count < 80 %}
+                {% if link[1]|count < 65 %}
                     {{link[1]}}
                 {% endif %}
             </span>
-            <div class="snippet jake" style="color: black; text-decoration: none;">
-                {% if link[2] < 60 and link[2] > 0 %}
-                    From {{ link[2] }} minutes ago.
-                {% endif %}
-
-                {% if link[2] >= 60 %}
-                    From {{ link[4] }} hours ago.
-                {% endif %}
-
-                {% if link[2] < 0 %}
-                    From ? hours ago.
-                {% endif %}
-            </div>
+            <div class="snippet jake" style="color: black; text-decoration: none;">{{ link[2] }} </div>
             </a>
         {% endfor %}
         </div>

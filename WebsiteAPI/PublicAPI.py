@@ -34,8 +34,8 @@ publicAPI = Blueprint('publicAPI', __name__)
 descriptions = ['Search better.', 'This search engine doesn\'t track you.', 'Made for everyone.', 'Search smarter.']
 
 dropdown = [
-    ['shopping', 'Shopping (Coming Soon)'],
-    ['mojeek', 'Mojeek European Search (Coming Soon)'],
+    ['mojeek', 'Mojeek European Search'],
+    ['shopping', 'Shopping (Coming Soon)']
     # Coming soon
     # ['code', 'Code (Coming Soon)'],
     # ['datasets', 'Datasets (Coming Soon)'],
@@ -453,8 +453,7 @@ def render_map_results():
             form_results = dict(request.form)
             query = form_results['Search']
 
-        except Exception as e:
-            print(e)
+        except Exception:
             return redirect('/')
 
         return get_map_results(query)
@@ -463,8 +462,7 @@ def render_map_results():
             query = request.args.get('q')
             return get_map_results(query)
 
-    except Exception as e:
-        print(e)
+    except Exception:
         return redirect('/')
 
     return redirect('/')
@@ -474,10 +472,11 @@ def get_mojeek_results(query):
     # if ddos_protection.ddos_safe() is False:
     #     return render_template('500_traffic.html')
 
-
     external_links = Externals.get_external_links(query)
 
-    results = [[]]
+    # results = [[]]
+    results = Searches.search_mojeek(query)
+    print(results)
 
     return render_template('results/mojeek_results.html', query=query, bing_results=results[0],
                            external_results=external_links, current='Mojeek',
@@ -491,7 +490,8 @@ def render_mojeek_results():
             form_results = dict(request.form)
             query = form_results['Search']
 
-        except Exception:
+        except Exception as e:
+            print(e)
             return redirect('/')
 
         return get_mojeek_results(query)
@@ -500,7 +500,8 @@ def render_mojeek_results():
             query = request.args.get('q')
             return get_mojeek_results(query)
 
-    except Exception:
+    except Exception as e:
+        print(e)
         return redirect('/')
 
     return redirect('/')
