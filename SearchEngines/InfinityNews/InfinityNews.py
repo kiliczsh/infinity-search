@@ -113,13 +113,23 @@ def get_news(query):
 
         parsed = urlparse(source['url'])
 
-        if parsed[0] == 'http':
-            source['url'] = source['url'].replace('http://', 'https://')  # Force https
+        # print(parsed[1])
+
+        if parsed[1].find('www.rt.com') != -1:
+        # print(source['title'])
+        #     source['title'] =
+            title_start = parsed[2].find('-') + 1
+            title = parsed[2][title_start:len(parsed[2]) - 1].replace('-', ' ')
+            source['title'] = title
+
+
+        # if parsed[0] == 'http':
+        #     source['url'] = source['url'].replace('http://', 'https://')  # Force https
 
         favicon_url = 'https://' + parsed[1] + '/favicon.ico'
 
-        minutes_ago = source['minutes_ago']
-        hours_ago = source['hours_ago']
+        # minutes_ago = source['minutes_ago']
+        # hours_ago = source['hours_ago']
 
         # links.append([source['title'] ,source['url'], round(minutes_ago), favicon_url, floor(hours_ago)])
         links.append([source['title'] ,source['url'], round(date[0]), favicon_url, floor(date[1])])
