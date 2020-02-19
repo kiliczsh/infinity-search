@@ -130,7 +130,11 @@ def render_static():
             return render_template('home.html', description=description)
 
         description = descriptions[random.randint(0, len(descriptions) - 1)]
+
         return render_template('home.html', description=description)
+
+
+
 
 
 @publicAPI.route('/results', methods=['GET', 'POST'])

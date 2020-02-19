@@ -1,13 +1,14 @@
 from flask import Blueprint, render_template, jsonify, request, redirect
+import random
 
 blogAPI = Blueprint('blogAPI', __name__)
-
 
 # For English: ----------------------
 
 @blogAPI.route('/content')
 def render_articles():
     articles = [
+        {'link': '/articles/surprise', 'title': 'Surprise Me!'},
         {'link': '/articles/languages', 'title': 'We Now Have Infinity Search In German and Spanish'},
         {'link': '/articles/secondpage', 'title': 'Why We Made Second Page'},
         {'link': '/articles/more_about_us', 'title': 'More Privacy Information About Us'},
@@ -18,12 +19,24 @@ def render_articles():
 
     return render_template('articles/articles.html', articles=articles)
 
+
 @blogAPI.route('/articles/<post>')
 def render_blog_post(post):
     try:
         return render_template('articles/' + post + '.html')
     except Exception as e:
+        print(e)
         return redirect('/404')
+
+
+@blogAPI.route('/articles/surprise')
+def render_surprise():
+    surprise_searches = ['/results?q=AAPL stock', '/results/news?q=Politics', '/results/maps?q=Labrador Canada',
+                         '/results/images?q=swiss alps', '/results/mojeek?q=eu', '/results/videos?q=PewDiePie',
+                         '/results?q=define philosophy']
+    surprise_search = surprise_searches[random.randint(0, len(surprise_searches)) - 1]
+
+    return render_template('articles/surprise.html', surprise_search=surprise_search)
 
 
 # For German: ----------------------
