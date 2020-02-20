@@ -33,7 +33,9 @@ def render_blog_post(post):
 def render_surprise():
     surprise_searches = ['/results?q=AAPL stock', '/results/news?q=Politics', '/results/maps?q=Labrador Canada',
                          '/results/images?q=swiss alps', '/results/mojeek?q=eu', '/results/videos?q=PewDiePie',
-                         '/results?q=define philosophy']
+                         '/results?q=define philosophy', '/results?q=stock news', '/results?q=crypto news'
+                         ]
+
     surprise_search = surprise_searches[random.randint(0, len(surprise_searches)) - 1]
 
     return render_template('articles/surprise.html', surprise_search=surprise_search)

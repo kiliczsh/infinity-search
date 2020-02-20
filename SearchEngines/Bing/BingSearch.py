@@ -22,8 +22,12 @@ def get_all(query, count=10):
         url = val.url
         parsed = urlparse(url)
 
-        # if parsed[0] == 'http':
-        #     url = url.replace('http://', 'https://') # Force https
+        # Adding affiliate link tags
+        if parsed[1] == 'www.amazon.com':
+            if parsed[4] == '':
+                url += '?tag=infinitysearc-20'
+            if parsed[4] != '':
+                url += '&tag=infinitysearc-20'
 
         favicon_url = 'https://' + parsed[1] + '/favicon.ico'
 
