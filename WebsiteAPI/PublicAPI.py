@@ -9,11 +9,11 @@ import MainApplication.ddos_protection as ddos_protection
 import integrations.maps.mapbox.get_coords as map_api
 
 ads = [
-    ['Apple AirPods with Charging Case (Latest Model)', 'https://amzn.to/30EEOEJ', 'https://amzn.to/30EEOEJ'],
+    # ['Apple AirPods with Charging Case (Latest Model)', 'https://amzn.to/30EEOEJ', 'https://amzn.to/30EEOEJ'],
     ['Fire TV Stick 4K streaming device with Alexa built in, Ultra HD, Dolby Vision, includes the Alexa Voice Remote', 'https://amzn.to/2RaGQcC', 'https://amzn.to/2RaGQcC'],
-    ['Introducing New World, an all-new MMO from Amazon Games', 'https://amzn.to/2NLJGTb', 'https://amzn.to/2NLJGTb'],
+    # ['Introducing New World, an all-new MMO from Amazon Games', 'https://amzn.to/2NLJGTb', 'https://amzn.to/2NLJGTb'],
     ['Try Twitch Prime','https://amzn.to/30DuzRb', 'https://amzn.to/30DuzRb'],
-    ['Shop Amazon Basics - HDMI Cables', 'https://amzn.to/2vap68L', 'https://amzn.to/2vap68L'],
+    # ['Shop Amazon Basics - HDMI Cables', 'https://amzn.to/2vap68L', 'https://amzn.to/2vap68L'],
     ['Shop Amazon - Top Rated Products', 'https://amzn.to/2sF68Ge', 'https://amzn.to/2sF68Ge'],
     ['Shop Amazon - Most Wished For Items', 'https://amzn.to/2tFEmdl', 'https://amzn.to/2tFEmdl'],
     ['Shop Amazon - Top Gift Ideas', 'https://amzn.to/2G5M9ng', 'https://amzn.to/2G5M9ng'],
@@ -24,9 +24,12 @@ ads = [
 
     ['Shop Ebay - Electronics', 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?ff3=4&pub=5575565606&toolid=10001&campid=5338647782&customid=5338647782&mpre=https%3A%2F%2Fwww.ebay.com%2Fb%2FElectronics%2Fbn_7000259124', 'https://www.ebay.com/b/Electronics/bn_7000259124'],
     ['Shop Ebay - Daily Deals', 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?ff3=4&pub=5575565606&toolid=10001&campid=5338647782&customid=5338647782&mpre=https%3A%2F%2Fwww.ebay.com%2Fdeals', 'https://www.ebay.com/deals'],
-    ['Shop Ebay - Radar Detectors', 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?ff3=4&pub=5575565606&toolid=10001&campid=5338647782&customid=5338647782&mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_trksid%3Dp2499334.m570.l1311.R1.TR12.TRC2.A0.H0.Xradar.TRS0%26_nkw%3Dradar%2Bdetectors%26_sacat%3D0', 'https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2499334.m570.l1311.R1.TR12.TRC2.A0.H0.Xradar.TRS0&_nkw=radar+detectors&_sacat=0'],
+    # ['Shop Ebay - Radar Detectors', 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?ff3=4&pub=5575565606&toolid=10001&campid=5338647782&customid=5338647782&mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_trksid%3Dp2499334.m570.l1311.R1.TR12.TRC2.A0.H0.Xradar.TRS0%26_nkw%3Dradar%2Bdetectors%26_sacat%3D0', 'https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2499334.m570.l1311.R1.TR12.TRC2.A0.H0.Xradar.TRS0&_nkw=radar+detectors&_sacat=0'],
 
-    ['Fathom Analytics - Privacy-focused website analytics', 'https://usefathom.com/ref/PDKRHE', 'https://usefathom.com/ref/PDKRHE']
+    ['Fathom Analytics - Privacy-focused website analytics', 'https://usefathom.com/ref/PDKRHE', 'https://usefathom.com/ref/PDKRHE', 'This is an affiliate link provided by Infinity Search.'],
+
+    # Sponsored Ads
+    ['Simple Login - Open source email alias solution to protect your mailbox', 'https://simplelogin.io', 'https://simplelogin.io', 'Simple Login is a partner of Infinity Search that is working to restore privacy on the internet.']
 ]
 
 
