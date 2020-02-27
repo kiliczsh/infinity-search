@@ -8,13 +8,7 @@
     - DuckDuckHack cheat sheet integrations 
 
 - Integrate results for: 
-    - Videos
-    - News (and setup ElasticSearch/Any other text search engine)
     - Shopping 
-
-- Fix image search: 
-    - Let more results fit the page 
-    - Make it look better and add js
 
 
 - Allow criteria selection for users to filter their results 

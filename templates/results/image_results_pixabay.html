@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Results</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel='shortcut icon' type='image/png' href='https://i.postimg.cc/7Lwth4Th/Infinity-Search-Logo-1-dragged.png'/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
+    <html lang="en">
+     <script src="{{ url_for('static', filename='jquery-3.4.1.min.js') }}"></script>
+</html>
+<script>
+
+    function imgError(image) {
+    image.onerror = "";
+    image.src = "https://i.postimg.cc/cHgVnXfW/blank.png";
+    return true;
+    }
+
+</script>
+
+<body>
+    <div style="text-align: left; margin-left: 3%">
+        <a href="/" style="display: inline-block"> <img style="vertical-align:middle; cursor: pointer; border-radius: 50%;" src="https://i.postimg.cc/Rhg9MPYN/Infinity-Search-Logo.png" width="30px" height="30px" alt=""></a>
+
+        <span class="rome" style="vertical-align:middle;"> &nbsp INFINITY SEARCH </span>
+    </div>
+
+    <div class="search">
+        <form action="/results/images" method="post" style="text-align: left">
+            <input type="text" name="Search" value='{{ query }}'>
+            <button style="background-color: white">
+                <i class="fa fa-search" style="font-size: 30px; color: rgb(31, 93, 213); padding-left: 10px;"></i>
+            </button>
+        </form>
+
+<!--        <ul>-->
+<!--            <li></li>-->
+<!--        </ul>-->
+    </div>
+
+    <div class="tab-container" style="margin-left: 3%">
+        <div>
+            <a href="/results?q={{ query }}" class="tab-link" style="display: inline-block; margin-left: 10px;"> Web </a>
+        </div>
+        <div>
+            <a href="/results/images?q={{ query }}" class="tab-link current_tab" style="display: inline-block"> Images </a>
+        </div>
+        <div>
+            <a href="/results/news?q={{ query }}" class="tab-link" style="display: inline-block"> News </a>
+        </div>
+        <div>
+            <a href="/results/videos?q={{ query }}" class="tab-link" style="display: inline-block"> Videos </a>
+        </div>
+
+        <div>
+            <a href="/results/maps?q={{ query }}" class="tab-link" style="display: inline-block;"> Maps </a>
+        </div>
+
+        <div class="tab-link" style="color: grey;">
+            |
+        </div>
+
+        <div>
+            <a href="/results/{{ current.lower() }}?q={{ query }}" class="tab-link" style="display: inline-block; text-decoration: underline; color: black"> {{ current }} </a>
+        </div>
+
+        <div class="dropdown">
+            <a onclick="myFunction()" class="dropbtn tab-link"> More</a>
+            <div id="myDropdown" class="dropdown-content">
+                {% for link in dropdown %}
+                    <a href="/results/{{link[0]}}?q={{ query }}"> {{link[1]}} </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <div class="main-container">
+
+    <div class="results_container middle_left_container">
+
+        <p class="results" id="results">
+
+        <div id="bing_container">
+        {% for link in bing_results %}
+
+            <div class="image_container" style="display: block; overflow: hidden; text-overflow: ellipsis">
+                <img src="{{ link[0] }}" width="{{ link[3] }}" height="{{ link[4] }}" style="max-width: 50%; max-height: 50%;">
+                <br>
+                Image: <a href="{{ link[1] }}"> {{ link[1] }}</a> <br>
+                Source: <a href="{{ link[2] }}"> {{ link[2] }}</a>
+            </div>
+
+        {% endfor %}
+        </div>
+
+        <a href="https://www.bing.com/images/search?q={{ query }}" class="result_container link_container" style="display: block; overflow: hidden; text-overflow: ellipsis">
+            <span class="toplink jake" style="color: black; font-size: 20px;">View More Results From Bing </span><br>
+                <span class="bottomlink jake">
+                    https://www.bing.com/images/search?q={{ query }}
+            </span>
+            <div class="snippet jake" style="color: black; text-decoration: none;"> </div>
+        </a>
+
+        <div id="bing_container">
+            <a href="https://usefathom.com/ref/PDKRHE" class="result_container link_container" style="display: block;">
+                <span class="toplink jake" style="color: black; font-size: 20px;"> Fathom Analytics - Privacy-focused website analytics. </span>
+                <i class="fas fa-ad" style="font-size: 20px; color: rgb(31, 93, 213); padding-left: 5px;"></i>
+                <br>
+                <span class="bottomlink jake"> https://usefathom.com/ref/PDKRHE </span>
+                <div class="snippet" style="color:black"> This is an affiliate link provided by Infinity Search. We
+                    use Fathom and recommend everyone to switch to analytics platforms that respect user privacy.
+                </div>
+            </a>
+        </div>
+
+        </p>
+
+    </div>
+        <div class="middle_right_container">
+            <!-- Gitlab results -->
+            <p class="fried">
+            <div id="external_container">
+            {% for link in external_results %}
+                  <a href={{ link[1] }} class="external_result_container link_container" style="display: block;">
+                      <span style="font-size: 17px;"><img onerror="imgError(this)" src="{{link[2]}}" width="16px" height="16px" style="vertical-align: baseline; padding-right: 5px;">{{link[0]}} </span>
+                  </a>
+            {% endfor %}
+            </div>
+        </div>
+
+    </div>
+    <div class="navbar">
+        <a href="/about">About</a>
+        <a href="/content"> Blog </a></li>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/contact">Contact</a>
+      </div>
+<!-- Fathom - simple website analytics - https://usefathom.com -->
+    <script>
+        (function (f, a, t, h, o, m) {
+            a[h] = a[h] || function () {
+                (a[h].q = a[h].q || []).push(arguments)
+            };
+            o = f.createElement('script'),
+                m = f.getElementsByTagName('script')[0];
+            o.async = 1;
+            o.src = t;
+            o.id = 'fathom-script';
+            m.parentNode.insertBefore(o, m)
+        })(document, window, '//cdn.usefathom.com/tracker.js', 'fathom');
+        fathom('set', 'siteId', 'FZMFTWHZ');
+        fathom('trackPageview');
+    </script>
+    <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+<!-- / Fathom -->
+</body>
+
+</html>
