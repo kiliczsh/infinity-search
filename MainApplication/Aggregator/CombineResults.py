@@ -1,5 +1,6 @@
 import SearchEngines.Bing.BingSearch as Bing
 import SearchEngines.Mojeek.MojeekSearch as Mojeek
+import SearchEngines.WikiMedia.WikiSearches as WikiMedia
 
 formatted_query = ''
 
@@ -169,12 +170,22 @@ def second_page_results(query): # From Mojeek
 
 
 
+def search_wiki_results(query):
+    format_query(query)
+    try:
+        results = WikiMedia.get_all_results_open_search(query)
+        results['Wikidata'] = []
+
+    except Exception as e:
+        print(e)
+        results = {'Wikipedia': [], 'Wiktionary': [], 'Wikibooks': [], 'Wikiquote': [], 'Wikivoyage': [],
+                   'Wikisource': [], 'Wikispecies': [], 'Wikinews': [], 'Wikiversity': [], 'Wikidata': [],
+                   'Metawiki': [], 'Wikicommons': []
+                   }
+
+    return results
 
 
-# if __name__ == '__main__':
-    # x = search_all('Python')
-    #
-    # for l in x:
-    #     print(l)
+
 
 

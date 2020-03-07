@@ -1,0 +1,190 @@
+<h4> Wikipedia: </h4>
+{% for link in wikipedia %}
+<div id="bing_container">
+    <a href="{{ link[1] }}" class="result_container link_container" style="display: block; overflow: hidden; text-overflow: ellipsis">
+    <span class="toplink jake" style="color: black; font-size: 20px;">{{ link[0] }} </span><br>
+        <span class="bottomlink jake" style="text-overflow: ellipsis; overflow: hidden;">
+            {% if link[1]|count > 50 %}
+                {{ link[1][0:50] }}
+            {% endif %}
+            {% if link[1]|count < 50 %}
+                {{link[1]}}
+            {% endif %}
+    </span>
+    </a>
+</div>
+{% endfor %}
+
+<h4> Wikimedia Commons: </h4>
+{% for link in wikicommons %}
+<div id="bing_container">
+    <a href="{{ link[1] }}" class="result_container link_container" style="display: block; overflow: hidden; text-overflow: ellipsis">
+    <span class="toplink jake" style="color: black; font-size: 20px;">{{ link[0] }} </span><br>
+        <span class="bottomlink jake" style="text-overflow: ellipsis; overflow: hidden;">
+            {% if link[1]|count > 50 %}
+                {{link[1][0:50]}}
+            {% endif %}
+            {% if link[1]|count < 50 %}
+                {{link[1]}}
+            {% endif %}
+    </span>
+    </a>
+</div>
+{% endfor %}
+
+<h4> Wikibooks: </h4>
+{% for link in wikibooks %}
+<div id="bing_container">
+    <a href="{{ link[1] }}" class="result_container link_container" style="display: block; overflow: hidden; text-overflow: ellipsis">
+    <span class="toplink jake" style="color: black; font-size: 20px;">{{ link[0] }} </span><br>
+        <span class="bottomlink jake" style="text-overflow: ellipsis; overflow: hidden;">
+            {% if link[1]|count > 50 %}
+                {{link[1][0:50]}}
+            {% endif %}
+            {% if link[1]|count < 50 %}
+                {{link[1]}}
+            {% endif %}
+    </span>
+    </a>
+</div>
+{% endfor %}
+
+<h4> Wikisource: </h4>
+{% for link in wikisource %}
+<div id="bing_container">
+    <a href="{{ link[1] }}" class="result_container link_container" style="display: block; overflow: hidden; text-overflow: ellipsis">
+    <span class="toplink jake" style="color: black; font-size: 20px;">{{ link[0] }} </span><br>
+        <span class="bottomlink jake" style="text-overflow: ellipsis; overflow: hidden;">
+            {% if link[1]|count > 50 %}
+                {{link[1][0:50]}}
+            {% endif %}
+            {% if link[1]|count < 50 %}
+                {{link[1]}}
+            {% endif %}
+    </span>
+    </a>
+</div>
+{% endfor %}
+
+<h4> Wikiquotes: </h4>
+{% for link in wikiquotes %}
+<div id="bing_container">
+    <a href="{{ link[1] }}" class="result_container link_container" style="display: block; overflow: hidden; text-overflow: ellipsis">
+    <span class="toplink jake" style="color: black; font-size: 20px;">{{ link[0] }} </span><br>
+        <span class="bottomlink jake" style="text-overflow: ellipsis; overflow: hidden;">
+            {% if link[1]|count > 50 %}
+                {{link[1][0:50]}}
+            {% endif %}
+            {% if link[1]|count < 50 %}
+                {{link[1]}}
+            {% endif %}
+    </span>
+    </a>
+</div>
+{% endfor %}
+
+<h4> Wikivoyage: </h4>
+{% for link in wikivoyage %}
+<div id="bing_container">
+    <a href="{{ link[1] }}" class="result_container link_container" style="display: block; overflow: hidden; text-overflow: ellipsis">
+    <span class="toplink jake" style="color: black; font-size: 20px;">{{ link[0] }} </span><br>
+        <span class="bottomlink jake" style="text-overflow: ellipsis; overflow: hidden;">
+            {% if link[1]|count > 50 %}
+                {{link[1][0:50]}}
+            {% endif %}
+            {% if link[1]|count < 50 %}
+                {{link[1]}}
+            {% endif %}
+    </span>
+    </a>
+</div>
+{% endfor %}
+
+
+<h4> Wikiversity: </h4>
+{% for link in wikiversity %}
+<div id="bing_container">
+    <a href="{{ link[1] }}" class="result_container link_container" style="display: block; overflow: hidden; text-overflow: ellipsis">
+    <span class="toplink jake" style="color: black; font-size: 20px;">{{ link[0] }} </span><br>
+        <span class="bottomlink jake" style="text-overflow: ellipsis; overflow: hidden;">
+            {% if link[1]|count > 50 %}
+                {{link[1][0:50]}}
+            {% endif %}
+            {% if link[1]|count < 50 %}
+                {{link[1]}}
+            {% endif %}
+    </span>
+    </a>
+</div>
+{% endfor %}
+
+
+<h4> Wikidata: </h4>
+{% for link in wikidata %}
+<div id="bing_container">
+    <a href="{{ link[1] }}" class="result_container link_container" style="display: block; overflow: hidden; text-overflow: ellipsis">
+    <span class="toplink jake" style="color: black; font-size: 20px;">{{ link[0] }} </span><br>
+        <span class="bottomlink jake" style="text-overflow: ellipsis; overflow: hidden;">
+            {% if link[1]|count > 50 %}
+                {{link[1][0:50]}}
+            {% endif %}
+            {% if link[1]|count < 50 %}
+                {{link[1]}}
+            {% endif %}
+    </span>
+    </a>
+</div>
+{% endfor %}
+
+<h4> Meta Wiki: </h4>
+{% for link in metawiki %}
+<div id="bing_container">
+    <a href="{{ link[1] }}" class="result_container link_container" style="display: block; overflow: hidden; text-overflow: ellipsis">
+    <span class="toplink jake" style="color: black; font-size: 20px;">{{ link[0] }} </span><br>
+        <span class="bottomlink jake" style="text-overflow: ellipsis; overflow: hidden;">
+            {% if link[1]|count > 50 %}
+                {{link[1][0:50]}}
+            {% endif %}
+            {% if link[1]|count < 50 %}
+                {{link[1]}}
+            {% endif %}
+    </span>
+    </a>
+</div>
+{% endfor %}
+
+<h4> Wiktionary: </h4>
+{% for link in wiktionary %}
+<div id="bing_container">
+    <a href="{{ link[1] }}" class="result_container link_container" style="display: block; overflow: hidden; text-overflow: ellipsis">
+    <span class="toplink jake" style="color: black; font-size: 20px;">{{ link[0] }} </span><br>
+        <span class="bottomlink jake" style="text-overflow: ellipsis; overflow: hidden;">
+            {% if link[1]|count > 50 %}
+                {{link[1][0:50]}}
+            {% endif %}
+            {% if link[1]|count < 50 %}
+                {{link[1]}}
+            {% endif %}
+    </span>
+    </a>
+</div>
+{% endfor %}
+
+<h4> Wikispecies: </h4>
+{% for link in wikispecies %}
+<div id="bing_container">
+    <a href="{{ link[1] }}" class="result_container link_container" style="display: block; overflow: hidden; text-overflow: ellipsis">
+    <span class="toplink jake" style="color: black; font-size: 20px;">{{ link[0] }} </span><br>
+        <span class="bottomlink jake" style="text-overflow: ellipsis; overflow: hidden;">
+            {% if link[1]|count > 50 %}
+                {{link[1][0:50]}}
+            {% endif %}
+            {% if link[1]|count < 50 %}
+                {{link[1]}}
+            {% endif %}
+    </span>
+    </a>
+</div>
+{% endfor %}
+
+

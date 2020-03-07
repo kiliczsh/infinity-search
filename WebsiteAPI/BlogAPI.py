@@ -8,6 +8,7 @@ blogAPI = Blueprint('blogAPI', __name__)
 @blogAPI.route('/content')
 def render_articles():
     articles = [
+        {'link': '/articles/privacy_browser_extensions', 'title': 'Privacy Browser Extensions'},
         {'link': '/articles/surprise', 'title': 'Surprise Me!'},
         {'link': '/articles/languages', 'title': 'We Now Have Infinity Search In German and Spanish'},
         {'link': '/articles/secondpage', 'title': 'Why We Made Second Page'},

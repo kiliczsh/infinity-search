@@ -7,6 +7,10 @@ import random
 import SearchEngines.Dictionary.Dictionary as Dictionary_API
 import MainApplication.ddos_protection as ddos_protection
 import integrations.maps.mapbox.get_coords as map_api
+import MainApplication.QueryAnalyzer as QueryAnalyzer
+import integrations.weather.openweather.OpenWeather as weather_api
+import SearchEngines.InfinityNews.InfinityNews as InfinityNews
+import SearchEngines.Invidious.Invidious as Invidious
 
 ads = [
     # ['Apple AirPods with Charging Case (Latest Model)', 'https://amzn.to/30EEOEJ', 'https://amzn.to/30EEOEJ'],
@@ -38,28 +42,20 @@ descriptions = ['Search better.', 'This search engine doesn\'t track you.', 'Mad
 
 dropdown = [
     ['mojeek', 'Mojeek European Search'],
-    ['shopping', 'Shopping (Coming Soon)']
+    ['shopping', 'Shopping (Coming Soon)'],
+    ['wiki', 'Wiki Search']
     # Coming soon
     # ['code', 'Code (Coming Soon)'],
     # ['datasets', 'Datasets (Coming Soon)'],
     # ['research', 'Research (Coming Soon)'],
 ]
 
-def get_results(query):
+def get_results_old(query):
     if ddos_protection.ddos_safe() is False:
         return render_template('500_traffic.html')
 
-    stock_searched = False
-    stock = ''
-
-    symbol = ''
-    url = ''
-
-    definition = []
-
     words = query
     words = str(words).split()
-
     words_in_search = len(words)
 
     if words_in_search == 0:
@@ -73,12 +69,59 @@ def get_results(query):
     top_ad = ads[random.randint(0, ads_length_index)]
     bottom_ad = ads[random.randint(0, ads_length_index)]
 
+    stock_searched = False
+    stock = ''
+
+    symbol = ''
+    url = ''
+
+    definition = []
+
+    # # TODO: Make this area below work with the query analyzer
+    #
+    # weather = []
+    # travel = []
+    # map = []
+    # calculation=[]
+    #
+    # integrations = QueryAnalyzer.analyze_query(query)
+    #
+    # if integrations[0] == 'weather':
+    #     x = 0
+    #     location = integrations[1]
+    #     # TODO: Get the weather data from the API
+    #
+    # elif integrations[0] == 'travel':
+    #     location = integrations[1]
+    #     # TODO: Get the data from the API
+    #
+    # elif integrations[0] == 'maps':
+    #     location = integrations[1]
+    #     # TODO: Get the data from the API
+    #
+    # elif integrations[0] == 'calculation':
+    #     calculation = [[]]
+    #
+    # elif integrations[0] == 'stocks':
+    #     # TODO: Move the integration from below into here
+    #     x = 0
+    #
+    # elif integrations[0] == 'crypto':
+    #     # TODO: Move the integration from below into here
+    #     x = 0
+    #
+    # elif integrations[0] == 'stock news':
+    #     # TODO: Move the integration from below into here
+    #     x = 0
+    #
+
     if words_in_search == 1:
         return render_template('results/results.html', query=query, stock=stock,
                                stock_searched=stock_searched, symbol=symbol, url=url,
                                ddg_ia_result=ddg_ia_result, bing_results=results[0],
                                external_results=external_links, definition=definition,
                                top_ad=top_ad, bottom_ad=bottom_ad, current='', dropdown=dropdown)
+
 
     if words_in_search == 2:
         if words[1].upper() == 'DEFINITION' or words[1].upper() == 'DEFINE':
@@ -118,6 +161,88 @@ def get_results(query):
                            top_ad=top_ad, bottom_ad=bottom_ad, current='', dropdown=dropdown)
 
 
+def get_results(query):
+    if ddos_protection.ddos_safe() is False:
+        return render_template('500_traffic.html')
+
+    words = query
+    words = str(words).split()
+    words_in_search = len(words)
+
+    if words_in_search == 0:
+        return redirect('/')
+
+    ddg_ia_result = DDG_IA.search_ddg_ia(query)
+    results = Searches.search_all(query)
+    external_links = Externals.get_external_links(query)
+
+    ads_length_index = len(ads) - 1
+    top_ad = ads[random.randint(0, ads_length_index)]
+    bottom_ad = ads[random.randint(0, ads_length_index)]
+
+    stock_searched = False
+    stock = ''
+
+    symbol = ''
+    url = ''
+
+    definition = []
+
+
+    stock_news = False
+    crypto_news = False
+
+    weather = []
+    travel = []
+    map_location = []
+    calculation=[]
+
+    try:
+        integrations = QueryAnalyzer.analyze_query_v2(query)
+    except Exception:
+        integrations = '', ''
+
+    # if integrations[0] == 'weather':
+    #     weather = weather_api.get_current_weather(integrations[1])
+
+    if integrations[0] == 'travel':
+        location = integrations[1]
+
+    elif integrations[0] == 'maps':
+        location = integrations[1]
+
+    elif integrations[0] == 'calculator':
+        calculation = [[]]
+
+    elif integrations[0] == 'stock':
+        stock_searched = True
+        stock = integrations[1].upper()
+        try:
+            exchange = exchange_dict[stock]
+
+        except Exception:
+            exchange = 'NASDAQ'
+
+        symbol = exchange.upper() + ':' + stock
+        url = 'https://www.tradingview.com/symbols/' + exchange + '-' + stock + '/'
+
+    elif integrations[0] == 'crypto':
+        crypto_news = True
+
+    elif integrations[0] == 'stock news':
+        stock_news = True
+
+    elif integrations[0] == 'definition':
+        word_definition = Dictionary_API.search_word(words[1])
+        definition = word_definition
+
+    return render_template('results/results.html', query=query, stock=stock, stock_searched=stock_searched,
+                           symbol=symbol, url=url, stock_news=stock_news, crypto_news=crypto_news,
+                           ddg_ia_result=ddg_ia_result, bing_results=results[0],
+                           external_results=external_links, definition=definition,
+                           top_ad=top_ad, bottom_ad=bottom_ad, current='', dropdown=dropdown, calculator=calculation)
+
+
 @publicAPI.route('/', methods=['GET', 'POST'])
 def render_static():
     if request.method == 'POST':
@@ -130,14 +255,11 @@ def render_static():
 
         except Exception:
             description = descriptions[random.randint(0, len(descriptions) - 1)]
-            return render_template('home.html', description=description)
+            return render_template('home.html', description=description, dropdown=dropdown)
 
         description = descriptions[random.randint(0, len(descriptions) - 1)]
 
-        return render_template('home.html', description=description)
-
-
-
+        return render_template('home.html', description=description, dropdown=dropdown)
 
 
 @publicAPI.route('/results', methods=['GET', 'POST'])
@@ -270,7 +392,6 @@ def render_image_results():
 
 
 # # News Search Engine ---------------------------
-import SearchEngines.InfinityNews.InfinityNews as InfinityNews
 
 def get_news_results(query):
     words = query
@@ -359,7 +480,6 @@ def render_news_engine_results():
 #
 #     return redirect('/')
 # Video  Results ------------------------
-import SearchEngines.Invidious.Invidious as Invidious
 def get_video_results(query):
     results = Invidious.get_video_results(query)
     external_links = Externals.get_video_links(query)
@@ -506,6 +626,49 @@ def render_mojeek_results():
         if request.args.get('q') is not None:
             query = request.args.get('q')
             return get_mojeek_results(query)
+
+    except Exception as e:
+        print(e)
+        return redirect('/')
+
+    return redirect('/')
+
+# Wiki Results: ----------------------
+
+def get_wiki_results(query):
+    external_links = Externals.get_wiki_links(query)
+    results = Searches.search_wiki_results(query)
+
+    return render_template('results/wiki_layout.html', query=query,
+                           external_results=external_links, current='Wiki',
+                           dropdown=dropdown,
+                           wikipedia=results['Wikipedia'], wiktionary=results['Wiktionary'], wikiquote=results['Wikiquote'],
+                           wikibooks=results['Wikibooks'], wikisource=results['Wikisource'], wikiversity=results['Wikiversity'],
+                           wikispecies=results['Wikispecies'], wikidata=results['Wikidata'], wikicommons=results['Wikicommons'],
+                           wikivoyage=results['Wikivoyage'], wikimeta=results['Metawiki']
+                           )
+
+
+@publicAPI.route('/results/wiki',  methods=['GET', 'POST'])
+def render_wiki_results():
+    if request.args.get('q') is not None:
+        query = request.args.get('q')
+        return get_wiki_results(query)
+
+    if request.method == 'POST':
+        try:  # In case someone tried to change the value of the form name
+            form_results = dict(request.form)
+            query = form_results['Search']
+
+        except Exception as e:
+            print(e)
+            return redirect('/')
+
+        return get_wiki_results(query)
+    try:
+        if request.args.get('q') is not None:
+            query = request.args.get('q')
+            return get_wiki_results(query)
 
     except Exception as e:
         print(e)

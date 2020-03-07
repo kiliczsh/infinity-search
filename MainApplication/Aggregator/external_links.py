@@ -173,6 +173,7 @@ def get_video_links(query):
         ['Veoh Results', 'https://www.veoh.com/find/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/veoh.ico'],
         ['Metacafe Results', 'https://www.metacafe.com/videos_about/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/metacafe.ico'],
         ['Vlare Results', 'https://vlare.tv/search/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/vlare.ico'],
+        ['Lbry Results', 'https://lbry.tv/$/search?q=' + query,'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/lbry.ico'],
     ]
     return links
 
@@ -241,4 +242,26 @@ def get_music_links(query):
     links = []
 
     return links
+
+
+def get_wiki_links(query):
+    query = query.replace(' ', '+')
+
+    links = [
+        ['Wikipedia', 'https://wikipedia.org/w/index.php?search=' + query , 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/wikipedia.ico',],
+        ['Wikibooks', 'https://wikibooks.org/w/index.php?search=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/wikibooks.ico'],
+        ['Wikiquote', 'https://wikiquote.org/w/index.php?search=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/wikiquote.ico'],
+        ['Wikivoyage', 'https://wikivoyage.org/w/index.php?search=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/wikivoyage.ico'],
+        ['Wikisource', 'https://wikivoyage.org/w/index.php?search=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/wikisource.ico'],
+        ['Wikimedia Commons', 'https://commons.wikimedia.org/w/index.php?search=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/wikimedia.ico'],
+        ['Wikinews', 'https://wikinews.org/w/index.php?search=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/wikinews.ico'],
+        ['Wikiversity', 'https://wikiversity.org/w/index.php?search=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/wikiversity.ico'],
+        ['Wikidata', 'https://www.wikidata.org/w/index.php?search=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/wikidata.ico'],
+        ['Wikimedia Meta', 'https://meta.wikimedia.org/w/index.php?search=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/wikimedia.ico'],
+        ['Wiktionary', 'https://wiktionary.org/w/index.php?search=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/wiktionary.ico'],
+        ['Wikispecies', 'https://species.wikimedia.org/w/index.php?search=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/wikispecies.ico'],
+    ]
+
+    return links
+
 

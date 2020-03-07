@@ -1,0 +1,185 @@
+{% if stock_searched == True %}
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div id="tradingview_9c61a"></div>
+    <div class="tradingview-widget-copyright"><a href={{ url }} rel="noopener" target="_blank"><span class="blue-text">{{ stock }} Chart</span></a>
+        by TradingView
+    </div>
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script type="text/javascript">
+        new TradingView.widget(
+            {
+                "width": 980,
+                "height": 610,
+                "symbol": '{{ symbol }}',
+                "interval": "D",
+                "timezone": "Etc/UTC",
+                "theme": "Light",
+                "style": "1",
+                "locale": "en",
+                "toolbar_bg": "#f1f3f6",
+                "enable_publishing": false,
+                "allow_symbol_change": true,
+                "referral_id": "20191",
+                "container_id": "tradingview_9c61a"
+            }
+        );
+    </script>
+</div>
+<!-- TradingView Widget END -->
+{% endif %}
+
+{% if crypto_news == True %}
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/"
+                                                 rel="noopener" target="_blank"><span class="blue-text">Cryptocurrency Markets</span></a>
+        by TradingView
+    </div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+        {
+            "width"
+        :
+            "1100",
+                "height"
+        :
+            "490",
+                "defaultColumn"
+        :
+            "overview",
+                "screener_type"
+        :
+            "crypto_mkt",
+                "displayCurrency"
+        :
+            "USD",
+                "colorTheme"
+        :
+            "light",
+                "transparency"
+        :
+            false,
+                "locale"
+        :
+            "en"
+        }
+    </script>
+</div>
+<!-- TradingView Widget END -->
+{% endif %}
+
+{% if stock_news == True %}
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"><span
+            class="blue-text">Quotes</span></a> by TradingView
+    </div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+        {
+            "symbols"
+        :
+            [
+                {
+                    "description": "S&P 500",
+                    "proName": "SP:SPX"
+                },
+                {
+                    "description": "NASDAQ 100",
+                    "proName": "NDX"
+                },
+                {
+                    "description": "EUR/USD",
+                    "proName": "OANDA:EURUSD"
+                },
+                {
+                    "description": "CRUDE OIL",
+                    "proName": "NYSE:WTI"
+                },
+                {
+                    "description": "BTC/USD",
+                    "proName": "COINBASE:BTCUSD"
+                },
+                {
+                    "description": "DXY",
+                    "proName": "TVC:DXY"
+                }
+            ],
+                "colorTheme"
+        :
+            "light",
+                "isTransparent"
+        :
+            true,
+                "locale"
+        :
+            "en"
+        }
+    </script>
+</div>
+<!-- TradingView Widget END -->
+{% endif %}
+
+{% for link in definition %}
+<div id="bing_container">
+    <a href="https://owlbot.info?q={{link[0]}}" class="result_container link_container" style="display: block;">
+        <span class="toplink jake" style="color: black; font-size: 20px"> Definition: {{ link[0] }} </span><br>
+        <span class="snippet jake"> {{ link[1] }}</span>
+        <div class="snippet jake" style="color: black; text-decoration: none;">{{ link[2] }}</div>
+        <br>
+        <span class="snippet jake" style="color: black; font-size: 13px; text-decoration: none"> Definition provided by Owlbot  </span>
+
+    </a>
+</div>
+{% endfor %}
+
+{% for link in weather %}
+<div id="bing_container">
+    <a href="https://owlbot.info?q={{link[0]}}" class="result_container link_container" style="display: block;">
+        <span class="toplink jake" style="color: black; font-size: 20px"> Definition: {{ link[0] }} </span><br>
+        <span class="snippet jake"> {{ link[1] }}</span>
+        <div class="snippet jake" style="color: black; text-decoration: none;">{{ link[2] }}</div>
+        <br>
+        <span class="snippet jake" style="color: black; font-size: 13px; text-decoration: none"> Weather data provided by OpenWeather </span>
+
+    </a>
+</div>
+{% endfor %}
+
+{% for data in calculator %}
+<div id="bing_container">
+    <div class="result_container link_container" style="display: block;">
+        <span class="toplink jake" style="color: black; font-size: 20px"> Calculator </span><br>
+        <br>
+        <span class="snippet jake" style="color: black; font-size: 13px; text-decoration: none">
+            <input type="text" id="calc" value="{{query}}" onload="calculate()" onkeypress="if (event.which == 13) return calculate();"  style="width: 50%">
+            <a onclick="calculate()" style="margin-left: 4px;font-size: .95rem; text-decoration: none"> = </a><span id="solution" style="margin-left: 4px; font-size: .95rem;"></span>
+        </span>
+    </div>
+
+    <script>
+        function prepare_input(input) {
+            input = input.replace('x', '*');
+            input = input.replace('X', '*');
+            input = input.replace('^', '**');
+            return input
+        }
+        function calculate() {
+            try {
+                var value = document.getElementById("calc").value;
+                var x = eval(prepare_input(value));
+                console.log(x);
+                document.getElementById("solution").innerText = x;
+            } catch (err) {
+                console.log(err);
+                document.getElementById("solution").innerText = "Error When Calculating";
+            }
+        }
+    </script>
+</div>
+{% endfor %}
+
+
+
+
