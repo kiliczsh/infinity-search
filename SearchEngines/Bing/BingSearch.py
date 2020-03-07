@@ -36,20 +36,26 @@ def get_all(query, count=10):
     return data
 
 def get_images(query, count=10):
-    client = BingAPI.client
-    web_data = client.web.search(query=query, count=count, answer_count=count, promote=['images'], response_filter=["Images"], safe_search="Moderate")
+    # client = BingAPI.client
+    # web_data = client.web.search(query=query, count=count, answer_count=count, promote=['images'], response_filter=["Images"], safe_search="Moderate")
+
+    client = BingAPI.image_client
+    image_results = client.images.search(query=query, count=count, safe_search="Moderate")
+
     data = []
 
-    if web_data.images is None:
-        # print('None')
-        return []
+    # if web_data.images is None:
+    #     # print('None')
+    #     return []
+    # len(image_results.value)
 
-    length = len(web_data.images.value)
+    # length = len(web_data.images.value)
+    length = len(image_results.value)
     index = 0
 
     # print(length)
     while index < length:
-        image = web_data.images.value[index]
+        image = image_results.value[index]
 
         width = image.width
         height = image.height
@@ -61,7 +67,6 @@ def get_images(query, count=10):
         data.append([image.thumbnail_url, image.content_url, image.host_page_url, width, height])
         index += 1
 
-    # print(data)
     return data
 
 

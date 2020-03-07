@@ -1,6 +1,7 @@
 azure-cognitiveservices-nspkg==3.0.1
 azure-cognitiveservices-search-nspkg==3.0.1
 azure-cognitiveservices-search-websearch==1.0.0
+azure-cognitiveservices-search-imagesearch==1.0.0
 azure-common==1.1.22
 azure-nspkg==3.0.2
 beautifulsoup4==4.7.1
@@ -26,3 +27,4 @@ urllib3==1.25.3
 Werkzeug==0.15.5
 pymongo==3.10.1
 dnspython
+

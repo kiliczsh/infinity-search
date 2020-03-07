@@ -362,7 +362,7 @@ def get_image_results(query):
 
     results = Searches.search_bing_images(query)
     # print(results)
-    print(results[0])
+    # print(results[0])
 
     return render_template('results/image_results.html', query=query, bing_results=results[0],
                            external_results=external_links, current='', dropdown=dropdown)
