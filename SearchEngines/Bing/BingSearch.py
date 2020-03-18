@@ -60,10 +60,6 @@ def get_images(query, count=10):
         width = image.width
         height = image.height
 
-        if width > 300:
-            width = width / 5
-            height = height / 5
-
         data.append([image.thumbnail_url, image.content_url, image.host_page_url, width, height])
         index += 1
 

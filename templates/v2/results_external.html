@@ -1,0 +1,15 @@
+
+{% for link in external_results %}
+    <div class="column">
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title" style="font-weight: normal;">
+                    <a href={{link[1]}} style="display: block;">
+                        <span style="font-size: 17px;"><img onerror="imgError(this)" src="{{link[2]}}" width="16px"
+                                                            height="16px" style="vertical-align: baseline; padding-right: 5px;"> {{link[0]}} </span>
+                    </a>
+                </p>
+            </header>
+        </div>
+    </div>
+{% endfor %}

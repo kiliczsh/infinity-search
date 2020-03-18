@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Infinity Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma.min.css') }}">
+    <style>
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div style="text-align: center; padding-bottom: 15px; margin-top: 40px;">
+<!--    <a href="/" style="display: inline-block"> <img style="vertical-align:middle; cursor: pointer; border-radius: 50%;" src="https://i.postimg.cc/Rhg9MPYN/Infinity-Search-Logo.png" width="75px" height="75px" alt=""></a>-->
+    <a href="/" style="display: inline-block"> <img style="vertical-align:middle; cursor: pointer; border-radius: 50%;" src="https://infinity-search-saved-favicons.s3.amazonaws.com/InfinitySearch/logo.png" width="75px" height="75px" alt=""></a>
+
+
+    <span class="rome" style="vertical-align:middle; font-size: 30px; padding-left: 20px;">  </span>
+</div>
+
+<div class="content" style="padding-left: 20%; padding-right: 20%">
+    {% block article %}
+    {% endblock %}
+</div>
+
+<div class="footer" style="text-align: center; padding-top: 10px; padding-bottom: 10px; background-color: white">
+    <div class="column is-half is-offset-one-quarter">
+    <div class="columns is-vcentered">
+        <a href="/about" class="column is-one-quarter">
+            About
+        </a>
+        <a href="/blog" class="column is-one-quarter">
+            Blog
+        </a>
+        <a href="/privacy" class="column is-one-quarter">
+            Privacy
+        </a>
+        <a href="/contact" class="column is-one-quarter">
+            Contact
+        </a>
+    </div>
+    </div>
+</div>
+
+</body>
+
+</html>

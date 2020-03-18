@@ -90,6 +90,18 @@ def combine_results(current, new):
 
 def get_news(query):
 
+    news_favicons = {
+        'www.reuters.com' : 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/reuters.ico',
+        'www.rt.com' : 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/rt.ico',
+        'www.cnn.com': 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/cnn.ico',
+        'www.foxnews.com': 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/fox.ico',
+        'www.nytimes.com': 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/nyt.ico',
+        'www.sputniknews.com': 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/sputnik.ico',
+        'www.dailymail.co.uk': 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/dailymail.ico',
+        'www.washingtonpost.com': 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/washingtonpost.ico',
+        'www.businessinsider.com': 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/businessinsider.ico',
+    }
+
     links = []
 
     query = query.replace(' ', '+')
@@ -125,8 +137,10 @@ def get_news(query):
 
         # if parsed[0] == 'http':
         #     source['url'] = source['url'].replace('http://', 'https://')  # Force https
+        # favicon_url = 'https://' + parsed[1] + '/favicon.ico'
 
-        favicon_url = 'https://' + parsed[1] + '/favicon.ico'
+        favicon_url = news_favicons[parsed[1]]
+
 
         # minutes_ago = source['minutes_ago']
         # hours_ago = source['hours_ago']

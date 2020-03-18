@@ -1,0 +1,19 @@
+<div class="columns is-multiline">
+    {% for link in video_results %}
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <a href="{{link[0]}}"> <img src="{{link[2] }}" style="max-height: 500px; max-width: 500px;" onerror="imgError(this)"> </a>
+                        <br>
+                        <a href="{{link[0]}}" class="toplink"> <span style="color: black"> <b>{{link[1]}}</b> </span> </a>
+                        <br>
+                        <a href="{{link[0]}}">{{link[1]}} </a>
+                        <br>
+                        <span> Length: {{link[3]}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

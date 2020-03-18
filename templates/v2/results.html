@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Just the head -->
+{% include 'v2/results_top.html' %}
+<body>
+
+<!--The input boxes  -->
+{% include 'v2/results_input.html' %}
+<div class="tile is-ancestor is-12">
+    <div class="tile is-vertical is-9">
+        <div class="tile is-parent">
+            <div class="tile is-child">
+                <!--The integrations  -->
+                {% include 'v2/results_integrations.html' %}
+                <!--The main results  -->
+                {% include 'v2/results_main.html' %}
+                {% include 'v2/results_images.html' %}
+                {% include 'v2/results_news.html' %}
+                {% include 'v2/results_videos.html' %}
+                {% include 'v2/results_maps.html' %}
+                {% include 'v2/results_mojeek.html' %}
+                {% include 'v2/results_wiki.html' %}
+                {% include 'v2/results_shopping.html' %}
+            </div>
+        </div>
+    </div>
+    <div class="tile is-parent">
+        <div class="tile is-child">
+            <!--The sidebar external results  -->
+            {% include 'v2/results_external.html' %}
+        </div>
+    </div>
+</div>
+<!-- The footer and scripts  -->
+{% include 'v2/results_bottom.html' %}
+
+</body>
+</html>

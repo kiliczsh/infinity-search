@@ -1,0 +1,14 @@
+{% extends 'v2/pages/article_layout.html' %}
+{% block article %}
+<h1 class="title is-1"> Our Articles </h1>
+<hr/>
+
+<div class="article">
+    {% for article in articles %}
+    <div class="box">
+        <a href={{ article['link'] }}> {{ article['title'] }} </a>
+        <br>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

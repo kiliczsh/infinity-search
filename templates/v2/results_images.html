@@ -1,0 +1,16 @@
+<div class="columns is-multiline">
+    {% for link in image_results %}
+    <div class="column">
+        <div class="card">
+            <div class="card-content">
+                <div class="content">
+                    <a href="{{link[1]}}"> <img src="{{ link[0] }}" width="{{ link[3] }}" height="{{ link[4] }}"> </a>
+                    <br>
+                    <span style="font-size: 20px;">Source: <a href="{{ link[2] }}"> {{ link[2] }}</a> </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+

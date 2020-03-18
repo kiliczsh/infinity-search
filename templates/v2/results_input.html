@@ -1,0 +1,71 @@
+<div class="column is-half">
+    <a href="/" style="display: inline-block">
+                <img style="vertical-align:middle; cursor: pointer; border-radius: 50%;"
+                                                    src="https://infinity-search-saved-favicons.s3.amazonaws.com/InfinitySearch/logo.png"
+                                                    width="50px" height="50px" alt="">
+                <span style="vertical-align:middle; font-size: 18px; color: hsl(0, 0%, 29%)"> &nbsp INFINITY SEARCH </span>
+    </a>
+
+</div>
+
+<div class="column is-9">
+    <div class="control has-icons-left">
+        {% if current == 'web' %}
+            <form action="/results" method="post" id="input_form">
+        {% else %}
+            <form action="/results/{{current}}" method="post" id="input_form">
+        {% endif %}
+            <input class="input is-medium" type="search" placeholder="" value="{{query}}" name="Search">
+            <span class="icon is-medium is-left">
+                      <i style="cursor: pointer" class="fa fa-search"></i>
+        </span>
+        </form>
+    </div>
+</div>
+
+<div class="column">
+    <div class="tabs">
+        <ul>
+            {% if current == 'web' %}
+                <li class="is-active"><a href="/results?q={{query}}">Web</a></li>
+            {% else %}
+                <li><a href="/results?q={{query}}">Web</a></li>
+            {% endif %}
+            {% if current == 'images' %}
+                <li class="is-active"><a href="/results/images?q={{query}}">Images</a></li>
+            {% else %}
+                <li><a href="/results/images?q={{query}}">Images</a></li>
+            {% endif %}
+            {% if current == 'news' %}
+                <li class="is-active"><a href="/results/news?q={{query}}">News</a></li>
+            {% else %}
+                <li><a href="/results/news?q={{query}}">News</a></li>
+            {% endif %}
+            {% if current == 'videos' %}
+                <li class="is-active"><a href="/results/videos?q={{query}}">Videos</a></li>
+            {% else %}
+                <li><a href="/results/videos?q={{query}}">Videos</a></li>
+            {% endif %}
+            {% if current == 'maps' %}
+                <li class="is-active"><a href="/results/maps?q={{query}}">Maps</a></li>
+            {% else %}
+                <li><a href="/results/maps?q={{query}}">Maps</a></li>
+            {% endif %}
+            {% if current == 'mojeek' %}
+                <li class="is-active"><a href="/results/mojeek?q={{query}}">Mojeek</a></li>
+            {% else %}
+                <li><a href="/results/mojeek?q={{query}}">Mojeek</a></li>
+            {% endif %}
+            {% if current == 'wiki' %}
+                <li class="is-active"><a href="/results/wiki?q={{query}}">Wiki</a></li>
+            {% else %}
+                <li><a href="/results/wiki?q={{query}}">Wiki</a></li>
+            {% endif %}
+            {% if current == 'shopping' %}
+                <li class="is-active"><a href="/results/shopping?q={{query}}">Shopping</a></li>
+            {% else %}
+                <li><a href="/results/shopping?q={{query}}">Shopping</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</div>

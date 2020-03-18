@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Infinity Search - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma.min.css') }}">
+
+    <style>
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<!--<body style="margin-left: 3%; margin-right: 3%; margin-top: 10%">-->
+<body>
+
+<div style="margin-top: 11%"></div>
+
+<div style="text-align: center;">
+    <a href="/" style="display: inline-block;">
+        <img src="https://infinity-search-saved-favicons.s3.amazonaws.com/InfinitySearch/home_logo.png" height="100px" width="400px">
+    </a>
+    <br>
+</div>
+
+<!--<div class="content column is-three-fifths is-offset-one-fifth" style="margin-top: 30px">-->
+<div class="content column is-half is-offset-one-quarter" style="margin-top: 30px">
+    <div class="control has-icons-left">
+        <form action="/results" method="post" id="input_form">
+            <input class="input is-medium" type="search" placeholder="Search for anything on the web" name="Search">
+            <span class="icon is-medium is-left" style="cursor: pointer">
+                      <i class="fa fa-search"></i>
+        </span>
+        </form>
+
+    </div>
+</div>
+
+<div class="column is-half is-offset-one-quarter">
+    <div class="tabs is-centered">
+        <ul>
+            <li class="is-active search_tab" onclick="switch_tab(this, '')"><a>Web</a></li>
+            <li class="search_tab" onclick="switch_tab(this, '/images')"><a>Images</a></li>
+            <li class="search_tab" onclick="switch_tab(this, '/news')"><a>News</a></li>
+            <li class="search_tab" onclick="switch_tab(this, '/videos')"><a>Videos</a></li>
+            <li class="search_tab" onclick="switch_tab(this, '/maps')"><a>Maps</a></li>
+            <li class="search_tab" onclick="switch_tab(this, '/mojeek')"><a>Mojeek </a>
+            <li class="search_tab" onclick="switch_tab(this, '/wiki')"><a>Wiki</a>
+            <li class="search_tab" onclick="switch_tab(this, '/shopping')"><a>Shopping</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="column is-half is-offset-one-quarter">
+    <div class="content is-medium">
+        Find stuff faster. <a href="/about"> Learn more about Infinity Search </a>
+    </div>
+</div>
+
+<footer class="footer" style="text-align: center; padding-top: 10px; padding-bottom: 10px; background-color: white">
+    <div class="column is-half is-offset-one-quarter">
+    <div class="columns is-vcentered">
+        <a class="column is-one-quarter" href="/about">
+            About
+        </a>
+        <a class="column is-one-quarter" href="/blog">
+            Blog
+        </a>
+        <a class="column is-one-quarter" href="/privacy">
+            Privacy
+        </a>
+        <a class="column is-one-quarter" href="/contact">
+            Contact
+        </a>
+    </div>
+    </div>
+</footer>
+
+<!--</div>-->
+
+
+<!--<div class="infinity_container">-->
+<!--    <div class="content" style="margin-top: 30px">-->
+<!--        <div class="control has-icons-left">-->
+<!--            <form action="/results" method="post" id="input_form">-->
+<!--                <input class="input is-medium" type="search" placeholder="" name="Search">-->
+<!--                <span class="icon is-medium is-left" style="cursor: pointer">-->
+<!--                      <i class="fa fa-search"></i>-->
+<!--        </span>-->
+<!--            </form>-->
+
+<!--        </div>-->
+<!--    </div>-->
+
+
+<!--    <div class="content is-medium">-->
+<!--        This search engine doesn't track you. <a href="/about"> Learn more about Infinity Search </a>-->
+<!--    </div>-->
+
+<!--</div>-->
+
+<script>
+    function reset_selected_tab() {
+        var tabs = document.getElementsByClassName("search_tab");
+        var i;
+        for (i = 0; i < tabs.length; i++) {
+            var tab = tabs[i];
+            if (tab.classList.contains('is-active')) {
+                tab.classList.remove('is-active');
+            }
+        }
+    }
+
+    function switch_tab(list_element, value) {
+        reset_selected_tab();
+        document.getElementById('input_form').setAttribute('action', '/results' + value);
+        list_element.classList.add('is-active');
+    }
+</script>
+
+</body>
+</html>

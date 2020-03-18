@@ -3,34 +3,31 @@ import random
 
 blogAPI = Blueprint('blogAPI', __name__)
 
-# For English: ----------------------
-
-@blogAPI.route('/content')
-def render_articles():
+@blogAPI.route('/blog')
+def render_blog():
     articles = [
-        {'link': '/articles/privacy_browser_extensions', 'title': 'Privacy Browser Extensions'},
-        {'link': '/articles/surprise', 'title': 'Surprise Me!'},
-        {'link': '/articles/languages', 'title': 'We Now Have Infinity Search In German and Spanish'},
-        {'link': '/articles/secondpage', 'title': 'Why We Made Second Page'},
-        {'link': '/articles/more_about_us', 'title': 'More Privacy Information About Us'},
-        {'link': '/articles/about_our_company', 'title': 'About Our Company'},
-        {'link': '/articles/open_source', 'title': 'Infinity Search Is Now Open Source'},
-        {'link' : '/articles/privacy_resources', 'title' : 'Privacy Resources'}
+        {'link': '/blog/privacy_browser_extensions', 'title': 'Privacy Browser Extensions'},
+        {'link': '/blog/surprise', 'title': 'Surprise Me!'},
+        {'link': '/blog/languages', 'title': 'We Now Have Infinity Search In German and Spanish'},
+        {'link': '/blog/more_about_us', 'title': 'More Privacy Information About Us'},
+        {'link': '/blog/about_our_company', 'title': 'About Our Company'},
+        {'link': '/blog/open_source', 'title': 'Infinity Search Is Now Open Source'},
+        {'link' : '/blog/privacy_resources', 'title' : 'Privacy Resources'}
     ]
 
-    return render_template('articles/articles.html', articles=articles)
+    return render_template('v2/pages/blog/articles.html', articles=articles)
 
 
-@blogAPI.route('/articles/<post>')
+@blogAPI.route('/blog/<post>')
 def render_blog_post(post):
     try:
-        return render_template('articles/' + post + '.html')
+        return render_template('v2/pages/blog/' + post + '.html')
     except Exception as e:
         print(e)
         return redirect('/404')
 
 
-@blogAPI.route('/articles/surprise')
+@blogAPI.route('/blog/surprise')
 def render_surprise():
     surprise_searches = ['/results?q=AAPL stock', '/results/news?q=Politics', '/results/maps?q=Labrador Canada',
                          '/results/images?q=swiss alps', '/results/mojeek?q=eu', '/results/videos?q=PewDiePie',
@@ -39,7 +36,7 @@ def render_surprise():
 
     surprise_search = surprise_searches[random.randint(0, len(surprise_searches)) - 1]
 
-    return render_template('articles/surprise.html', surprise_search=surprise_search)
+    return render_template('v2/pages/blog/surprise.html', surprise_search=surprise_search)
 
 
 # For German: ----------------------

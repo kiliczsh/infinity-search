@@ -1,0 +1,182 @@
+{% if current == 'wiki' %}
+    <div class="column" style="color: black; font-size: 20px; margin-left: 5px;"> <b> Wikipedia: </b> </div>
+    {% for link in wikipedia %}
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <a href="{{link[1]}}" class="toplink"> <span style="color: black"> <b>{{link[0]}}</b> </span> </a>
+                        <br>
+                        <a href="{{link[1]}}">{{link[1]}} </a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="column" style="color: black; font-size: 20px; margin-left: 5px;"> <b> Wikimedia Commons: </b> </div>
+    {% for link in wikicommons %}
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <a href="{{link[1]}}" class="toplink"> <span style="color: black"> <b>{{link[0]}}</b> </span> </a>
+                        <br>
+                        <a href="{{link[1]}}">{{link[1]}} </a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="column" style="color: black; font-size: 20px; margin-left: 5px;"> <b> Wikibooks: </b> </div>
+    {% for link in wikibooks %}
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <a href="{{link[1]}}" class="toplink"> <span style="color: black"> <b>{{link[0]}}</b> </span> </a>
+                        <br>
+                        <a href="{{link[1]}}">{{link[1]}} </a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="column" style="color: black; font-size: 20px; margin-left: 5px;"> <b> Wikisource: </b> </div>
+    {% for link in wikisource %}
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <a href="{{link[1]}}" class="toplink"> <span style="color: black"> <b>{{link[0]}}</b> </span> </a>
+                        <br>
+                        <a href="{{link[1]}}">{{link[1]}} </a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="column" style="color: black; font-size: 20px; margin-left: 5px;"> <b> Wikiquotes: </b> </div>
+    {% for link in wikiquotes %}
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <a href="{{link[1]}}" class="toplink"> <span style="color: black"> <b>{{link[0]}}</b> </span> </a>
+                        <br>
+                        <a href="{{link[1]}}">{{link[1]}} </a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="column" style="color: black; font-size: 20px; margin-left: 5px;"> <b> Wikivoyage: </b> </div>
+    {% for link in wikivoyage %}
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <a href="{{link[1]}}" class="toplink"> <span style="color: black"> <b>{{link[0]}}</b> </span> </a>
+                        <br>
+                        <a href="{{link[1]}}">{{link[1]}} </a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+
+    <div class="column" style="color: black; font-size: 20px; margin-left: 5px;"> <b> Wikiversity: </b> </div>
+    {% for link in wikiversity %}
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <a href="{{link[1]}}" class="toplink"> <span style="color: black"> <b>{{link[0]}}</b> </span> </a>
+                        <br>
+                        <a href="{{link[1]}}">{{link[1]}} </a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+
+    <div class="column" style="color: black; font-size: 20px; margin-left: 5px;"> <b> Wikidata: </b> </div>
+    {% for link in wikidata %}
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <a href="{{link[1]}}" class="toplink"> <span style="color: black"> <b>{{link[0]}}</b> </span> </a>
+                        <br>
+                        <a href="{{link[1]}}">{{link[1]}} </a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="column" style="color: black; font-size: 20px; margin-left: 5px;"> <b> Meta Wiki: </b> </div>
+    {% for link in metawiki %}
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <a href="{{link[1]}}" class="toplink"> <span style="color: black"> <b>{{link[0]}}</b> </span> </a>
+                        <br>
+                        <a href="{{link[1]}}">{{link[1]}} </a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="column" style="color: black; font-size: 20px; margin-left: 5px;"> <b> Wiktionary: </b> </div>
+    {% for link in wiktionary %}
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <a href="{{link[1]}}" class="toplink"> <span style="color: black"> <b>{{link[0]}}</b> </span> </a>
+                        <br>
+                        <a href="{{link[1]}}">{{link[1]}} </a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="column" style="color: black; font-size: 20px; margin-left: 5px;"> <b> Wikispecies: </b> </div>
+    {% for link in wikispecies %}
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <a href="{{link[1]}}" class="toplink"> <span style="color: black"> <b>{{link[0]}}</b> </span> </a>
+                        <br>
+                        <a href="{{link[1]}}">{{link[1]}} </a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+
+{% endif %}
+
