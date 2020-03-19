@@ -11,6 +11,7 @@ import MainApplication.QueryAnalyzer as QueryAnalyzer
 import integrations.weather.openweather.OpenWeather as weather_api
 import SearchEngines.InfinityNews.InfinityNews as InfinityNews
 import SearchEngines.Invidious.Invidious as Invidious
+from SearchEngines.WikiMedia.WikiSearches import wikivoyage_search
 
 ads = [
     # ['Apple AirPods with Charging Case (Latest Model)', 'https://amzn.to/30EEOEJ', 'https://amzn.to/30EEOEJ'],
@@ -395,11 +396,11 @@ def get_map_results(query):
 
     external_links = Externals.get_map_links(query)
 
-    results = [[]]
+    wikivoyage = wikivoyage_search(query)
 
     location_info = map_api.get_location(query)
 
-    return render_template('v2/results.html', query=query, bing_results=results[0],
+    return render_template('v2/results.html', query=query, wikivoyage=wikivoyage,
                            external_results=external_links, location_info=location_info, current='maps',
                            dropdown=dropdown)
 
