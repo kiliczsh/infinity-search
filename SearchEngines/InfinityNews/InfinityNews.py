@@ -97,6 +97,7 @@ def get_news(query):
         'www.foxnews.com': 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/fox.ico',
         'www.nytimes.com': 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/nyt.ico',
         'www.sputniknews.com': 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/sputnik.ico',
+        'sputniknews.com': 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/sputnik.ico',
         'www.dailymail.co.uk': 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/dailymail.ico',
         'www.washingtonpost.com': 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/washingtonpost.ico',
         'www.businessinsider.com': 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/businessinsider.ico',
@@ -139,7 +140,10 @@ def get_news(query):
         #     source['url'] = source['url'].replace('http://', 'https://')  # Force https
         # favicon_url = 'https://' + parsed[1] + '/favicon.ico'
 
-        favicon_url = news_favicons[parsed[1]]
+        try:
+            favicon_url = news_favicons[parsed[1]]
+        except Exception:
+            favicon_url = ''
 
 
         # minutes_ago = source['minutes_ago']
@@ -150,7 +154,7 @@ def get_news(query):
 
 
 
-    # print(links)
+    print(links)
 
     all_results = []
     all_results = combine_results(all_results, links)

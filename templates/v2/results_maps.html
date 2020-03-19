@@ -11,21 +11,23 @@
         </div>
     </div>
 
-    <div class="column" style="color: black; font-size: 20px; margin-left: 5px;"> <b> Wikivoyage Results: </b> </div>
-    {% for link in wikivoyage %}
-        <div class="column">
-            <div class="card">
-                <div class="card-content">
-                    <div class="content">
-                        <a href="{{link[1]}}" class="toplink"> <span style="color: black"> <b>{{link[0]}}</b> </span> </a>
-                        <br>
-                        <a href="{{link[1]}}">{{link[1]}} </a>
-                        <br>
+    {% if wikivoyage|length > 0 %}
+        <div class="column" style="color: black; font-size: 20px; margin-left: 5px;"> <b> Wikivoyage Results: </b> </div>
+        {% for link in wikivoyage %}
+            <div class="column">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content">
+                            <a href="{{link[1]}}" class="toplink"> <span style="color: black"> <b>{{link[0]}}</b> </span> </a>
+                            <br>
+                            <a href="{{link[1]}}">{{link[1]}} </a>
+                            <br>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    {% endif %}
 
     <script>
 

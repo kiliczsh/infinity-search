@@ -186,6 +186,11 @@ def render_results():
         return redirect('/')
 
 
+@publicAPI.route('/advanced_search')
+def render_advanced_search():
+    return render_template('v2/advanced_search.html')
+
+
 @publicAPI.route('/about')
 def render_about():
     return render_template('v2/pages/about.html')
@@ -295,7 +300,8 @@ def render_news_engine_results():
             # return render_template('news_results.html', query=query, bing_results=[],
             #                        external_results=external_links)
 
-        except Exception:
+        except Exception as e:
+            print(e)
             return redirect('/')
 
     try:
@@ -307,7 +313,8 @@ def render_news_engine_results():
             # return render_template('news_results.html', query=query, bing_results=[],
             #                        external_results=external_links)
 
-    except Exception:
+    except Exception as e:
+        print(e)
         return redirect('/')
 
     return redirect('/')
