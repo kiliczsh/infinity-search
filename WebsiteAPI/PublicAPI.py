@@ -52,7 +52,7 @@ dropdown = [
 ]
 
 
-def get_results(query):
+def get_results(query, page_number=1):
     if ddos_protection.ddos_safe() is False:
         return render_template('v2/500_traffic.html')
 
@@ -63,8 +63,12 @@ def get_results(query):
     if words_in_search == 0:
         return redirect('/')
 
-    ddg_ia_result = DDG_IA.search_ddg_ia(query)
-    results = Searches.search_all(query)
+
+    ddg_ia_result = []
+    if page_number == 1:
+        ddg_ia_result = DDG_IA.search_ddg_ia(query)
+
+    results = Searches.search_all(query, offset=page_number)
     external_links = Externals.get_external_links(query)
 
     ads_length_index = len(ads) - 1
@@ -138,7 +142,7 @@ def get_results(query):
                            symbol=symbol, url=url, stock_news=stock_news, crypto_news=crypto_news,
                            ddg_ia_result=ddg_ia_result, bing_results=results[0],
                            external_results=external_links, definition=definition,
-                           top_ad=top_ad, bottom_ad=bottom_ad, current='web', dropdown=dropdown, calculator=calculation)
+                           top_ad=top_ad, bottom_ad=bottom_ad, current='web', dropdown=dropdown, calculator=calculation, page_number=page_number)
 
 
 
@@ -174,10 +178,14 @@ def render_results():
 
         return get_results(query)
 
+
     try:
+        page_number = 1
+        if request.args.get('page_number'):
+            page_number = int(request.args.get('page_number'))
         if request.args.get('q') is not None:
             query = request.args.get('q')
-            return get_results(query)
+            return get_results(query, page_number)
 
     except Exception:
         return redirect('/')
@@ -213,7 +221,7 @@ def render_pro():
 
 # Images ------------------
 
-def get_image_results(query):
+def get_image_results(query, page_number=1):
     if ddos_protection.ddos_safe() is False:
         return render_template('v2/500_traffic.html')
 
@@ -226,12 +234,12 @@ def get_image_results(query):
     # external_links = Externals.get_external_links(query)
     external_links = Externals.get_image_links(query)
 
-    results = Searches.search_bing_images(query)
+    results = Searches.search_bing_images(query, page_number)
     # print(results)
     # print(results[0])
 
     return render_template('v2/results.html', query=query, image_results=results[0],
-                           external_results=external_links, current='images', dropdown=dropdown)
+                           external_results=external_links, current='images', dropdown=dropdown, page_number=page_number)
 
 
 @publicAPI.route('/results/images',  methods=['GET', 'POST'])
@@ -247,9 +255,13 @@ def render_image_results():
         return get_image_results(query)
 
     try:
+        page_number = 1
+        if request.args.get('page_number'):
+            page_number = int(request.args.get('page_number'))
+
         if request.args.get('q') is not None:
             query = request.args.get('q')
-            return get_image_results(query)
+            return get_image_results(query, page_number=page_number)
 
     except Exception:
         return redirect('/')

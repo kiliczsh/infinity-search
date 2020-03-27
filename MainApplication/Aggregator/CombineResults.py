@@ -43,7 +43,7 @@ def format_mojeek(data):
     return data
 
 # really just Bing for now
-def search_all(query):
+def search_all(query, offset=0):
     format_query(query)
 
     # try:
@@ -69,7 +69,7 @@ def search_all(query):
     #     mojeek = [[]]
 
     try:
-        bing = Bing.get_all(query, count=25)
+        bing = Bing.get_all(query, count=25, offset=offset)
     except Exception as e:
         # print(e)
         bing = [[]]
@@ -113,9 +113,9 @@ def search_mojeek(query):
     # ranked_results = rank_all(all_results)
     # return ranked_results
 
-def search_bing_images(query):
+def search_bing_images(query, offset=1):
     try:
-        bing = Bing.get_images(query, count=10)
+        bing = Bing.get_images(query, count=10, offset=offset)
     except Exception as e:
         print(e)
         return [[]]

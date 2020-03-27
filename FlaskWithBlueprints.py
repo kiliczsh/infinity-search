@@ -26,6 +26,7 @@ app.register_blueprint(designsAPI)
 
 @app.before_request
 def before_request():
+
     # This is just so that we do not force https when testing the site on localhost
     if request.url.startswith('http://localhost') or request.url.startswith(
             'http://127.0.0.1'):  # If it is being ran locally
@@ -38,6 +39,7 @@ def before_request():
         return redirect(url, code=code)
 
     return
+
 
 
 @app.route('/robots.txt')

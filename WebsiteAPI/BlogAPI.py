@@ -27,6 +27,21 @@ def render_blog_post(post):
         return redirect('/404')
 
 
+@blogAPI.route('/ad/<ad_id>')
+def ad_redirect(ad_id):
+
+    ad_dict = {
+        'abc' : 'ad_url'
+    }
+    
+    if ad_id in ad_dict:
+        # Count the click rate
+        print(ad_dict[ad_id])
+        return redirect(ad_dict[ad_id])
+
+    return redirect('/')
+
+
 @blogAPI.route('/blog/surprise')
 def render_surprise():
     surprise_searches = ['/results?q=AAPL stock', '/results/news?q=Politics', '/results/maps?q=Labrador Canada',
