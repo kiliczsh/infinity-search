@@ -8,7 +8,7 @@ def render_blog():
     articles = [
         {'link': '/blog/privacy_browser_extensions', 'title': 'Privacy Browser Extensions'},
         {'link': '/blog/surprise', 'title': 'Surprise Me!'},
-        {'link': '/blog/languages', 'title': 'We Now Have Infinity Search In German and Spanish'},
+        # {'link': '/blog/languages', 'title': 'We Now Have Infinity Search In German and Spanish'},
         {'link': '/blog/more_about_us', 'title': 'More Privacy Information About Us'},
         {'link': '/blog/about_our_company', 'title': 'About Our Company'},
         {'link': '/blog/open_source', 'title': 'Infinity Search Is Now Open Source'},
@@ -33,7 +33,7 @@ def ad_redirect(ad_id):
     ad_dict = {
         'abc' : 'ad_url'
     }
-    
+
     if ad_id in ad_dict:
         # Count the click rate
         print(ad_dict[ad_id])
