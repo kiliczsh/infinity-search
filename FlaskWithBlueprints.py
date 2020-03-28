@@ -10,7 +10,7 @@ from WebsiteAPI.BlogAPI import blogAPI
 #
 # from WebsiteAPI.DesignsAPI import designsAPI
 
-import EasyAnalytics.EasyAnalytics as EasyAnalytics
+# import EasyAnalytics.EasyAnalytics as EasyAnalytics
 
 app = Flask(__name__)
 
@@ -28,7 +28,7 @@ app.register_blueprint(blogAPI)
 @app.before_request
 def before_request():
 
-    EasyAnalytics.handle_data(request)
+    # EasyAnalytics.handle_data(request)
 
     # This is just so that we do not force https when testing the site on localhost
     if request.url.startswith('http://localhost') or request.url.startswith(
