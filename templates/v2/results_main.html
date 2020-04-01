@@ -20,20 +20,19 @@
         </div>
     {% endfor %}
 
-    <div class="column">
-        <div class="card">
-            <div class="card-content">
-                <div class="content">
-                    <a href="{{ top_ad[1] }}" class="toplink"> <span style="color: black"> <b>{{top_ad[0]}}</b> <i class="fas fa-ad" style="font-size: 24px; color: rgb(31, 93, 213); padding-left: 5px;"></i></span> </a>
-                    <br>
-                    <a href="{{top_ad[1]}}">{{top_ad[2]}} </a>
-                    <br>
-                    {{top_ad[3]}}
-                </div>
-            </div>
-        </div>
-    </div>
-
+<!--    <div class="column">-->
+<!--        <div class="card">-->
+<!--            <div class="card-content">-->
+<!--                <div class="content">-->
+<!--                    <a href="{{ top_ad[1] }}" class="toplink"> <span style="color: black"> <b>{{top_ad[0]}}</b> <i class="fas fa-ad" style="font-size: 24px; color: rgb(31, 93, 213); padding-left: 5px;"></i></span> </a>-->
+<!--                    <br>-->
+<!--                    <a href="{{top_ad[1]}}">{{top_ad[2]}} </a>-->
+<!--                    <br>-->
+<!--                    {{top_ad[3]}}-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
     {% for link in bing_results %}
         <div class="column">
@@ -51,17 +50,17 @@
         </div>
     {% endfor %}
 
-    <div class="column">
-        <div class="card">
-            <div class="card-content">
-                <div class="content">
-                    <a href="{{ bottom_ad[1] }}" class="toplink"> <span style="color: black"> <b>{{bottom_ad[0]}}</b> <i class="fas fa-ad" style="font-size: 24px; color: rgb(31, 93, 213); padding-left: 5px;"></i></span> </a>
-                    <br>
-                    <a href="{{bottom_ad[1]}}">{{bottom_ad[2]}} </a>
-                    <br>
-                    {{bottom_ad[3]}}
-                </div>
-            </div>
-        </div>
-    </div>
+<!--    <div class="column">-->
+<!--        <div class="card">-->
+<!--            <div class="card-content">-->
+<!--                <div class="content">-->
+<!--                    <a href="{{ bottom_ad[1] }}" class="toplink"> <span style="color: black"> <b>{{bottom_ad[0]}}</b> <i class="fas fa-ad" style="font-size: 24px; color: rgb(31, 93, 213); padding-left: 5px;"></i></span> </a>-->
+<!--                    <br>-->
+<!--                    <a href="{{bottom_ad[1]}}">{{bottom_ad[2]}} </a>-->
+<!--                    <br>-->
+<!--                    {{bottom_ad[3]}}-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 {% endif %}

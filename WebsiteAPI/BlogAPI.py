@@ -6,6 +6,7 @@ blogAPI = Blueprint('blogAPI', __name__)
 @blogAPI.route('/blog')
 def render_blog():
     articles = [
+        # {'link': '/blog/press', 'title': 'Infinity Search Press Coverage'},
         {'link': '/blog/privacy_browser_extensions', 'title': 'Privacy Browser Extensions'},
         {'link': '/blog/surprise', 'title': 'Surprise Me!'},
         # {'link': '/blog/languages', 'title': 'We Now Have Infinity Search In German and Spanish'},

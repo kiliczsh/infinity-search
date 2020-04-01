@@ -30,14 +30,10 @@ instead of just taking people to instructions
 # Low Priority 
 - Add hotel search
 - Add flight search
-- Add a book tab 
+- Add a books tab 
 - Make our own api for displaying website favicons
-- Add a second page to the results page 
-- Add qr code instant results 
 
-- Cleanup the code  because it is starting to get messy.
 
 # Issues
 - The Spanish and German version of this site was translated by Bing 
 and probably have grammatical errors. 
-

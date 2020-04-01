@@ -5,20 +5,23 @@ def get_external_links(query):
     links = [
         # Open Resources:
         ['Internet Archive Results', 'https://archive.org/search.php?query=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/archive.ico'],
+        ['Wikipedia Results', 'https://en.wikipedia.org/wiki/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/wikipedia.ico'],
+        ['Youtube Results', 'https://www.youtube.com/results?search_query=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/youtube.ico'],
+
         ['GitHub Results', 'https://github.com/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/github.ico'],
         ['GitLab Results', 'https://gitlab.com/search?search=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/gitlab.png'],
-        ['DuckDuckGo IA Results', 'https://duck.co/ia?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/duckduckhack.png'],
-        # Popular Websites
-        ['Wikipedia Results', 'https://en.wikipedia.org/wiki/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/wikipedia.ico'],
-        ['Invidious Results', 'https://www.invidio.us/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/invidious.ico'],
-        ['Youtube Results', 'https://www.youtube.com/results?search_query=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/youtube.ico'],
-        ['Unsplash Image Results', 'https://unsplash.com/s/photos/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/unsplash.png'],
-        ['Twitter Results', 'https://twitter.com/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/twitter.ico'],
-        # ['Amazon Results', 'https://www.amazon.com/s?k=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/amazon.ico'],
-        # With affiliate link
-        ['Amazon Results', 'https://www.amazon.com/gp/search?ie=UTF8&tag=infinitysearc-20&linkCode=ur2&linkId=2477f1f1396323c01402d67e62bdbd5c&camp=1789&creative=9325&index=aps&keywords=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/amazon.ico'],
 
+        # Popular Websites
+        ['Unsplash Image Results', 'https://unsplash.com/s/photos/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/unsplash.png'],
+        ['Wikimedia Commons Results', 'https://commons.wikimedia.org/wiki/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/wikimedia.ico'],
+
+        ['Amazon Results', 'https://www.amazon.com/s?k=' + query + '&tag=infinitysea0b-20',
+         'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/amazon.ico'],
+
+        # ['Invidious Results', 'https://www.invidio.us/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/invidious.ico'],
         # Forum Searches
+
+        ['Twitter Results', 'https://twitter.com/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/twitter.ico'],
         ['Reddit Results', 'https://www.reddit.com/search/?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/reddit.ico'],
         ['BoardReader Results', 'https://boardreader.com/s/' + query + '.html', 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/boardreader.ico'],
         # Technical Searches
@@ -28,18 +31,19 @@ def get_external_links(query):
         # Archive Searches
         ['Project Gutenburg Results', 'https://www.gutenberg.org/ebooks/search/?query=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/gutenberg.ico'],
         ['Wayback Machine Results', 'https://web.archive.org/web/*/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/archive.ico'],
-        ['Wikimedia Commons Results', 'https://commons.wikimedia.org/wiki/' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/wikimedia.ico'],
-        ['SlideShare Results', 'https://www.slideshare.net/search/slideshow?searchfrom=header&q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/slideshare.ico'],
-        # ['Software Heritage Archive Results', 'https://archive.softwareheritage.org/browse/search/?q=' + query],
+        # ['SlideShare Results', 'https://www.slideshare.net/search/slideshow?searchfrom=header&q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/slideshare.ico'],
         # Other Search Engines
         ['DuckDuckGo Results', 'https://duckduckgo.com/?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/duckduckgo.ico'],
         ['Mojeek Results', 'https://www.mojeek.com/search?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/mojeek.ico'],
         ['Yandex Results', 'https://yandex.com/search/?text=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/yandex.ico'],
         ['Qwant Results', 'https://www.qwant.com/?q=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/qwant.ico'],
         ['Cliqz Results', 'https://beta.cliqz.com/search?q=' + query + '#channel=infinitysearch', 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/cliqz.ico'],
+        # ['DuckDuckGo IA Results', 'https://duck.co/ia?q=' + query,
+        #  'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/duckduckhack.png'],
+
         # ['360 Chinese Search Engine Results', 'https://www.so.com/s?q=' + query],
-        ['Baidu Results',
-         'https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/baidu.ico'],
+        # ['Baidu Results',
+         # 'https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/baidu.ico'],
     ]
 
     return links
@@ -208,7 +212,7 @@ def get_shopping_links(query):
     query = query.replace(' ', '+')
 
     links = [
-        ['Amazon Results','https://www.amazon.com/gp/search?ie=UTF8&tag=infinitysearc-20&linkCode=ur2&linkId=2477f1f1396323c01402d67e62bdbd5c&camp=1789&creative=9325&index=aps&keywords=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/amazon.ico'],
+        # ['Amazon Results','https://www.amazon.com/gp/search?ie=UTF8&tag=infinitysearc-20&linkCode=ur2&linkId=2477f1f1396323c01402d67e62bdbd5c&camp=1789&creative=9325&index=aps&keywords=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/amazon.ico'],
         ['Jet Results', 'https://jet.com/search?term=' + query,'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/jet.ico'],
         # ['Ebay Results', 'https://www.ebay.com/sch/i.html?_nkw=' + query, 'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/ebay.ico'],
         ['Ebay Results', 'http://rover.ebay.com/rover/1/711-53200-19255-0/1?ff3=4&pub=5575565606&toolid=10001&campid=5338647778&customid=&mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_nkw%3D' + query,'https://infinity-search-saved-favicons.s3.amazonaws.com/external_link_favicons/ebay.ico'],

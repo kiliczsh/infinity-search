@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Infinity Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma.min.css') }}">
+    <style>
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div style="text-align: center; padding-bottom: 15px; margin-top: 40px;">
+    <a href="/" style="display: inline-block"> <img style="vertical-align:middle; cursor: pointer; border-radius: 50%;" src="https://infinity-search-saved-favicons.s3.amazonaws.com/InfinitySearch/logo.png" width="75px" height="75px" alt=""></a>
+
+
+    <span class="rome" style="vertical-align:middle; font-size: 30px; padding-left: 20px;">  </span>
+</div>
+
+<div class="content" style="padding-left: 20%; padding-right: 20%">
+    {% block article %}
+    {% endblock %}
+</div>
+
+<div class="footer" style="text-align: center; padding-top: 10px; padding-bottom: 10px; background-color: white">
+    <div class="column is-half is-offset-one-quarter">
+    <div class="columns is-vcentered">
+        <a href="/about/de" class="column is-one-quarter">
+            About
+        </a>
+        <a href="/blog/de" class="column is-one-quarter">
+            Blog
+        </a>
+        <a href="/privacy/de" class="column is-one-quarter">
+            Privacy
+        </a>
+        <a href="/contact/de" class="column is-one-quarter">
+            Contact
+        </a>
+    </div>
+    </div>
+</div>
+
+</body>
+
+</html>
